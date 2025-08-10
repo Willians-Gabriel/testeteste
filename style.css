@@ -1,0 +1,374 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    height: 100vh;
+}
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+}
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 6px;
+    background-color: #00ff08;
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
+    transition: .2s;
+}
+h2.titulo{
+    color: #fff;
+    font-size: 38px;
+    text-align: center;
+}
+
+/* CABECALHO */
+header{
+    padding: 40px 4%;
+}
+header>.interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header a {
+    color: #5c5c5c;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header a:hover{
+    color: #fff; 
+    transform: scale(1.09);
+    transition: .2s;
+}
+header nav ul{
+    list-style-type: none;
+}
+header nav.menu-desktop li{
+    display: inline-block;
+    padding: 0 45px;
+}
+header .btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font: weight 6px;
+    background-color: #00ff08;
+    border-radius: 30px;
+    border: 0   ;
+    cursor: pointer;
+}
+.btn-contato button:hover {
+    box-shadow: 0px 0px 8px #00ff08;
+    transform: scale(1.05);
+}
+/* ESTILO DO MENU MOBILE*/
+.btn-abrir-menu i{
+    color: #00ff08;
+    font-size: 40px;
+}
+.overlay-menu{
+    background-color: rgba(0, 0, 0, 0.356);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88;
+    display: none;
+}
+.menu-mobile.abrir-menu{
+    width: 70%;
+    
+}
+/* Esconde o botão em telas grandes */
+.btn-abrir-menu {
+    display: none;
+}
+
+/* Mostra apenas quando a largura da tela for menor que 1024px (ajuste como quiser) */
+@media (max-width: 1024px) {
+    .btn-abrir-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem; /* tamanho do ícone */
+    }
+    
+    /* Opcional: esconder o menu desktop quando no mobile */
+    .menu-desktop {
+        display: none;
+    }
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+.menu-mobile{
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    position:fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    width: 0%;
+    overflow: hidden;
+    transition: .4s;
+}
+.menu-mobile nav ul{
+    text-align: right;
+}
+
+.menu-mobile nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}
+
+.menu-mobile nav ul li a:hover{
+    background-color: #00ff08;
+    color: black;
+}
+.menu-mobile .btn-fechar{
+    padding: 20px 6%;
+}
+.menu-mobile .btn-fechar i {
+    color: #00ff08;
+    font-size: 20px;
+}
+/* TOPO DO SITE*/
+
+section.topo-do-site {
+    padding: 40px 4%;
+}
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}  
+.topo-do-site h1 {
+    color: #fff;
+    font-size: 42px;
+    line-height: 40px;
+}
+.topo-do-site .txt-topo-site h1 span{ 
+    color: #00ff08;
+}
+.topo-do-site .txt-topo-site p {
+    color: #fff;
+    margin: 40px 0;
+}
+.topo-do-site .img-topo-site img {
+    position: relative;
+    animation: flip 2s ease-in-out infinite alternate;
+    transform-style: preserve-3d;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+/* ESTILO DAS ESPECIALIDADES */
+section.especialidades{
+    padding: 40px 4%;
+}
+section.especialidades .flex{
+    gap: 60px;
+}
+.especialidades .especialidades-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #ffffff46;
+}
+.especialidades .especialidades-box{
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+    cursor: pointer;
+}
+.especialidades .especialidades-box i{
+    color: #00ff08;
+    font-size: 70px;
+    
+}
+.especialidades .especialidades-box h3{
+    font-size: 26px;
+    margin: 15px 0;
+    
+}
+a.reaper{
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+}
+/* Responsividade */
+@media screen and (max-width:1020px){
+    .flex{
+        flex-direction: column;
+    }
+    
+    /* Cabecalho */   
+    
+    .menu-desktop, .btn-contato{
+        display: none;
+        
+    }
+    /* TOPO SITE ESCRITA */
+    section.topo-do-site .flex {
+        
+        gap: 65px;
+    }  
+    
+    section.topo-do-site{
+        padding: 20px 8%;
+    }
+    
+    .topo-do-site h1 {
+        font-size: 30px;
+    }
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+    }
+    
+    /* ESTILO DAS ESPECIALIDADES */
+    section.especialidades{
+        padding: 40px 8%;
+    }
+}
+/* PORTIFOLIO */
+/* Seção principal */
+.portfolio-section {
+    background: #000; /* fundo escuro opcional */
+    padding: 60px 0;
+}
+
+/* Container central com mesmo limite da seção Ronaldo */
+.portfolio-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 8%; /* igual ao bloco de cima */
+    box-sizing: border-box;
+    position: relative;
+}
+
+.portfolio-container h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+/* Carrossel */
+/* Carrossel */
+.portfolio-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 8%; /* Garantir que o carrossel tenha o mesmo padding que os outros itens */
+    box-sizing: border-box;
+    position: relative;
+}
+
+.portfolio-carousel {
+    position: relative;
+    overflow: hidden; /* Oculta a barra de rolagem */
+}
+
+.portfolio-wrapper {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out; /* Suaviza o movimento ao clicar nas setas */
+}
+
+.portfolio-item {
+    flex: 0 0 250px; /* Defina o tamanho fixo para os itens */
+    width: 250px; /* Tamanho fixo dos itens do carrossel */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card {
+    background: #111;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+/* Setas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
+
+.arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsividade - Ajustes para telas menores */
+@media screen and (max-width: 1020px) {
+    .portfolio-container {
+        padding: 0 4%; /* Reduzir o padding em telas menores */
+    }
+
+    .portfolio-wrapper {
+        gap: 10px; /* Menos espaço entre os itens em telas menores */
+    }
+
+    .portfolio-item {
+        width: 100%; /* Deixa os itens ocupando a largura total em telas pequenas */
+        min-width: 280px; /* Tamanho mínimo em dispositivos menores */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .portfolio-container {
+        padding: 0 10%; /* Aumentar o padding para celulares */
+    }
+
+    .portfolio-item {
+        width: 100%; /* Itens ocupam 100% da tela */
+    }
+}
+

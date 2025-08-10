@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Feitiços do Ceifador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h2 {
+            text-align: center;
+            color: #4a4a4a;
+        }
+        .description {
+            font-style: italic;
+            text-align: center;
+            margin: 20px 0;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+        tr:hover td {
+            background-color: #f1f1f1;
+        }
+        .spell-description {
+            display: none; 
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;     
+            background-color: #e9ffe9;
+        }
+        @media (max-width: 600px) {
+            table {
+                font-size: 14px;
+            }
+        }
+                .btn-voltar {
+            background-color: #4CAF50; /* Transparente */
+            color: #121212;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 30px; /* Aumentando o tamanho */
+            font-size: 20px; /* Aumentando o tamanho da fonte */
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        .btn-voltar:hover {
+            background-color: whitesmoke; /* Efeito hover */
+        }
+        .emoji {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function toggleDescription(id) {
+            const descriptions = document.querySelectorAll('.spell-description');
+            descriptions.forEach(desc => {
+                if (desc.id === id) {
+                    desc.style.display = desc.style.display === 'none' || desc.style.display === '' ? 'block' : 'none';
+                } else {
+                    desc.style.display = 'none'; // Esconde outras descrições
+                }
+            });
+        }
+
+        function toggleLevel(level) {
+            const tableBody = document.querySelector(`#${level} tbody`);
+            const descriptions = document.querySelectorAll('.spell-description');
+
+    // Alterna a visibilidade da tabela
+            const isVisible = tableBody.style.display !== 'none' && tableBody.style.display !== '';
+            tableBody.style.display = isVisible ? 'none' : 'table-row-group';
+
+    // Fecha todas as descrições
+            descriptions.forEach(desc => {
+                desc.style.display = 'none';
+            });
+        }
+        window.onload = function() {
+            const descriptions = document.querySelectorAll('.spell-description');
+            descriptions.forEach(desc => {
+        desc.style.display = 'none'; // Garante que todas as descrições estejam ocultas
+    });
+
+    // Oculta todas as tabelas de níveis
+            const tableBodies = document.querySelectorAll('#truques tbody, #primeiro-nivel tbody, #segundo-nivel tbody, #terceiro-nivel tbody, #quarto-nivel tbody, #quinto-nivel tbody');
+            tableBodies.forEach(tableBody => {
+        tableBody.style.display = 'none'; // Garante que todas as tabelas também estejam ocultas
+    });
+        };
+    </script>
+</head>
+<body>
+    <a href="reaper.html" class="btn-voltar">
+        <span class="emoji">↩️</span> Voltar
+    </a>
+    <h2>Lista de Feitiços do Ceifador</h2> 
+    <p class="description">
+        A morte lhe dá apenas o que você precisa para fazer o trabalho, e não concede nada além disso. Você conhece todas as magias na lista de magias básicas do Grim Reaper abaixo:
+    </p>
+
+    <table id="truques">
+        <thead>
+            <tr onclick="toggleLevel('truques')">
+                <th>Truques</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr onclick="toggleDescription('toque-frio')"><td>Toque Frio</td></tr>
+            <tr onclick="toggleDescription('orientacao')"><td>Orientação</td></tr>
+            <tr onclick="toggleDescription('luz')"><td>Luz</td></tr>
+            <tr onclick="toggleDescription('mao-mago')"><td>Mão de Mago</td></tr>
+            <tr onclick="toggleDescription('mensagem')"><td>Mensagem</td></tr>
+            <tr onclick="toggleDescription('resistencia')"><td>Resistência</td></tr>
+            <tr onclick="toggleDescription('poupe')"><td>Poupe os Moribundos</td></tr>
+            <tr onclick="toggleDescription('taumaturgia')"><td>Taumaturgia</td></tr>
+            <tr onclick="toggleDescription('ataque-verdadeiro')"><td>Ataque Verdadeiro</td></tr>
+            <tr onclick="toggleDescription('foice-espectral')"><td>Foice Espectral</td></tr>
+        </tbody>
+    </table>
+    <div id="toque-frio" class="spell-description">
+        <strong>Toque Frio</strong>
+        <br><br>
+        <p>
+            <strong>Tempo de conjuração:</strong> 1 ação <br>
+            <strong>Alcance:</strong> 120 pés <br>
+            <strong>Componentes:</strong> V, S <br>
+            <strong>Duração:</strong> 1 rodada
+        </p>
+        <p>
+            Você cria uma mão fantasmagórica e esquelética no espaço de uma criatura dentro do alcance. Faça um ataque mágico à distância contra a criatura para atacá-la com o frio do túmulo. Em um acerto, o alvo recebe 1d8 de dano necrótico e não pode recuperar pontos de vida até o início do seu próximo turno. Até então, a mão se agarra ao alvo. Se você acertar um alvo morto-vivo, ele também tem desvantagem em jogadas de ataque contra você até o final do seu próximo turno.
+        </p>
+        <p>
+            <strong>Em Níveis Mais Altos:</strong> O dano desta magia aumenta em 1d8 quando você alcança o 5º nível (2d8), 11º nível (3d8) e 17º nível (4d8).
+        </p>
+        <p>
+            <strong>Listas de Magias:</strong> Feiticeiro, Bruxo, Mago
+        </p>
+    </div>
+
+    <div id="orientacao" class="spell-description">
+        <strong>Orientação</strong>
+        <br>
+        <p>
+            <strong>Tempo de conjuração:</strong> 1 ação <br>
+            <strong>Alcance:</strong> Toque <br>
+            <strong>Componentes:</strong> V, S <br>
+            <strong>Duração:</strong> Concentração, até 1 minuto
+        </p>
+        <p>
+            Você toca uma criatura disposta. Uma vez antes do fim da magia, o alvo pode rolar um d4 e adicionar o número rolado a um teste de habilidade de sua escolha. Ele pode rolar o dado antes ou depois de fazer o teste de habilidade. A magia então termina.
+        </p>
+        <p>
+            <strong>Listas de Magias:</strong> Artificer, Cleric, Druid
+        </p>
+    </div>
+    <div id="luz" class="spell-description">
+       <strong>Luz</strong> </br>
+       <p>
+        <strong>Tempo de conjuração:</strong> 1 ação </br>
+        <strong>Alcance:</strong> Toque </br>
+        <strong>Componentes:</strong> V, M (um vaga-lume ou musgo fosforescente) </br>
+        <strong>Duração:</strong> 1 hora</br>
+    </p>
+    <p>
+        Você toca em um objeto que não seja maior que 10 pés em qualquer dimensão. Até que a magia termine, o objeto emite luz brilhante em um raio de 20 pés e luz fraca por mais 20 pés. A luz pode ser colorida como você quiser. Cobrir completamente o objeto com algo opaco bloqueia a luz. A magia termina se você conjurá-la novamente ou dispensá-la como uma ação.
+
+        Se você tiver como alvo um objeto segurado ou usado por uma criatura hostil, aquela criatura deve ser bem-sucedida em um teste de resistência de Destreza para evitar a magia.
+    </p>
+    <p>
+        <strong>Listas de Feitiços.</strong> Artífice , Bardo , Clérigo , Feiticeiro , Mago
+    </p>
+</div>
+
+<div id="mao-mago" class="spell-description">
+    <strong>Mão de Mago</strong>
+    <br>
+    <p>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 30 pés <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> 1 minuto<br>
+    </p>
+    <p>
+        Uma mão espectral flutuante aparece em um ponto que você escolher dentro do alcance. A mão dura pela duração ou até que você a descarte como uma ação. A mão desaparece se estiver a mais de 30 pés de distância de você ou se você conjurar esta magia novamente.
+    </p>
+    <p>
+        Você pode usar sua ação para controlar a mão. Ela pode manipular um objeto, abrir uma porta ou recipiente destrancado, guardar ou recuperar um item de um recipiente aberto ou despejar o conteúdo de um frasco. Você pode mover a mão até 30 pés cada vez que usá-la.
+    </p>
+    <p>
+        A mão não pode atacar, ativar itens mágicos ou carregar mais de 4,5 kg.
+    </p>
+    <p>
+        <strong>Listas de Feitiços:</strong> Artificer, Bard, Sorcerer, Warlock, Wizard
+    </p>
+</div>
+
+<div id="mensagem" class="spell-description">
+    <strong>Mensagem</strong>
+    <br><br>
+    <p>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 120 pés <br>
+        <strong>Componentes:</strong> V, S, M (um pequeno pedaço de fio de cobre) <br>
+        <strong>Duração:</strong> 1 rodada
+    </p>
+    <p>
+        Você aponta seu dedo para uma criatura dentro do alcance e sussurra uma mensagem. O alvo (e somente o alvo) ouve a mensagem e pode responder em um sussurro que somente você pode ouvir.
+    </p>
+    <p>
+        Você pode conjurar esta magia através de objetos sólidos se estiver familiarizado com o alvo e souber que ele está além da barreira. Silêncio mágico, 1 pé de pedra, 1 polegada de metal comum, uma fina folha de chumbo ou 3 pés de madeira bloqueiam a magia. A magia não precisa seguir uma linha reta e pode viajar livremente por cantos ou por aberturas.
+    </p>
+</div>
+<div id="resistencia" class="spell-description">
+    <strong>Resistencia</strong>
+    <br><br>
+    <p>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Toque <br>
+        <strong>Componentes:</strong> V, S, M (uma capa em miniatura) <br>
+        <strong>Duração:</strong> Concentração, até 1 minuto
+    </p>
+    <p>
+        Você toca uma criatura disposta. Uma vez antes do fim da magia, o alvo pode rolar um d4 e adicionar o número rolado a um teste de resistência de sua escolha. Ele pode rolar o dado antes ou depois do teste de resistência. A magia então termina.
+    </p>
+    <p>
+        <strong>Listas de Magias:</strong> Artificer, Cleric, Druid
+    </p>
+</div>
+
+<div id="poupe" class="spell-description">
+    <strong>Poupe os Moribundos</strong>
+    <br><br>
+    <p>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Toque <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> Instantâneo
+    </p>
+    <p>
+        Você toca uma criatura viva que tem 0 pontos de vida. A criatura se torna estável. Esta magia não tem efeito em mortos-vivos ou constructos.
+    </p>
+</div>
+
+<div id="taumaturgia" class="spell-description">
+    <strong>Taumaturgia</strong>
+    <br><br>
+    <p>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 30 pés <br>
+        <strong>Componentes:</strong> V <br>
+        <strong>Duração:</strong> Até 1 minuto
+    </p>
+    <p>
+        Você manifesta uma maravilha menor, um sinal de poder sobrenatural, dentro do alcance. Você cria um dos seguintes efeitos mágicos:
+    </p>
+    <ul>
+        <li>Sua voz fica até três vezes mais alta que o normal por 1 minuto.</li>
+        <li>Você faz com que as chamas pisquem, aumentem de intensidade, diminuam de intensidade ou mudem de cor por 1 minuto.</li>
+        <li>Você causa tremores inofensivos no solo por 1 minuto.</li>
+        <li>Você cria um som instantâneo que se origina de um ponto de sua escolha dentro do alcance, como o estrondo de um trovão, o grito de um corvo ou sussurros ameaçadores.</li>
+        <li>Você instantaneamente faz com que uma porta ou janela destrancada se abra ou feche com força.</li>
+        <li>Você altera a aparência dos seus olhos por 1 minuto.</li>
+    </ul>
+    <p>
+        Se você conjurar esta magia várias vezes, você pode ter até três dos seus efeitos de 1 minuto ativos ao mesmo tempo, e você pode dispensar tal efeito como uma ação.
+    </p>
+    <p>
+        <strong>Listas de Magias:</strong> Clérigo
+    </p>
+</div>
+
+<div id="ataque-verdadeiro" class="spell-description">
+    <strong>Ataque Verdadeiro</strong>
+    <br><br>
+    <p>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 30 pés <br>
+        <strong>Componentes:</strong> S <br>
+        <strong>Duração:</strong> Concentração, até 1 rodada
+    </p>
+    <p>
+        Você estende sua mão e aponta um dedo para um alvo dentro do alcance. Sua magia lhe concede uma breve visão das defesas do alvo. Em seu próximo turno, você ganha vantagem em sua primeira jogada de ataque contra o alvo, desde que esta magia não tenha terminado.
+    </p>
+    <p>
+        <strong>Listas de Magias:</strong> Bardo, Feiticeiro, Bruxo, Mago
+    </p>
+</div>
+
+<div id="foice-espectral" class="spell-description">
+    <strong>Foice Espectral</strong>
+    <br><br>
+    <p>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Toque <br>
+        <strong>Componentes:</strong> V, M (um bastão ou vara de algum tipo) <br>
+        <strong>Duração:</strong> Indeterminado
+    </p>
+    <p>
+        Enquanto segura um cajado com ambas as mãos, você pode usar uma ação para criar uma lâmina de energia necrótica no formato de uma foice de ceifador na ponta do cajado. A lâmina causa 1d6 de dano necrótico além do dano normal do cajado, e enquanto você for proficiente com o cajado, você é proficiente com esta arma. A magia termina se você soltar o cajado ou se você conjurar esta magia novamente.
+    </p>
+    <p>
+        O dano da magia aumenta em 1d6 quando você alcança o 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).
+    </p>
+</div>
+<table id="primeiro-nivel">
+    <thead>
+        <tr>
+            <th onclick="toggleLevel('primeiro-nivel')">1º Nível</th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr onclick="toggleDescription('alarme')"><td>Alarme</td></tr>
+        <tr onclick="toggleDescription('armadura-de-agathys')"><td>Armadura de Agathys</td></tr>
+        <tr onclick="toggleDescription('armas-de-hadar')"><td>Armas de Hadar</td></tr>
+        <tr onclick="toggleDescription('maldiçao')"><td>Maldição</td></tr>
+        <tr onclick="toggleDescription('abencoar')"><td>Abençoar</td></tr>
+        <tr onclick="toggleDescription('comandar')"><td>Comandar</td></tr>
+        <tr onclick="toggleDescription('compreender-idiomas')"><td>Compreender Idiomas</td></tr>
+        <tr onclick="toggleDescription('curar-ferimentos')"><td>Curar Ferimentos</td></tr>
+        <tr onclick="toggleDescription('detectar-bem-mal')"><td>Detectar o Mal e o Bem</td></tr>
+        <tr onclick="toggleDescription('detectar-veneno-e-doenca')"><td>Detectar Veneno e Doença</td></tr>
+        <tr onclick="toggleDescription('disfarcar-se')"><td>Disfarçar-se</td></tr>
+        <tr onclick="toggleDescription('vida-falsa')"><td>Vida Falsa</td></tr>
+        <tr onclick="toggleDescription('palavra-cura')"><td>Palavra de Cura</td></tr>
+        <tr onclick="toggleDescription('repreensao-infernal')"><td>Repreensão Infernal</td></tr>
+        <tr onclick="toggleDescription('infligir-ferimentos')"><td>Infligir Ferimentos</td></tr>
+        <tr onclick="toggleDescription('proteçao-contra-o-mal-e-o-bem')"><td>Proteção contra o Mal e o Bem</td></tr>
+        <tr onclick="toggleDescription('raio-doenca')"><td>Raio da Doença</td></tr>
+        <tr onclick="toggleDescription('imagem-silenciosa')"><td>Imagem Silenciosa</td></tr>
+        <tr onclick="toggleDescription('sono')"><td> Sono</td></tr>
+        <tr onclick="toggleDescription('servo-invisivel')"><td>Servo Invisível</td></tr>
+    </tbody>
+</table>
+
+<div id="alarme" class="spell-description">
+    <strong>Alarme</strong>
+    <br><br>
+    <p>
+        <strong>Nível:</strong> 1º nível Abjuração (ritual) <br>
+        <strong>Tempo de conjuração:</strong> 1 minuto <br>
+        <strong>Alcance:</strong> 30 pés <br>
+        <strong>Componentes:</strong> V, S, M (uma pequena campainha e um pedaço de fio de prata fino) <br>
+        <strong>Duração:</strong> 8 horas
+    </p>
+    <p>
+        Você estabelece um alarme contra intrusões indesejadas. Escolha uma porta, uma janela ou uma área dentro do alcance que não seja maior que um cubo de 20 pés. Até que a magia termine, um alarme o alerta sempre que uma criatura de tamanho diminuto ou maior tocar ou entrar na área protegida. 
+    </p>
+    <p>
+        Ao conjurar a magia, você pode designar criaturas que não ativarão o alarme. Você também escolhe se o alarme será mental ou audível.
+    </p>
+    <p>
+        Um alarme mental alerta você com um sinal em sua mente se você estiver dentro de 1 milha da área protegida. Este sinal o acorda se você estiver dormindo. Um alarme audível produz o som de uma campainha por 10 segundos dentro de 60 pés.
+    </p>
+    <p>
+        <strong>Listas de Magias:</strong> Artífice, Ranger, Mago
+    </p>
+</div>
+
+<div id="armadura-de-agathys" class="spell-description">
+    <strong>Armadura de Agathys</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Evocação <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Pessoal <br>
+        <strong>Componentes:</strong> V, S, M (uma gota de sangue) <br>
+        <strong>Duração:</strong> 1 hora
+    </p>
+    <p>
+        Você cria uma armadura mágica que lhe concede temporariamente pontos de vida e causa dano a criaturas que o atacarem.
+    </p>
+</div>
+
+<div id="armas-de-hadar" class="spell-description">
+    <strong>Armas de Hadar</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Invocação <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 30 pés <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> Instantânea
+    </p>
+    <p>
+        Você conjura uma arma feita de energia negativa que danifica criaturas em uma área.
+    </p>
+</div>
+
+<div id="maldiçao" class="spell-description">
+    <strong>Maldição</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Necromancia <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 30 pés <br>
+        <strong>Componentes:</strong> V, S, M (uma gota de sangue) <br>
+        <strong>Duração:</strong> 1 hora
+    </p>
+    <p>
+        Você coloca uma maldição sobre uma criatura, fazendo com que ela sofra desvantagens em certas ações.
+    </p>
+</div>
+
+<div id="abencoar" class="spell-description">
+    <strong>Abençoar</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Divinação <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 30 pés <br>
+        <strong>Componentes:</strong> V, S, M (um pequeno pedaço de erva ou um grão) <br>
+        <strong>Duração:</strong> Concentrar, até 1 minuto
+    </p>
+    <p>
+        Você abençoa até três criaturas, concedendo-lhes um bônus em suas rolagens de ataque e salvamento.
+    </p>
+</div>
+
+<div id="comandar" class="spell-description">
+    <strong>Comandar</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Encantamento <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 60 pés <br>
+        <strong>Componentes:</strong> V <br>
+        <strong>Duração:</strong> 1 rodada
+    </p>
+    <p>
+        Você dá uma ordem simples a uma criatura, que deve obedecer se falhar em um teste de resistência.
+    </p>
+</div>
+
+<div id="compreender-idiomas" class="spell-description">
+    <strong>Compreender Idiomas</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Divinação <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Pessoal <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> 1 hora
+    </p>
+    <p>
+        Você compreende todas as línguas faladas durante a duração da magia.
+    </p>
+</div>
+
+<div id="curar-ferimentos" class="spell-description">
+    <strong>Curar Ferimentos</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Evocação <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Toque <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> Instantânea
+    </p>
+    <p>
+        Você toca uma criatura e restaura uma quantidade de pontos de vida igual a 1d8 + seu modificador de habilidade.
+    </p>
+</div>
+
+<div id="detectar-bem-mal" class="spell-description">
+    <strong>Detectar o Mal e o Bem</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Divinação <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Pessoal <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> Concentração, até 10 minutos
+    </p>
+    <p>
+        Você detecta a presença de criaturas e locais de origem celestial, infernal ou não morta.
+    </p>
+</div>
+
+<div id="detectar-veneno-e-doenca" class="spell-description">
+    <strong>Detectar Veneno e Doença</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Divinação <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Pessoal <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> Concentração, até 10 minutos
+    </p>
+    <p>
+        Você detecta a presença de venenos e doenças em uma criatura ou objeto.
+    </p>
+</div>
+
+<div id="disfarcar-se" class="spell-description">
+    <strong>Disfarçar-se</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Ilusão <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Pessoal <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> 1 hora
+    </p>
+    <p>
+        Você altera sua aparência, podendo mudar seu aspecto físico e vestimentas.
+    </p>
+</div>
+
+<div id="vida-falsa" class="spell-description">
+    <strong>Vida Falsa</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Necromancia <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Pessoal <br>
+        <strong>Componentes:</strong> V, S, M (uma gota de sangue) <br>
+        <strong>Duração:</strong> 1 hora
+    </p>
+    <p>
+        Você cria uma quantidade temporária de pontos de vida que absorve dano.
+    </p>
+</div>
+
+<div id="palavra-cura" class="spell-description">
+    <strong>Palavra de Cura</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Evocação <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 60 pés <br>
+        <strong>Componentes:</strong> V <br>
+        <strong>Duração:</strong> Instantânea
+    </p>
+    <p>
+        Você restaura uma quantidade de pontos de vida a uma criatura à distância.
+    </p>
+</div>
+
+<div id="repreensao-infernal" class="spell-description">
+    <strong>Repreensão Infernal</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Necromancia <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 60 pés <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> Instantânea
+    </p>
+    <p>
+        Você inflige dano a uma criatura que você pode ver e que esteja dentro do alcance.
+    </p>
+</div>
+
+<div id="infligir-ferimentos" class="spell-description">
+    <strong>Infligir Ferimentos</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Necromancia <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Toque <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> Instantânea
+    </p>
+    <p>
+        Você causa dano a uma criatura que toca, infligindo 1d10 de dano necrótico.
+    </p>
+</div>
+
+<div id="proteçao-contra-o-mal-e-o-bem" class="spell-description">
+    <strong>Proteção contra o Mal e o Bem</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Abjuração <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> Toque <br>
+        <strong>Componentes:</strong> V, S, M (uma gota de sangue) <br>
+        <strong>Duração:</strong> 10 minutos
+    </p>
+    <p>
+        Você protege uma criatura contra criaturas de tipos específicos, concedendo vantagens em testes de resistência.
+    </p>
+</div>
+
+<div id="raio-doenca" class="spell-description">
+    <strong>Raio da Doença</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Necromancia <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 30 pés <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> Instantânea
+    </p>
+    <p>
+        Você dispara um raio de energia doente em uma criatura, causando dano e possivelmente envenenando-a.
+    </p>
+</div>
+
+<div id="imagem-silenciosa" class="spell-description">
+    <strong>Imagem Silenciosa</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Ilusão <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 60 pés <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> 1 minuto
+    </p>
+    <p>
+        Você cria uma imagem ilusória que pode se mover e mudar de aparência.
+    </p>
+</div>
+
+<div id="sono" class="spell-description">
+    <strong>Sono</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Encantamento <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 90 pés <br>
+        <strong>Componentes:</strong> V, S <br>
+        <strong>Duração:</strong> 1 minuto
+    </p>
+    <p>
+        Você coloca criaturas em um raio de 20 pés para dormir, afetando as de menor vida primeiro.
+    </p>
+</div>
+
+<div id="servo-invisivel" class="spell-description">
+    <strong>Servo Invisível</strong>
+    <p>
+        <strong>Nível:</strong> 1º nível Conjuração <br>
+        <strong>Tempo de conjuração:</strong> 1 ação <br>
+        <strong>Alcance:</strong> 30 pés <br>
+        <strong>Componentes:</strong> V, S, M (um pedaço de pano e uma gota de água) <br>
+        <strong>Duração:</strong> 1 hora
+    </p>
+    <p>
+        Você cria um servo invisível que pode realizar tarefas simples e carregar pequenos objetos.
+    </p>
+</div>
+<table id="segundo-nivel">
+    <thead>
+        <tr>
+            <th onclick="toggleLevel('segundo-nivel')">2º Nível</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr onclick="toggleDescription('ajuda')"><td>Ajuda</td></tr>
+        <tr onclick="toggleDescription('cegueira-surdez')"><td>Cegueira/Surdez</td></tr>
+        <tr onclick="toggleDescription('desfocar')"><td>Desfocar</td></tr>
+        <tr onclick="toggleDescription('acalmar-emocoes')"><td>Acalmar Emoções</td></tr>
+        <tr onclick="toggleDescription('coroa-da-loucura')"><td>Coroa da Loucura</td></tr>
+        <tr onclick="toggleDescription('escuridao')"><td>Escuridão</td></tr>
+        <tr onclick="toggleDescription('detectar-pensamentos')"><td>Detectar Pensamentos</td></tr>
+        <tr onclick="toggleDescription('aumentar-habilidade')"><td>Aumentar Habilidade</td></tr>
+        <tr onclick="toggleDescription('repouso-suave')"><td>Repouso Suave</td></tr>
+        <tr onclick="toggleDescription('segurar-pessoa')"><td>Segurar Pessoa</td></tr>
+        <tr onclick="toggleDescription('invisibilidade')"><td>Invisibilidade</td></tr>
+        <tr onclick="toggleDescription('restauracao-menor')"><td>Restauração Menor</td></tr>
+        <tr onclick="toggleDescription('passo-nebuloso')"><td>Passo Nebuloso</td></tr>
+        <tr onclick="toggleDescription('passar-sem-deixar-rastros')"><td>Passar sem Deixar Rastros</td></tr>
+        <tr onclick="toggleDescription('forca-fantasmagorica')"><td>Força Fantasmagórica</td></tr>
+        <tr onclick="toggleDescription('oracao-de-cura')"><td>Oração de Cura</td></tr>
+        <tr onclick="toggleDescription('protecao-contra-veneno')"><td>Proteção contra Veneno</td></tr>
+        <tr onclick="toggleDescription('raio-de-enfraquecimento')"><td>Raio de Enfraquecimento</td></tr>
+        <tr onclick="toggleDescription('ver-invisibilidade')"><td>Ver Invisibilidade</td></tr>
+        <tr onclick="toggleDescription('silencio')"><td>Silêncio</td></tr>
+        <tr onclick="toggleDescription('sugestao')"><td>Sugestão</td></tr>
+        <tr onclick="toggleDescription('zona-da-verdade')"><td>Zona da Verdade</td></tr>
+    </table>
+
+    <div id="ajuda" class="spell-description">
+        <strong>Ajuda</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 30 pés<br>
+            Componentes: V, S, M (uma pequena tira de pano branco)<br>
+            Duração: 8 horas
+        </p>
+        <p>
+            A magia reforça seus aliados com resistência e determinação. Escolha até três criaturas dentro do alcance. O máximo de pontos de vida e os pontos de vida atuais de cada alvo aumentam em 5 pela duração.
+        </p>
+        <p>Listas de Magias: Clérigo, Bardo, Mago</p>
+    </div>
+
+    <div id="cegueira-surdez" class="spell-description">
+        <strong>Cegueira/Surdez</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 30 pés<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 minuto
+        </p>
+        <p>
+            Você pode cegar ou surdir uma criatura que você possa ver dentro do alcance. A criatura deve fazer um teste de resistência de Constituição. Se falhar, ficará cega ou surda por toda a duração.
+        </p>
+        <p>Listas de Magias: Clérigo, Mago</p>
+    </div>
+
+    <div id="desfocar" class="spell-description">
+        <strong>Desfocar</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 60 pés<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 minuto
+        </p>
+        <p>
+            Você cria uma ilusão que desfoca a visão de um alvo, concedendo desvantagem em ataques contra você.
+        </p>
+        <p>Listas de Magias: Ilusionista, Mago</p>
+    </div>
+
+    <div id="acalmar-emocoes" class="spell-description">
+        <strong>Acalmar Emoções</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 60 pés<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 minuto
+        </p>
+        <p>
+            Você acalma as emoções de criaturas em uma área, removendo efeitos de medo ou hostilidade.
+        </p>
+        <p>Listas de Magias: Bardo, Clérigo</p>
+    </div>
+
+    <div id="coroa-da-loucura" class="spell-description">
+        <strong>Coroa da Loucura</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 60 pés<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 minuto
+        </p>
+        <p>
+            Você coloca uma coroa de loucura em uma criatura, causando confusão e desorientação. A criatura deve fazer um teste de resistência de Sabedoria.
+        </p>
+        <p>Listas de Magias: Bardo, Feiticeiro</p>
+    </div>
+
+    <div id="escuridao" class="spell-description">
+        <strong>Escuridão</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 60 pés<br>
+            Componentes: V, M (uma gota de tinta preta)<br>
+            Duração: Concentração, até 10 minutos
+        </p>
+        <p>
+            Você cria uma esfera de escuridão impenetrável que obscurece a visão.
+        </p>
+        <p>Listas de Magias: Mago, Feiticeiro</p>
+    </div>
+
+    <div id="detectar-pensamentos" class="spell-description">
+        <strong>Detectar Pensamentos</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 30 pés<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 minuto
+        </p>
+        <p>
+            Você pode ler os pensamentos de uma criatura e se concentrar em seus sentimentos. A criatura pode fazer um teste de resistência de Inteligência.
+        </p>
+        <p>Listas de Magias: Mago, Feiticeiro</p>
+    </div>
+
+    <div id="aumentar-habilidade" class="spell-description">
+        <strong>Aumentar Habilidade</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: Toque<br>
+            Componentes: V, S, M (um pequeno pedaço de cabelo)<br>
+            Duração: Concentração, até 1 hora
+        </p>
+        <p>
+            Você aumenta uma habilidade específica de uma criatura, concedendo um bônus de +1d4 em testes relacionados.
+        </p>
+        <p>Listas de Magias: Bardo, Clérigo, Feiticeiro</p>
+    </div>
+
+    <div id="repouso-suave" class="spell-description">
+        <strong>Repouso Suave</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 30 pés<br>
+            Componentes: V, S<br>
+            Duração: 1 hora
+        </p>
+        <p>
+            Você provoca um estado de descanso em uma criatura, permitindo que ela recupere 1d4 + seu nível de conjurador em pontos de vida.
+        </p>
+        <p>Listas de Magias: Bardo, Clérigo</p>
+    </div>
+
+    <div id="segurar-pessoa" class="spell-description">
+        <strong>Segurar Pessoa</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 30 pés<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 minuto
+        </p>
+        <p>
+            Você imobiliza uma criatura humanoide dentro do alcance. A criatura deve fazer um teste de resistência de Sabedoria.
+        </p>
+        <p>Listas de Magias: Feiticeiro, Mago</p>
+    </div>
+
+    <div id="invisibilidade" class="spell-description">
+        <strong>Invisibilidade</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: Toque<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 hora
+        </p>
+        <p>
+            Você torna uma criatura invisível. A magia termina se a criatura atacar ou lançar uma magia.
+        </p>
+        <p>Listas de Magias: Feiticeiro, Mago</p>
+    </div>
+
+    <div id="restauracao-menor" class="spell-description">
+        <strong>Restauração Menor</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: Toque<br>
+            Componentes: V, S<br>
+            Duração: Instantânea
+        </p>
+        <p>
+            Você cura 1d4 + seu modificador de Sabedoria em pontos de vida ou remove uma condição como paralisia ou envenenamento.
+        </p>
+        <p>Listas de Magias: Clérigo, Druida</p>
+    </div>
+
+    <div id="passo-nebuloso" class="spell-description">
+        <strong>Passo Nebuloso</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: Pessoal<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 minuto
+        </p>
+        <p>
+            Você se torna nebuloso, permitindo que você passe por objetos e criaturas como se fossem difíceis de atravessar.
+        </p>
+        <p>Listas de Magias: Feiticeiro, Mago</p>
+    </div>
+
+    <div id="passar-sem-deixar-rastros" class="spell-description">
+        <strong>Passar sem Deixar Rastros</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 30 pés<br>
+            Componentes: V, S, M (um pequeno pedaço de lã)<br>
+            Duração: 1 hora
+        </p>
+        <p>
+            Você cria um caminho que não deixa rastros. Você e as criaturas que você toca não podem ser rastreados por meios mágicos ou não mágicos.
+        </p>
+        <p>Listas de Magias: Druida, Ranger</p>
+    </div>
+
+    <div id="forca-fantasmagorica" class="spell-description">
+        <strong>Força Fantasmagórica</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 30 pés<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 minuto
+        </p>
+        <p>
+            Você cria uma força que pode interagir com criaturas e objetos, causando 1d10 de dano necrótico.
+        </p>
+        <p>Listas de Magias: Mago</p>
+    </div>
+
+    <div id="oracao-de-cura" class="spell-description">
+        <strong>Oração de Cura</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 30 pés<br>
+            Componentes: V, S, M (uma gota de água sagrada)<br>
+            Duração: Instantânea
+        </p>
+        <p>
+            Você cura 2d8 + seu modificador de habilidade em pontos de vida em uma criatura à sua escolha.
+        </p>
+        <p>Listas de Magias: Clérigo</p>
+    </div>
+
+    <div id="protecao-contra-veneno" class="spell-description">
+        <strong>Proteção contra Veneno</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: Toque<br>
+            Componentes: V, S<br>
+            Duração: 1 hora
+        </p>
+        <p>
+            Você concede resistência a venenos e cura condições relacionadas a venenos, como envenenamento.
+        </p>
+        <p>Listas de Magias: Clérigo, Druida</p>
+    </div>
+
+    <div id="raio-de-enfraquecimento" class="spell-description">
+        <strong>Raio de Enfraquecimento</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 60 pés<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 minuto
+        </p>
+        <p>
+            Você lança um raio que provoca 2d8 de dano necrótico a uma criatura. A criatura deve fazer um teste de resistência de Constituição.
+        </p>
+        <p>Listas de Magias: Mago</p>
+    </div>
+
+    <div id="ver-invisibilidade" class="spell-description">
+        <strong>Ver Invisibilidade</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: Pessoal<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 1 hora
+        </p>
+        <p>
+            Você pode ver criaturas e objetos invisíveis como se fossem visíveis.
+        </p>
+        <p>Listas de Magias: Mago, Feiticeiro</p>
+    </div>
+
+    <div id="silencio" class="spell-description">
+        <strong>Silêncio</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 120 pés<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 10 minutos
+        </p>
+        <p>
+            Você cria uma área de silêncio onde não há som, silenciando criaturas e objetos.
+        </p>
+        <p>Listas de Magias: Clérigo, Mago</p>
+    </div>
+
+    <div id="sugestao" class="spell-description">
+        <strong>Sugestão</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 30 pés<br>
+            Componentes: V, S<br>
+            Duração: Concentração, até 8 horas
+        </p>
+        <p>
+            Você sugere uma ação a uma criatura. Se ela não for prejudicial, a criatura deve seguir sua sugestão.
+        </p>
+        <p>Listas de Magias: Bardo, Feiticeiro, Mago</p>
+    </div>
+
+    <div id="zona-da-verdade" class="spell-description">
+        <strong>Zona da Verdade</strong>
+        <p>
+            Tempo de conjuração: 1 ação<br>
+            Alcance: 60 pés<br>
+            Componentes: V, S, M (um pequeno pedaço de carvão)<br>
+            Duração: Concentração, até 10 minutos
+        </p>
+        <p>
+            Você cria uma área onde as criaturas não podem mentir. Qualquer criatura que minta na área sofre dano psíquico.
+        </p>
+        <p>Listas de Magias: Clérigo, Paladino</p>
+    </div>
+    <table id="terceiro-nivel">
+        <thead>
+            <tr>
+                <th onclick="toggleLevel('terceiro-nivel')">3º Nível</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr onclick="toggleDescription('animar-mortos')"><td>Animar Mortos</td></tr>
+            <tr onclick="toggleDescription('aura-de-vitalidade')"><td>Aura de Vitalidade</td></tr>
+            <tr onclick="toggleDescription('farol-de-esperanca')"><td>Farol de Esperança</td></tr>
+            <tr onclick="toggleDescription('concede-maldicao')"><td>Concede Maldição</td></tr>
+            <tr onclick="toggleDescription('piscar')"><td>Piscar</td></tr>
+            <tr onclick="toggleDescription('clarividencia')"><td>Clarividência</td></tr>
+            <tr onclick="toggleDescription('medo')"><td>Medo</td></tr>
+            <tr onclick="toggleDescription('forma-gasosa')"><td>Forma Gasosa</td></tr>
+            <tr onclick="toggleDescription('aceleracao')"><td>Aceleração</td></tr>
+            <tr onclick="toggleDescription('fome-de-hadar')"><td>Fome de Hadar</td></tr>
+            <tr onclick="toggleDescription('palavra-de-cura-em-massa')"><td>Palavra de Cura em Massa</td></tr>
+            <tr onclick="toggleDescription('nao-deteccao')"><td>Não Detecção</td></tr>
+            <tr onclick="toggleDescription('protecao-contra-energia')"><td>Proteção contra Energia</td></tr>
+            <tr onclick="toggleDescription('remover-maldicao')"><td>Remover Maldição</td></tr>
+            <tr onclick="toggleDescription('revivificar')"><td>Revivificar</td></tr>
+            <tr onclick="toggleDescription('falar-com-mortos')"><td>Falar com Mortos</td></tr>
+            <tr onclick="toggleDescription('linguas')"><td>Línguas</td></tr>
+            <tr onclick="toggleDescription('toque-vampirico')"><td>Toque Vampírico</td></tr>
+        </table>
+
+        <div id="animar-mortos" class="spell-description">
+            <strong>Animar Mortos</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: 60 pés<br>
+                Componentes: V, S, M (um pequeno pedaço de osso)<br>
+                Duração: Concentração, até 1 hora
+            </p>
+            <p>
+                Você anima os corpos de mortos, criando zumbis ou esqueletos que obedecem suas ordens. Você pode animar até 3 criaturas que você possa ver dentro do alcance.
+            </p>
+            <p>Listas de Magias: Feiticeiro, Mago</p>
+        </div>
+
+        <div id="aura-de-vitalidade" class="spell-description">
+            <strong>Aura de Vitalidade</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: Pessoal<br>
+                Componentes: V, S<br>
+                Duração: Concentração, até 10 minutos
+            </p>
+            <p>
+                Você cria uma aura que cura 2d6 pontos de vida a cada rodada a uma criatura dentro do alcance, podendo ser você ou um aliado.
+            </p>
+            <p>Listas de Magias: Clérigo, Paladino</p>
+        </div>
+
+        <div id="farol-de-esperanca" class="spell-description">
+            <strong>Farol de Esperança</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: 30 pés<br>
+                Componentes: V, S, M (uma vela)<br>
+                Duração: Concentração, até 1 hora
+            </p>
+            <p>
+                Você cria um campo de energia positiva que cura 1d8 pontos de vida a cada rodada em aliados dentro do alcance.
+            </p>
+            <p>Listas de Magias: Clérigo, Bardo</p>
+        </div>
+
+        <div id="concede-maldicao" class="spell-description">
+            <strong>Concede Maldição</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: 30 pés<br>
+                Componentes: V, S, M (um pedaço de cabelo da vítima)<br>
+                Duração: Concentração, até 1 minuto
+            </p>
+            <p>
+                Você amaldiçoa uma criatura, causando desvantagem em testes de resistência e ataques. A criatura pode fazer um teste de resistência de Sabedoria no final de cada um dos seus turnos.
+            </p>
+            <p>Listas de Magias: Feiticeiro, Bruxo</p>
+        </div>
+
+        <div id="piscar" class="spell-description">
+            <strong>Piscar</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: Pessoal<br>
+                Componentes: V, S<br>
+                Duração: Instantânea
+            </p>
+            <p>
+                Você se teletransporta para uma distância de até 30 pés para um local que você possa ver.
+            </p>
+            <p>Listas de Magias: Feiticeiro, Mago</p>
+        </div>
+
+        <div id="clarividencia" class="spell-description">
+            <strong>Clarividência</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: Pessoal<br>
+                Componentes: V, S, M (um cristal de quartzo)<br>
+                Duração: Concentração, até 10 minutos
+            </p>
+            <p>
+                Você pode ver o que está acontecendo em um local à sua escolha, que você conheça, até 1 milha de distância.
+            </p>
+            <p>Listas de Magias: Mago, Feiticeiro</p>
+        </div>
+
+        <div id="medo" class="spell-description">
+            <strong>Medo</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: 30 pés<br>
+                Componentes: V, S<br>
+                Duração: Concentração, até 1 minuto
+            </p>
+            <p>
+                Você emana uma aura de medo. Criaturas dentro do alcance devem fazer um teste de resistência de Sabedoria. Se falharem, ficarão aterrorizadas e devem fugir de você.
+            </p>
+            <p>Listas de Magias: Feiticeiro, Mago</p>
+        </div>
+
+        <div id="forma-gasosa" class="spell-description">
+            <strong>Forma Gasosa</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: Pessoal<br>
+                Componentes: V, S<br>
+                Duração: Concentração, até 1 hora
+            </p>
+            <p>
+                Você se transforma em uma forma gasosa, permitindo que você passe através de pequenos espaços e ignore obstáculos físicos.
+            </p>
+            <p>Listas de Magias: Feiticeiro, Mago</p>
+        </div>
+
+        <div id="aceleracao" class="spell-description">
+            <strong>Aceleração</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: 30 pés<br>
+                Componentes: V, S<br>
+                Duração: Concentração, até 1 minuto
+            </p>
+            <p>
+                Você concede a uma criatura um aumento de velocidade, permitindo que ela faça um ataque adicional em seu turno.
+            </p>
+            <p>Listas de Magias: Feiticeiro, Mago</p>
+        </div>
+
+        <div id="fome-de-hadar" class="spell-description">
+            <strong>Fome de Hadar</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: 150 pés<br>
+                Componentes: V, S, M (uma gota de sangue)<br>
+                Duração: Concentração, até 1 minuto
+            </p>
+            <p>
+                Você cria uma área de escuridão que causa 2d6 de dano necrótico a criaturas que começam seu turno nessa área.
+            </p>
+            <p>Listas de Magias: Feiticeiro, Bruxo</p>
+        </div>
+
+        <div id="palavra-de-cura-em-massa" class="spell-description">
+            <strong>Palavra de Cura em Massa</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: 60 pés<br>
+                Componentes: V<br>
+                Duração: Instantânea
+            </p>
+            <p>
+                Você cura até 6 criaturas a até 60 pés de distância, restaurando 3d4 + seu modificador de Sabedoria em pontos de vida para cada uma.
+            </p>
+            <p>Listas de Magias: Clérigo</p>
+        </div>
+
+        <div id="nao-deteccao" class="spell-description">
+            <strong>Não Detecção</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: Toque<br>
+                Componentes: V, S, M (um pequeno cristal)<br>
+                Duração: 8 horas
+            </p>
+            <p>
+                Você protege uma criatura de ser detectada por magia e efeitos divinatórios.
+            </p>
+            <p>Listas de Magias: Feiticeiro, Mago</p>
+        </div>
+
+        <div id="protecao-contra-energia" class="spell-description">
+            <strong>Proteção contra Energia</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: Toque<br>
+                Componentes: V, S, M (uma gota de óleo)<br>
+                Duração: 1 hora
+            </p>
+            <p>
+                Você concede resistência a um tipo específico de dano (fogo, frio, elétrico, ácido ou veneno) para uma criatura que você toca.
+            </p>
+            <p>Listas de Magias: Clérigo, Mago</p>
+        </div>
+
+        <div id="remover-maldicao" class="spell-description">
+            <strong>Remover Maldição</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: Toque<br>
+                Componentes: V, S<br>
+                Duração: Instantânea
+            </p>
+            <p>
+                Você remove uma maldição de uma criatura ou objeto. Se a maldição for de um efeito mágico, a maldição é removida.
+            </p>
+            <p>Listas de Magias: Clérigo, Druida</p>
+        </div>
+
+        <div id="revivificar" class="spell-description">
+            <strong>Revivificar</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: Toque<br>
+                Componentes: V, S, M (um diamante de pelo menos 300 peças de ouro)<br>
+                Duração: Instantânea
+            </p>
+            <p>
+                Você traz uma criatura de volta à vida, restaurando-a a 1 ponto de vida, desde que tenha morrido nos últimos 10 minutos.
+            </p>
+            <p>Listas de Magias: Clérigo, Paladino</p>
+        </div>
+
+        <div id="falar-com-mortos" class="spell-description">
+            <strong>Falar com Mortos</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: 10 pés<br>
+                Componentes: V, S, M (um pedaço de cabelo de um morto)<br>
+                Duração: 10 minutos
+            </p>
+            <p>
+                Você pode fazer perguntas a um corpo que tenha morrido recentemente. O corpo pode responder até 5 perguntas.
+            </p>
+            <p>Listas de Magias: Clérigo, Mago</p>
+        </div>
+
+        <div id="linguas" class="spell-description">
+            <strong>Línguas</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: Pessoal<br>
+                Componentes: V, S<br>
+                Duração: 1 hora
+            </p>
+            <p>
+                Você pode compreender e falar qualquer língua que você ouça.
+            </p>
+            <p>Listas de Magias: Feiticeiro, Mago</p>
+        </div>
+
+        <div id="toque-vampirico" class="spell-description">
+            <strong>Toque Vampírico</strong>
+            <p>
+                Tempo de conjuração: 1 ação<br>
+                Alcance: Toque<br>
+                Componentes: V, S<br>
+                Duração: Instantânea
+            </p>
+            <p>
+                Você toca uma criatura e causa 3d6 de dano necrótico, recuperando a mesma quantidade em pontos de vida.
+            </p>
+            <p>Listas de Magias: Feiticeiro, Bruxo, Mago</p>
+        </div>
+
+        <table id="quarto-nivel">
+            <thead>
+                <tr>
+                    <th onclick="toggleLevel('quarto-nivel')">4º Nível</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="toggleDescription('aura-da-vida')"><td>Aura da Vida</td></tr>
+                <tr onclick="toggleDescription('aura-da-pureza')"><td>Aura da Pureza</td></tr>
+                <tr onclick="toggleDescription('banimento')"><td>Banimento</td></tr>
+                <tr onclick="toggleDescription('praga')"><td>Praga</td></tr>
+                <tr onclick="toggleDescription('compulsao')"><td>Compulsão</td></tr>
+                <tr onclick="toggleDescription('confusao')"><td>Confusão</td></tr>
+                <tr onclick="toggleDescription('protecao-da-morte')"><td>Proteção da Morte</td></tr>
+                <tr onclick="toggleDescription('porta-dimensional')"><td>Porta Dimensional</td></tr>
+                <tr onclick="toggleDescription('liberdade-de-movimento')"><td>Liberdade de Movimento</td></tr>
+                <tr onclick="toggleDescription('invisibilidade-maior')"><td>Invisibilidade Maior</td></tr>
+                <tr onclick="toggleDescription('guardiao-da-fe')"><td>Guardião da Fé</td></tr>
+                <tr onclick="toggleDescription('assassino-fantasmagorico')"><td>Assassino Fantasmagórico</td></tr>
+            </table>
+
+            <div id="aura-da-vida" class="spell-description">
+                <strong>Aura da Vida</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: 30 pés<br>
+                    Componentes: V, S, M (um pequeno cristal)<br>
+                    Duração: Concentração, até 10 minutos
+                </p>
+                <p>
+                    Você cria uma aura que concede a aliados dentro do alcance 1d6 pontos de vida temporários no início de cada um de seus turnos.
+                </p>
+                <p>Listas de Magias: Clérigo, Paladino</p>
+            </div>
+
+            <div id="aura-da-pureza" class="spell-description">
+                <strong>Aura da Pureza</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: Pessoal<br>
+                    Componentes: V, S<br>
+                    Duração: Concentração, até 10 minutos
+                </p>
+                <p>
+                    Você cria uma aura que protege você e aliados de doenças e venenos, concedendo vantagem em testes de resistência relacionados.
+                </p>
+                <p>Listas de Magias: Clérigo, Druida</p>
+            </div>
+
+            <div id="banimento" class="spell-description">
+                <strong>Banimento</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: 60 pés<br>
+                    Componentes: V, S<br>
+                    Duração: Concentração, até 1 minuto
+                </p>
+                <p>
+                    Você tenta banir uma criatura que você pode ver. Ela deve fazer um teste de resistência de Carisma ou ser banida para outra dimensão.
+                </p>
+                <p>Listas de Magias: Clérigo, Mago</p>
+            </div>
+
+            <div id="praga" class="spell-description">
+                <strong>Praga</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: 30 pés<br>
+                    Componentes: V, S, M (um grão de sal)<br>
+                    Duração: Concentração, até 1 minuto
+                </p>
+                <p>
+                    Você envia uma praga a uma área, causando 2d6 de dano necrótico a criaturas que começam seu turno dentro da área.
+                </p>
+                <p>Listas de Magias: Bruxo, Feiticeiro</p>
+            </div>
+
+            <div id="compulsao" class="spell-description">
+                <strong>Compulsão</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: 30 pés<br>
+                    Componentes: V, S<br>
+                    Duração: Concentração, até 1 minuto
+                </p>
+                <p>
+                    Você força criaturas a se moverem em direção a um local específico, causando desvantagem em testes de resistência contra o efeito.
+                </p>
+                <p>Listas de Magias: Clérigo, Feiticeiro</p>
+            </div>
+
+            <div id="confusao" class="spell-description">
+                <strong>Confusão</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: 120 pés<br>
+                    Componentes: V, S<br>
+                    Duração: Concentração, até 1 minuto
+                </p>
+                <p>
+                    Você causa confusão em criaturas em uma área, forçando-as a fazer testes de resistência de Inteligência para evitar se confundir.
+                </p>
+                <p>Listas de Magias: Mago, Feiticeiro</p>
+            </div>
+
+            <div id="protecao-da-morte" class="spell-description">
+                <strong>Proteção da Morte</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: Toque<br>
+                    Componentes: V, S, M (uma gota de sangue)<br>
+                    Duração: 1 hora
+                </p>
+                <p>
+                    Você protege uma criatura, fazendo com que ela não possa ser reduzida a 0 pontos de vida pela duração da magia.
+                </p>
+                <p>Listas de Magias: Clérigo, Mago</p>
+            </div>
+
+            <div id="porta-dimensional" class="spell-description">
+                <strong>Porta Dimensional</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: Pessoal<br>
+                    Componentes: V, S<br>
+                    Duração: Instantânea
+                </p>
+                <p>
+                    Você se teletransporta para um local que você possa ver dentro de 500 pés.
+                </p>
+                <p>Listas de Magias: Mago, Feiticeiro</p>
+            </div>
+
+            <div id="liberdade-de-movimento" class="spell-description">
+                <strong>Liberdade de Movimento</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: Toque<br>
+                    Componentes: V, S, M (um pedaço de pelagem de um animal)<br>
+                    Duração: 1 hora
+                </p>
+                <p>
+                    Você concede a uma criatura a capacidade de se mover livremente, ignorando condições como paralisia e restrição de movimento.
+                </p>
+                <p>Listas de Magias: Druida, Clérigo</p>
+            </div>
+
+            <div id="invisibilidade-maior" class="spell-description">
+                <strong>Invisibilidade Maior</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: Toque<br>
+                    Componentes: V, S<br>
+                    Duração: Concentração, até 1 hora
+                </p>
+                <p>
+                    Você torna uma criatura invisível, mesmo quando ela ataca ou lança magias, desde que a magia não termine.
+                </p>
+                <p>Listas de Magias: Mago, Feiticeiro</p>
+            </div>
+
+            <div id="guardiao-da-fe" class="spell-description">
+                <strong>Guardião da Fé</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: 30 pés<br>
+                    Componentes: V, S, M (um símbolo sagrado)<br>
+                    Duração: Concentração, até 10 minutos
+                </p>
+                <p>
+                    Você convoca um espírito guardião que ataca criaturas hostis dentro do alcance, causando 4d8 de dano radiante.
+                </p>
+                <p>Listas de Magias: Clérigo</p>
+            </div>
+
+            <div id="assassino-fantasmagorico" class="spell-description">
+                <strong>Assassino Fantasmagórico</strong>
+                <p>
+                    Tempo de conjuração: 1 ação<br>
+                    Alcance: 60 pés<br>
+                    Componentes: V, S, M (um pequeno pedaço de tecido)<br>
+                    Duração: Concentração, até 1 minuto
+                </p>
+                <p>
+                    Você convoca uma entidade sombria para atacar um inimigo, causando 3d10 de dano necrótico na criatura alvo.
+                </p>
+                <p>Listas de Magias: Feiticeiro, Bruxo</p>
+            </div>
+
+            <table id="quinto-nivel">
+                <thead>
+                    <tr>
+                        <th onclick="toggleLevel('quinto-nivel')">5º Nível</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="toggleDescription('concha-antivida')"><td>Concha Antivida</td></tr>
+                    <tr onclick="toggleDescription('comuna')"><td>Comuna</td></tr>
+                    <tr onclick="toggleDescription('contato-com-outro-plano')"><td>Contato com Outro Plano</td></tr>
+                    <tr onclick="toggleDescription('contagio')"><td>Contágio</td></tr>
+                    <tr onclick="toggleDescription('dissipar-o-mal-e-o-bem')"><td>Dissipar o Mal e o Bem</td></tr>
+                    <tr onclick="toggleDescription('dominar-pessoa')"><td>Dominar Pessoa</td></tr>
+                    <tr onclick="toggleDescription('sonho')"><td>Sonho</td></tr>
+                    <tr onclick="toggleDescription('geas')"><td>Geas</td></tr>
+                    <tr onclick="toggleDescription('restauracao-maior')"><td>Restauração Maior</td></tr>
+                    <tr onclick="toggleDescription('consagracao')"><td>Consagração</td></tr>
+                    <tr onclick="toggleDescription('cura-em-massa-de-ferimentos')"><td>Cura em Massa de Ferimentos</td></tr>
+                    <tr onclick="toggleDescription('ressuscitar-mortos')"><td>Ressuscitar Mortos</td></tr>
+                    <tr onclick="toggleDescription('reencarnar')"><td>Reencarnar</td></tr>
+                </table>
+
+                <div id="concha-antivida" class="spell-description">
+                    <strong>Concha Antivida</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: 30 pés<br>
+                        Componentes: V, S, M (um pedaço de osso)<br>
+                        Duração: Concentração, até 10 minutos
+                    </p>
+                    <p>
+                        Você cria uma barreira que impede a passagem de criaturas vivas, causando dano a quem tentar atravessá-la.
+                    </p>
+                    <p>Listas de Magias: Clérigo, Mago</p>
+                </div>
+
+                <div id="comuna" class="spell-description">
+                    <strong>Comuna</strong>
+                    <p>
+                        Tempo de conjuração: 10 minutos<br>
+                        Alcance: Pessoal<br>
+                        Componentes: V, S, M (um ídolo de um deus)<br>
+                        Duração: 24 horas
+                    </p>
+                    <p>
+                        Você cria uma conexão espiritual com a comunidade, permitindo que você se comunique telepaticamente com outros membros.
+                    </p>
+                    <p>Listas de Magias: Clérigo, Druida</p>
+                </div>
+
+                <div id="contato-com-outro-plano" class="spell-description">
+                    <strong>Contato com Outro Plano</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: Pessoal<br>
+                        Componentes: V, S, M (um pequeno pedaço de cristal)<br>
+                        Duração: Instantânea
+                    </p>
+                    <p>
+                        Você entra em contato com uma entidade de outro plano, podendo fazer uma pergunta e recebendo uma resposta.
+                    </p>
+                    <p>Listas de Magias: Mago, Feiticeiro</p>
+                </div>
+
+                <div id="contagio" class="spell-description">
+                    <strong>Contágio</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: 30 pés<br>
+                        Componentes: V, S, M (um pouco de sujeira)<br>
+                        Duração: Concentração, até 1 minuto
+                    </p>
+                    <p>
+                        Você infecta uma criatura com uma doença, causando desvantagem em testes de resistência e outros efeitos.
+                    </p>
+                    <p>Listas de Magias: Bruxo, Feiticeiro</p>
+                </div>
+
+                <div id="dissipar-o-mal-e-o-bem" class="spell-description">
+                    <strong>Dissipar o Mal e o Bem</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: 30 pés<br>
+                        Componentes: V, S<br>
+                        Duração: Instantânea
+                    </p>
+                    <p>
+                        Você dissipa criaturas malignas ou benignas, forçando-as a fazer um teste de resistência ou serem banidas.
+                    </p>
+                    <p>Listas de Magias: Clérigo, Paladino</p>
+                </div>
+
+                <div id="dominar-pessoa" class="spell-description">
+                    <strong>Dominar Pessoa</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: 60 pés<br>
+                        Componentes: V, S<br>
+                        Duração: Concentração, até 1 minuto
+                    </p>
+                    <p>
+                        Você tenta dominar a mente de uma criatura, forçando-a a obedecer suas ordens.
+                    </p>
+                    <p>Listas de Magias: Feiticeiro, Mago</p>
+                </div>
+
+                <div id="sonho" class="spell-description">
+                    <strong>Sonho</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: 30 pés<br>
+                        Componentes: V, S, M (um pequeno pedaço de seda)<br>
+                        Duração: 8 horas
+                    </p>
+                    <p>
+                        Você envia um sonho a uma criatura, podendo causar dano psíquico ou oferecer um aviso.
+                    </p>
+                    <p>Listas de Magias: Mago, Feiticeiro</p>
+                </div>
+
+                <div id="geas" class="spell-description">
+                    <strong>Geas</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: 60 pés<br>
+                        Componentes: V, S, M (um pequeno pedaço de ouro)<br>
+                        Duração: 30 dias
+                    </p>
+                    <p>
+                        Você impõe uma tarefa a uma criatura, forçando-a a cumprir suas ordens ou sofrer penalidades.
+                    </p>
+                    <p>Listas de Magias: Clérigo, Mago</p>
+                </div>
+
+                <div id="restauracao-maior" class="spell-description">
+                    <strong>Restauração Maior</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: Toque<br>
+                        Componentes: V, S, M (um diamante de 100 peças de ouro)<br>
+                        Duração: Instantânea
+                    </p>
+                    <p>
+                        Você cura doenças, remove maldições e restaura pontos de vida a uma criatura que você toca.
+                    </p>
+                    <p>Listas de Magias: Clérigo, Druida</p>
+                </div>
+
+                <div id="consagracao" class="spell-description">
+                    <strong>Consagração</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: 30 pés<br>
+                        Componentes: V, S, M (uma gota de água sagrada)<br>
+                        Duração: Concentração, até 1 hora
+                    </p>
+                    <p>
+                        Você consagra uma área, tornando-a um local sagrado que causa dano a criaturas malignas.
+                    </p>
+                    <p>Listas de Magias: Clérigo, Paladino</p>
+                </div>
+
+                <div id="cura-em-massa-de-ferimentos" class="spell-description">
+                    <strong>Cura em Massa de Ferimentos</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: 60 pés<br>
+                        Componentes: V, S<br>
+                        Duração: Instantânea
+                    </p>
+                    <p>
+                        Você cura até 6 criaturas em um raio de 60 pés, restaurando 3d8 + seu modificador de Sabedoria em pontos de vida.
+                    </p>
+                    <p>Listas de Magias: Clérigo, Bardo</p>
+                </div>
+
+                <div id="ressuscitar-mortos" class="spell-description">
+                    <strong>Ressuscitar Mortos</strong>
+                    <p>
+                        Tempo de conjuração: 1 ação<br>
+                        Alcance: Toque<br>
+                        Componentes: V, S, M (um diamante de pelo menos 500 peças de ouro)<br>
+                        Duração: Instantânea
+                    </p>
+                    <p>
+                        Você traz uma criatura de volta à vida, restaurando-a a 1 ponto de vida, desde que tenha morrido há menos de um ano.
+                    </p>
+                    <p>Listas de Magias: Clérigo, Paladino</p>
+                </div>
+
+                <div id="reencarnar" class="spell-description">
+                    <strong>Reencarnar</strong>
+                    <p>
+                        Tempo de conjuração: 1 hora<br>
+                        Alcance: Toque<br>
+                        Componentes: V, S, M (um pedaço de carne de um animal)<br>
+                        Duração: Instantânea
+                    </p>
+                    <p>
+                        Você traz uma criatura de volta à vida em um novo corpo, escolhendo uma nova raça e características.
+                    </p>
+                    <p>Listas de Magias: Clérigo, Druida</p>
+                </div>
+            </body>
+            </html>
