@@ -28,38 +28,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const arrowRight = document.querySelector('.arrow-right');
     const carousel = document.querySelector('.portfolio-container');
 
+    const cardWidth = items[0].getBoundingClientRect().width + parseFloat(getComputedStyle(items[0]).marginRight);
+    const visibleCards = Math.floor(carousel.offsetWidth / cardWidth);
+
     let currentIndex = 0;
-    let cardWidth = items[0].offsetWidth + 20;
-    let visibleCards = Math.floor(carousel.offsetWidth / cardWidth);
-    let maxIndex = items.length - visibleCards;
 
     function updateCarousel() {
+        portfolioWrapper.style.transition = 'transform 0.3s ease-in-out';
         portfolioWrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
     }
 
     arrowLeft.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = maxIndex; // volta para o final
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = items.length - visibleCards; // volta pro final
         }
         updateCarousel();
     });
 
     arrowRight.addEventListener('click', () => {
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // volta para o começo
+        currentIndex++;
+        if (currentIndex > items.length - visibleCards) {
+            currentIndex = 0; // volta pro começo
         }
         updateCarousel();
     });
-
-    window.addEventListener('resize', () => {
-        cardWidth = items[0].offsetWidth + 20;
-        visibleCards = Math.floor(carousel.offsetWidth / cardWidth);
-        maxIndex = items.length - visibleCards;
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
-        updateCarousel();
-    });
 });
+
+
