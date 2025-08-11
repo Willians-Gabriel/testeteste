@@ -280,11 +280,10 @@ a.reaper{
 }
 
 /* Carrossel */
-/* Carrossel */
 .portfolio-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 8%; /* Garantir que o carrossel tenha o mesmo padding que os outros itens */
+    padding: 0 0%; /* Mesmo padding que os outros itens */
     box-sizing: border-box;
     position: relative;
 }
@@ -294,27 +293,31 @@ a.reaper{
     overflow: hidden; /* Oculta a barra de rolagem */
 }
 
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* ajuste conforme necessário */
+    background: #000; /* opcional: fundo para imagens menores */
+}
+
 .portfolio-wrapper {
     display: flex;
     gap: 20px;
     transition: transform 0.3s ease-in-out; /* Suaviza o movimento ao clicar nas setas */
 }
 
-.portfolio-item {
-    flex: 0 0 250px; /* Defina o tamanho fixo para os itens */
-    width: 250px; /* Tamanho fixo dos itens do carrossel */
-}
-
 .portfolio-item img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    object-fit: contain; /* mostra a imagem inteira */
+    border-radius: 2px;
 }
 
 .card {
     background: #111;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 20px;
+    border-radius: 20px;
     text-align: center;
     color: white;
 }
@@ -347,28 +350,18 @@ a.reaper{
 }
 
 /* Responsividade - Ajustes para telas menores */
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 600px) {
     .portfolio-container {
-        padding: 0 4%; /* Reduzir o padding em telas menores */
+        padding: 0 1%; /* padding mais suave no celular */
     }
 
     .portfolio-wrapper {
-        gap: 10px; /* Menos espaço entre os itens em telas menores */
+        gap: 20px; /* sem espaço entre os itens */
     }
 
     .portfolio-item {
-        width: 100%; /* Deixa os itens ocupando a largura total em telas pequenas */
-        min-width: 280px; /* Tamanho mínimo em dispositivos menores */
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .portfolio-container {
-        padding: 0 10%; /* Aumentar o padding para celulares */
-    }
-
-    .portfolio-item {
-        width: 100%; /* Itens ocupam 100% da tela */
+        flex: 0 0 100%; /* garante que apenas 1 item ocupe toda a largura */
+        max-width: 100%; /* impede que o item ultrapasse a tela */
     }
 }
 
