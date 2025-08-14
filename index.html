@@ -1,159 +1,623 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- FIM GOOGLE FONTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- FIM BOOTSTRAP ICONS -->
-    <link rel="stylesheet" href="style.css">
     
-    <script src="menu.js" defer></script>
-    <title>Hub</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style2.css">
+    <script src="tabela.js"></script>
+
+
+
+    <title>Ceifador</title>
 </head>
 <body>
     
-    <header>
-        <div class="interface">
-            <div class="logo">
-                <a href="#">
-                    <img src="images/logo.png" alt="Logo Arquivos elficos">
-                </a>
-            </div><!--logo-->
-            <nav class="menu-desktop">
-                <ul>
-                    <li>  <a href="#"> Inicio</a> </li>
-                    <li>  <a href="#manual"> Manuais</a> </li>
-                    <li>  <a href="#secao1"> Homebrews</a> </li>                        
-                </ul>
-            </nav>
-            
-            <div class="btn-contato">
-                <a href="#"><button>Crie sua ficha</button></a>
+    <!-- Seção com imagem de fundo em tela cheia -->
+    <section class="full-bg">
+        <div class="content">
+            <div class="ceifador-img">
+                <img src="https://i.imgur.com/kr68R4t.png" alt="Imagem do Ceifador">
             </div>
-            <div class="btn-abrir-menu" id="btn-menu">
-                <i class="bi bi-list"></i>
-            </div>
-            
-            <div class="menu-mobile" id="menu-mobile">
-                
-                <div class="btn-fechar">
-                    <i class="bi bi-x-lg"></i>
-                </div>
-                
-                <nav>
-                    <ul>
-                        <li>  <a href="#"> Inicio</a> </li>
-                        <li>  <a href="#manual"> Manuais</a> </li>
-                        <li>  <a href="#secao1"> Homebrews</a> </li>     
-                        <li>  <a href="#"> Crie sua ficha</a> </li>                   
-                    </ul>
-                </nav>
-            </div>
-            <div class="div overlay-menu" id="div overlay-menu">
-                
-            </div>
-        </div><!--interface-->
-        
-    </header>
-    
-    <section class="topo-do-site">
-        <div class="interface">
-            <div class="flex">
-                <div class="txt-topo-site">
-                    <h1>TRANSFORMANDO IDEIAS EM REALIDADE DIGITAL<span>.</span></h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius sint eveniet vel voluptate odio consequuntur id, perspiciatis assumenda iure aperiam accusamus, nihil dolorem? Eveniet ratione similique explicabo nisi pariatur earum..</p>
-                    
-                    
-                </div><!--txt-topo-site-->
-                
-                <div class="img-topo-site">
-                    <img src="images/pessoa.png" alt="">
-                </div><!--img-topo-site-->
-            </div><!--flex-->
-        </div><!--interface-->
-    </section><!--topo-do-site-->
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    
-    <section class="especialidades">
-        <div class="interface">
-            <section id="secao1">    <h2 class="titulo">Homebrews</h2>    </section>
-            <div class="flex">
-                <div class="especialidades-box">
-                    <a href="reaper.html" class="reaper">
-                        <i class="bi bi-yin-yang"></i>
-                        <h3>Ceifador</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum ullam illo dignissimos nemo asperiores quidem, quos similique fugit ut aut error ipsa mollitia eos! Repellendus sapiente fuga in optio.</p>
-                    </a>
-                </div> <!--Especialidades-box-->
-                
-                <div class="especialidades-box">
-                    <i class="bi bi-yin-yang"></i>
-                    <h3>Samurai</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum ullam illo dignissimos nemo asperiores quidem, quos similique fugit ut aut error ipsa mollitia eos! Repellendus sapiente fuga in optio.</p>
-                </div> <!--Especialidades-box-->
-                <div class="especialidades-box">
-                    <i class="bi bi-yin-yang"></i>
-                    <h3>Em breve</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum ullam illo dignissimos nemo asperiores quidem, quos similique fugit ut aut error ipsa mollitia eos! Repellendus sapiente fuga in optio.</p>
-                </div> <!--Especialidades-box-->
-            </div> <!--flex-->
-        </div><!--interface-->
-    </section><!--especialidades-->
-    
-   
-    <section class="portfolio-section">
-        <div class="portfolio-container">
-            <h2 id="manual">Manuais</h2></a>
-            
-            <div class="portfolio-carousel">
-                <button class="arrow arrow-left">&#9664;</button>
-                
-                <div class="portfolio-wrapper">
-                    <div class="portfolio-item">
-                        <div class="card">
-                            <img src="images/1.png" alt="Projeto 1">
-                            <h3>Guia de Xanathar</h3>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="card">
-                            <img src="images/2.png" alt="Projeto 2">
-                            <h3>Caldeirão de Tasha</h3>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="card">
-                            <img src="images/3.png" alt="Projeto 3">
-                            <h3>Manual de Monstros</h3>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="card">
-                            <img src="images/4.png" alt="Projeto 4">
-                            <h3>Livro do jogador</h3>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="card">
-                            <img src="images/5.png" alt="Projeto 5">
-                            <h3>Guia de bestas</h3>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <button class="arrow arrow-right">&#9654;</button>
+            <div class="texto">
+                <h1>CEIFADOR</h1>
+                <p>O corpo inerte de uma criança flutua entre os juncos de um pântano. Uma figura encapuzada, vestida com longas roupas negras, desce sobre o pequeno corpo e revela uma foice curva e maligna. Com um único golpe, o corpo produz uma pequena alma, que a figura inala profundamente antes de ser sugada para a escuridão sob o capuz. Tão silenciosamente quanto apareceu, o ceifador se foi.
+                    Os ceifadores, enviados pela Morte, são entidades sombrias encarregadas de coletar almas. Eles se movem como sombras, flutuando entre os vivos e os mortos, trazendo um presságio de fim. Cada golpe de suas foices é preciso e implacável, e onde passam, o desespero ecoa. Em sua presença, a linha entre a vida e a morte se torna tênue, e o medo se espalha como uma névoa.    
+                </p>
+                <br>
+                <h1 class="com-barra">CAMPEÃO DA MORTE</h1>
+                <p>As pessoas acham que é tão simples. Só existe uma Morte, certo? Errado. Esse seria seu chefe. Você é um entre muitos que são abençoados ou amaldiçoados para se tornar um ceifador e coletar as almas daqueles que morrem em troca. A Morte selecionou você para ser aquele que carrega a foice em seu nome, para ir em frente e buscar almas maduras para serem tomadas. </p>
+                <br>
+                <h1 class="com-barra">CONSTRUÇÃO RÁPIDA</h1>
+                <p>Você pode fazer um ceifador rapidamente seguindo estas sugestões. Primeiro, Força deve ser sua maior pontuação de habilidade, seguida por Sabedoria. Segundo, para antecedentes, escolha algo que aumente suas capacidades de jogo ou um trabalho artesanal no qual você possa ganhar a vida. Terceiro, escolha Insight e Perception para habilidades e o Explorer's Pack para equipamento.</p>
             </div>
         </div>
-    </section>
-    
-    
-</body>
+    </div>
+</section>
+<div class="parallax"></div>
 
-</html>
+
+<!-- Conteúdo seguinte, sem fundo -->
+<div style="height:100x;background-color:rgba(255, 0, 0, 0.096);font-size:36px"></div>
+<section class="parte">
+    <h3><i>Características da classe</i></h3>
+    <i>Como um Ceifador, você ganha as seguintes características de classe.</i>
+    
+    <h3>Pontos de vida</h3>
+    <ul>
+        <li><h4>Pontos de vida no nível 1º: 10 + modificador de Constituição.</h4></li>
+        <li><h4>Pontos de Vida em Níveis Superiores: 1d10 + modificador de Constituição (ou 6) + modificador de Constituição por nível do Ceifador após nível 1º.</h4></li>
+    </ul>
+    
+    <h3>Proficiências</h3>
+    <ul>
+        <li><h4>Armadura: nenhuma</h4></li>
+        <li><h4>Armas: Foices, armas marciais, armas simples de longo alcance</h4></li>
+        <li><h4>Ferramentas: Um conjunto de jogo de sua escolha E um de sua escolha entre Ferramentas de artesão ou Instrumentos musicais</h4></li>
+        <li><strong>Testes de resistência: Força e Sabedoria</strong></li>
+    </ul>
+    
+    <h3>Perícias:</h3>
+    <h4>Escolha duas entre:</h4>
+    <ul>
+        <li>Arcanismo</li>
+        <li>Intuição</li>
+        <li>Percepção</li>
+        <li>Religião</li>
+        <li>Intimidação</li>
+        <li>Atletismo</li>
+    </ul>
+    
+    <h3>Equipamentos:</h3>
+    <h4>Você começa com o seguinte equipamento, além do equipamento concedido pelo seu histórico:</h4>
+    <ul>
+        <li><h4>(a) Foice ou (b) besta leve e 20 virotes.</h4></li>
+        <li><h4>Um foco de conjuração.</h4></li>
+        <li><h4>(a) Pacote do Dungeoner ou (b) Pacote do Explorador.</h4></li>
+        <li><h4>Se você estiver usando riqueza inicial, você tem 2d4x10 PO em fundos.</h4></li>
+    </ul>
+</section>
+</div>
+<section class="upe">
+    <h2>Tabela: The Reaper</h2>
+    <div class="table-wrapper">
+        <button id="toggleButton" onclick="toggleTable()">Mostrar/Ocultar Tabela</button>
+        <div id="tableContainer">
+            <ul id="lista-links">
+                <table>
+                    <tr>
+                        
+                        <th id="tabela-inicial">Nível</th>
+                        <th>Bônus de proficiência</th>
+                        <th>Truques conhecidos</th>
+                        <th>Magias conhecidas</th>
+                        <th>Características</th>
+                        <th>1º</th>
+                        <th>2º</th>
+                        <th>3º</th>
+                        <th>4º</th>
+                        <th>5º</th>
+                    </tr>
+                    <tr>
+                        <td>1º</td>
+                        <td>+2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td><a href="#titulo01">Grim Feast -</a>
+                            <a href="#titulo02">Grim Reaver -</a> 
+                            <a href="#titulo03">Veste da morte -</a>
+                            <a href="#titulo04"> Morte Eterna -</a></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>2º</td>
+                            <td>+2</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td> <a href="#titulo05">Conjurar Feitiços </a></td>
+                            <td>2</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>3º</td>
+                            <td>+2</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><a href="#titulo06">Linguagem dos Mortos,</a> 
+                                <a href="#lista">Melhoria Grim Reaver </a></td>
+                                <td>3</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>4º</td>
+                                <td>+2</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td><a href="#melhoria-habilidade">Melhora na pontuação de habilidade</a></td>
+                                <td>3</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>5º</td>
+                                <td>+3</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td><a href="#titulo07">Colheita Sombria</a></td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>6º</td>
+                                <td>+3</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td><a href="#titulo08">Em um cavalo Pálido</td>
+                                    <td>4</td>
+                                    <td>2</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>7º</td>
+                                    <td>+3</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td><a href="#lista"> Melhoria do Grim Reaver </a>-<a href="#vestes"> Melhoria na Veste da Morte</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>8º</td>
+                                    <td>+3</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td><a href="#melhoria-habilidade">Melhoria na pontuação de habilidade</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>9º</td>
+                                    <td>+4</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>—</td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>10º</td>
+                                    <td>+4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td><a href="#lista">Melhoria do Grim Reaver,</a> <a href="#vestes"> Melhoria da Veste da Morte</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>11º</td>
+                                    <td>+4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td><a href="#vestes"> Melhoria da Veste da Morte</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>12º</td>
+                                    <td>+4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td><a href="#melhoria-habilidade"> Melhoria na pontuação de habilidade</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>—</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>13º</td>
+                                    <td>+5</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>—</td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>14º</td>
+                                    <td>+5</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td><a href="lista"> Melhoria do Grim Reaver</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>15º</td>
+                                    <td>+5</td>
+                                    <td>4</td>
+                                    <td>4</td>
+                                    <td><a href="#vestes"> Melhoria da Veste da Morte</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>16º</td>
+                                    <td>+5</td>
+                                    <td>4</td>
+                                    <td>4</td>
+                                    <td><a href="#melhoria-habilidade">Melhoria na pontuação de habilidade</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>17º</td>
+                                    <td>+6</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>—</td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>18º</td>
+                                    <td>+6</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td><a href="#vestes"> Melhoria da Veste da Morte</a>,<a href="#lista"> Melhoria do Grim Reaver</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>19º</td>
+                                    <td>+6</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td><a href="#melhoria-habilidade">Melhoria na pontuação de habilidade</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>20º</td>
+                                    <td>+6</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td><a href="#vestes"> Melhoria da Veste da Morte</a>,<a href="#lista"> Melhoria do Grim Reaver</a></td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                </table>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="link-topo-container" style="display: none;">
+                        <a href="#tabela-inicial" id="link-topo">Voltar à tabela</a>
+                    </div>
+                </div>
+            </section>
+            <section class="conteudo">
+                <div class="text">
+                    <h2 id="titulo01">Grim Feast</h2>
+                    <p>A morte chega para todos, inevitavelmente; nenhuma criatura é realmente imune à morte. A partir do 1º nível, você pode consumir almas de pessoas que partiram recentemente para seu benefício. Os tipos de criaturas que podem ser comidas ficam a critério do Mestre. Os únicos seres que não podem ser devorados em nenhuma circunstância são os mortos-vivos de qualquer tipo e constructos; eles são preenchidos com uma essência que zomba da vida e não são "verdadeiramente vivos.</p>
+                    <p>Você pode usar uma ação bônus para comer as essências vitais de pessoas que faleceram recentemente. A criatura deve ter morrido na última hora para que a essência seja consumida, e você deve estar a até 1,5 m da criatura cuja alma será consumida. Quando a alma é consumida, você ganha pontos de vida iguais à metade do CR da alma consumida (mínimo de 1). Se estiver no máximo de pontos de vida, você recebe pontos de vida temporários iguais à metade do CR da criatura. Você pode usar esta habilidade um número de vezes igual ao seu modificador de Sabedoria, recuperando o uso após terminar um descanso longo.</p>
+                </div>
+                
+                <div class="text">
+                    <h2 id="titulo02">Grim Reaver</h2>
+                    <p>Começando no 1º nível, você é capaz de amplificar a arma que está usando. Como uma ação bônus, sua arma explode com uma chama da energia da morte. Seu próximo ataque com sua arma causa 1d10 de dano necrótico extra em um acerto. Você pode usar essa habilidade um número de vezes igual ao seu modificador de Sabedoria, recuperando todo o uso quando terminar um descanso longo.</p>
+                    <p>Um ceifador deve gastar uma hora para se vincular em ritual à arma para fortalecê-la. Você só pode ter uma arma dessas por vez. Se você se vincular a outra arma, o vínculo original será perdido. Se ela conseguir ser destruída, ela reaparecerá em suas mãos após você conduzir um ritual como parte de um descanso curto, pelo preço de 100 gp.</p>
+                    <p>Conforme você amadurece como um ceifador, seus poderes mudam para combinar com seu estilo. Embora possa haver muitos ceifadores, seus poderes individuais podem diferir. No 3º, 7º, 10º, 14º, 18º e 20º nível, você pode escolher uma melhoria das Melhorias do Reaver Grim, <a href="#lista">listadas na parte inferior da página. </a>Algumas dessas melhorias têm pré-requisitos que devem ser cumpridos antes que você possa levá-las para melhorar seu reaver.</p>
+                </div>
+                
+                <div class="text">
+                    <h2 id="titulo03">Veste da Morte</h2>
+                    <p>Suas roupas podem ter sido consideradas muitas coisas: emo, fora de moda e desconfortáveis sob calor forte. Mas isso tudo acaba agora. Começando no 1º nível, uma túnica etérea da Morte foi concedida a você. Ela se materializa como uma capa preta desfiada, drapeada ao redor de sua pessoa, com mangas esvoaçantes e abas de casaco. Sua CA se torna igual a 10 + seu modificador de Constituição + seu modificador de Sabedoria. Você pode tirar esta vestimenta como uma roupa normal.</p>
+                    <p>Assim como seu reaver, esta vestimenta cresce em potência conforme você avança em sua profissão como um ceifador. No 7º, 10º, 11º, 15º, 18º e 20º nível, você pode escolher uma melhoria das Grim Raiment Improvements, <a href="#vestes">listadas na parte inferior da página.</a> Algumas dessas melhorias têm pré-requisitos que devem ser cumpridos antes que você possa levá-las para melhorar sua vestimenta.</p>
+                </div>
+                
+                <div class="text">
+                    <h2 id="titulo04">Morte Eterna</h2>
+                    <p>A Morte vai chamá-lo para casa quando estiver pronto e não antes. Após ser imbuído do poder da Morte no 1º nível, você se torna sem idade. Você não pode mais envelhecer por meios naturais, mágicos ou quaisquer outros.</p>
+                </div>
+                
+                <div class="text">
+                    <h2 id="titulo05">Conjuração de Magias</h2>
+                    <p>A partir do 2º nível, a Morte considera adequado equipar você com o poder de utilizar magia em seus empreendimentos.</p>
+                    <h3>Habilidade de Conjuração</h3>
+                    <p>Começando no 2º nível, você conhece um número de truques mágicos igual aos truques mágicos conhecidos na tabela acima, assim como magias iguais à lista de Magias Conhecidas na mesma tabela. Essas e outras magias são escolhidas da Lista de Magias do Ceifador. Em cada nível, você pode trocar magias da lista por magias conhecidas, mas você nunca conhece mais magias do que o permitido na coluna Magias Conhecidas. Você conjura magias usando seu foco arcano.</p>
+                    <p><strong>Sabedoria</strong> é sua Habilidade de Conjuração para conjurar magias do Ceifador de Almas.</p>
+                    <p><strong>Modificador de Ataque Mágico:</strong> Seu Bônus de Proficiência + Seu Modificador de Sabedoria</p>
+                    <p><strong>CD de Resistência à Magia:</strong> 8 + Seu Bônus de Proficiência + Seu Modificador de Sabedoria</p>
+                    <p id="link-tabela"><a href="magias.html">Tabela de Magias aqui</a></p>
+                </div>
+                
+                <div class="text" id="titulo06">
+                    <h2>Linguagem dos Mortos</h2>
+                    <p>Os mortos falam uma língua entendida por todos. No 3º nível, você aprende uma língua de sua escolha.</p>
+                </div>
+                
+                <div class="text" id="melhoria-habilidade">
+                    <h2>Aumento da Pontuação de Habilidade</h2>
+                    <p>Ao atingir o 4º nível, e novamente no 8º, 12º, 16º e 19º níveis, você pode aumentar um valor de habilidade de sua escolha em 2, ou pode aumentar dois valores de habilidade de sua escolha em 1. Como de costume, você não pode aumentar um valor de habilidade acima de 20 usando esse recurso.</p>
+                </div>
+                
+                <div class="text" id="titulo07">
+                    <h2>Colheita Sombria</h2>
+                    <p>Começando no 5º nível, sempre que você causar dano necrótico com sucesso a uma criatura, você pode ganhar metade do dano causado como pontos de vida temporários. Esses pontos de vida expiram no final do seu próximo turno.</p>
+                </div>
+                
+                <div class="text" id="titulo08">
+                    <h2>Em um Cavalo Pálido</h2>
+                    <p>Começando no 6º nível, você assume a imagem de um verdadeiro Cavaleiro do Apocalipse. Você pode conduzir um ritual de 1 hora para invocar um familiar conforme as regras de encontrar familiar. Esta criatura é totalmente obediente a você e seus aliados. Ela age em seu próprio turno na batalha, mas não realizará nenhuma ação a menos que você use uma ação bônus para comandá-la. Quando ela é reduzida a 0 pontos de vida, ela desaparece em uma morte azul e flamejante.</p>
+                </div>
+                
+                <div class="text" id="lista">
+                    <h2>Melhorias no Grim Reaver</h2>
+                    <p>Você pode escolher entre as seguintes opções para aumentar sua arma de escolha como um reaper. Essas opções servem como substituições para arquétipos nesta classe.</p>
+                    <h3>Nível 3</h3>
+                    <ul class="lista-estilo">
+                        <li>
+                            <strong>Deathly Edge:</strong>
+                            <p>Seu reaver agora conta como mágico para superar imunidade/resistência.</p>
+                        </li>
+                        
+                        <li>
+                            <strong>Arma Eterna:</strong> <p>Seu reaver nunca pode ser perdido ou destruído permanentemente por qualquer motivo. Se ele se afastar mais de 30 pés de você, ele aparecerá de volta em suas mãos no início do seu próximo turno, a menos que seja levado para outro plano.
+                            </p></li>
+                            <li>
+                                <strong>Brutalidade:</strong><p> 
+                                    Seu reaver agora causa dois dados adicionais de dano de arma em um acerto crítico.
+                                </p></li>
+                                <li> 
+                                    <strong>Fluxo de Estígio:</strong>
+                                    <p> Seu reaver agora causa um dado adicional de dano de arma.
+                                    </p></li>
+                                    <li>
+                                        <strong>Os Sinos Dobram:</strong> 
+                                        <p>Morte àqueles que pensam que podem negar o inevitável. Seu reaver tem vantagem em jogadas de ataque contra criaturas do tipo morto-vivo, e acertos nelas causam dano necrótico adicional igual ao seu bônus de proficiência.</p>
+                                    </li>
+                                </ul>
+                                <h3>Nível 5</h3>
+                                <ul>
+                                    <li> <strong>Buscador da Vida:</strong> Pré-requisito: ceifador de 5º nível) <p>Enquanto segura seu reaver, como uma ação, você varre a área ao seu redor para a vida. Você se torna ciente de todas as criaturas a até 60 pés de você e suas localizações e estado de saúde, desde que não sejam mortos-vivos ou do tipo constructo.</p></li>
+                                </ul>
+                                
+                                <h3>Nível 7</h3>
+                                <ul class="lista-estilo">
+                                    <li> <strong>Sifão Necrótico:</strong> (Pré-requisito: ceifador de 7º nível)<p> Mesmo que você não consiga comer a alma de um morto-vivo, você ainda pode ganhar algo. Quando você ataca com sucesso um morto-vivo com seu reaver, você recupera pontos de vida iguais ao seu bônus de proficiência.</p></li>
+                                    <li><strong>Magia da Morte:</strong> (Pré-requisito: ceifador de 7º nível) <p>Você pode usar seu reaver como seu foco arcano. Quando você conjura uma magia que causa dano usando seu reaver, você pode mudar o dano da magia para necrótico sem uma ação.</p></li>
+                                </ul>
+                                <h3>Nível 9</h3>
+                                
+                                <ul class="lista-estilo">
+                                    
+                                    <li>  <strong>Atacante de Oportunidade:</strong> (Pré-requisito: ceifador de 9º nível)<p> Ataques feitos com seu reaver agora marcam um acerto crítico em uma jogada de 19-20.</p></li><li>
+                                        <strong>Passo da Morte:</strong> (Pré-requisito: ceifador de 9º nível)<p> Depois de fazer um ataque com seu reaver, você pode se teletransportar imediatamente para um espaço desocupado a até 9 metros de distância, sem nenhuma ação.</p></li>
+                                    </ul>
+                                    <h3>Nível 11</h3>
+                                    <ul class="lista-estilo">
+                                        <li>  <strong>Foice Impiedosa:</strong> (Pré-requisito: ceifador de 11º nível)<p> Uma vez por turno, quando você faz um ataque com seu reaver e acerta, você pode conjurar infligir ferimentos em seu nível mais baixo, sem usar uma ação ou gastar um espaço.</p></li><li>
+                                            <strong>Explosão Mortal Sem Fim:</strong> (Pré-requisito: Ceifador de 11º nível)<p> Você não precisa mais gastar uma ação para ativar o dano necrótico extra do seu recurso Grim Reaver.</p></li>
+                                        </ul>
+                                        
+                                    </div>
+                                    
+                                    <div class="text" id="vestes">
+                                        
+                                        <h2>Melhorias nas Vestes da Morte</h2>
+                                        <p>Você pode escolher entre as seguintes opções para aumentar as vestes do seu ceifador. Essas opções servem como substituições para arquétipos nesta classe.</p>
+                                        
+                                        <h3>Nível 3</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>Retornando a Veste</strong><p>
+                                                    Se sua vestimenta estiver a mais de 30 pés de sua pessoa, ela aparecerá de volta em volta de seus ombros. Se ela conseguir ser destruída, ela reaparecerá em volta de seus ombros após um descanso curto ou longo.</p>
+                                                </li>
+                                                <li>
+                                                    <strong>Dark Hood</strong>
+                                                    <p>Sua vestimenta ganha um capuz, que lhe concede 60 pés de visão no escuro. Se você já tem visão no escuro, em vez disso, você ganha visão no escuro superior.</p></li>
+                                                    <li>   
+                                                        <strong>Semblante Mortal</strong>
+                                                        <p>Você tem vantagem em todos os testes de Intimidação contra qualquer criatura que possa ver seu rosto.</p></li>
+                                                        <li>
+                                                            <strong>Presença Escassa</strong>
+                                                            <p>O manto agora parece mais bem cuidado. Você ganha vantagem em testes de Destreza (Furtividade) enquanto estiver usando sua vestimenta.</p>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>World Traverse</strong>
+                                                            
+                                                            <p>De agora em diante, enquanto a vestimenta estiver vestida, você poderá tolerar confortavelmente ambientes de Frio Extremo e Calor Extremo conforme o DMG. Isso confere proteção completa nesses ambientes, o que significa que você não precisa fazer o teste de Constituição usual para resistir aos seus efeitos.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                    
+                                                    <h3>Nível 15</h3>
+                                                    
+                                                    <ul>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Armadura Etérea</strong>
+                                                            
+                                                            <p>(Pré-requisito: ceifador de 15º nível) Sua vestimenta agora oferece resistência a um dos seguintes tipos de dano: cortante, perfurante ou contundente.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                    
+                                                    <h3>Nível 17</h3>
+                                                    
+                                                    <ul>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Dark Piercer</strong>
+                                                            
+                                                            <p>(Pré-requisito: melhoria Dark Hood) Sua visão no escuro se torna visão do diabo, permitindo que você enxergue através da escuridão mágica.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Olhos da Morte</strong>
+                                                            
+                                                            <p>(Pré-requisito: Ceifador de nível 17, melhoria Perfurador das Trevas) O capuz agora lhe concede 9 metros de visão verdadeira.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Sinos Funerários</strong>
+                                                            
+                                                            <p>(Pré-requisito: Ceifador de nível 17) Você não pode ser surpreendido e nenhuma jogada de ataque tem vantagem contra você enquanto você não estiver incapacitado. Sempre que um ataque é tentado por uma criatura, você ouve o que parece ser um sino de igreja de tom profundo.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                    
+                                                    <h3>Nível 18</h3>
+                                                    
+                                                    <ul>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Fedor da Morte</strong>
+                                                            
+                                                            <p>(Pré-requisito: ceifador de nível 18) Você pode gastar uma ação para fazer com que criaturas de sua escolha dentro de um raio de 30 pés de você façam um teste de resistência de Sabedoria com uma CD de 8 + seu bônus de proficiência + seu modificador de Sabedoria. As criaturas que falharem em seus testes de resistência ficam todas assustadas por você por 1 minuto. Elas podem repetir esse teste de resistência no final de cada um de seus turnos, encerrando o efeito em um sucesso. Depois de usar esse recurso, você não pode usá-lo novamente até terminar um descanso curto ou longo.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                    
+                                                    <h3>Nível 20</h3>
+                                                    
+                                                    <ul>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Cura Necrótica</strong>
+                                                            
+                                                            <p>(Pré-requisito: Ceifador de nível 20, melhoria do Necro Steer) Qualquer ataque necrótico que acerte você com sucesso cura você na mesma quantidade de dano que teria causado.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                    
+                                                    <h3>Outras Habilidades</h3>
+                                                    
+                                                    <ul>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Barra Necro</strong>
+                                                            
+                                                            <p>Você ganha resistência a dano necrótico.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Necro Steer</strong>
+                                                            
+                                                            <p>(Pré-requisito: melhoria da Necro Bar) Ao gastar sua reação, se qualquer aliado a até 30 pés de você for alvo de qualquer ataque ou magia que cause dano necrótico, você pode escolher direcionar o fluxo das energias do ataque para si mesmo. Você também pode utilizar a energia e direcioná-la para outro alvo a até 30 pés de você.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Proteção por Thanatos</strong>
+                                                            
+                                                            <p>A morte não é dissuadida pelas condições da carne. Você ganha vantagem em testes de resistência contra ser envenenado e petrificado. Você também não precisa mais comer, dormir, respirar ou beber para sobreviver.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Morte Silenciosa</strong>
+                                                            
+                                                            <p>(Pré-requisito: melhoria de Presença Escassa) A morte entra e sai rapidamente, fazendo trabalho despercebido. Agora você pode conjurar magia de não detecção um número de vezes igual ao seu modificador de Sabedoria, recuperando todo o uso quando terminar um descanso longo.</p>
+                                                            
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            
+                                                            <strong>Asas da Morte</strong>
+                                                            
+                                                            <p>(Pré-requisito: ceifador de 5º nível) A maioria das pessoas não sabe que os ceifadores podem voar. Você ganha a habilidade de invocar e dispensar asas de penas pretas como uma ação bônus, ganhando uma velocidade de voo de 30 pés. Se você já tinha velocidade de voo, sua velocidade de voo é aumentada em 10 pés quando esse recurso é ativado. Você não pode usar esse recurso se estiver usando qualquer roupa ou armadura que não seja a Veste da Morte.</p>
+                                                            
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                
+                                            </section>
+                                            
+
+                                        </body>
+                                        </html>
