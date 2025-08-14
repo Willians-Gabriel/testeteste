@@ -1,366 +1,310 @@
-
-
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
-html {
+body {
+    font-family: Arial, sans-serif;
+    flex-direction: column;
     scroll-behavior: smooth;
-}
-body{
-    background-color: black;
-    height: 100vh;
-}
-.interface {
-    max-width: 1280px;
-    margin: 0 auto;
-}
-.flex{
     display: flex;
-}
-.btn-contato button {
-    padding: 10px 40px;
-    font-size: 18px;
-    font-weight: 6px;
-    background-color: #00ff08;
-    border-radius: 30px;
-    border: 0;
-    cursor: pointer;
-    transition: .2s;
-}
-h2.titulo{
-    color: #fff;
-    font-size: 38px;
-    text-align: center;
+    position: relative; 
 }
 
-/* CABECALHO */
-header{
-    padding: 40px 4%;
-}
-header>.interface {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-header a {
-    color: #5c5c5c;
-    text-decoration: none;
-    display: inline-block;
-    transition: .2s;
+/* Seção full screen com imagem */
+.parallax {
+    /* The image used */
+    background-image: url("https://i.imgur.com/3ymB4Zx.png");
+  
+    /* Set a specific height */
+    min-height: 100vh; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.full-bg {
+    position: relative;
+    overflow: hidden;
+    min-height: 1366px;
+    display:flex ;
+    justify-content: center;
+    z-index: 0;
 }
 
-header a:hover{
-    color: #fff; 
-    transform: scale(1.09);
-    transition: .2s;
-}
-header nav ul{
-    list-style-type: none;
-}
-header nav.menu-desktop li{
-    display: inline-block;
-    padding: 0 45px;
-}
-header .btn-contato button {
-    padding: 10px 40px;
-    font-size: 18px;
-    font: weight 6px;
-    background-color: #00ff08;
-    border-radius: 30px;
-    border: 0   ;
-    cursor: pointer;
-}
-.btn-contato button:hover {
-    box-shadow: 0px 0px 8px #00ff08;
-    transform: scale(1.05);
-}
-/* ESTILO DO MENU MOBILE*/
-.btn-abrir-menu i{
-    color: #00ff08;
-    font-size: 40px;
-}
-.overlay-menu{
-    background-color: rgba(0, 0, 0, 0.356);
+.full-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 88;
-    display: none;
-}
-.menu-mobile.abrir-menu{
-    width: 70%;
-    
-}
-/* Esconde o botão em telas grandes */
-.btn-abrir-menu {
-    display: none;
+    background: url('https://i.imgur.com/xkowwq5.png') no-repeat center center;
+    background-size: cover;
+    transform: scaleX(-1); /* inverte só a imagem */
+    z-index: -1; /* deixa atrás do texto */
 }
 
-/* Mostra apenas quando a largura da tela for menor que 1024px (ajuste como quiser) */
-@media (max-width: 1024px) {
-    .btn-abrir-menu {
-        display: block;
-        cursor: pointer;
-        font-size: 2rem; /* tamanho do ícone */
-    }
-    
-    /* Opcional: esconder o menu desktop quando no mobile */
-    .menu-desktop {
-        display: none;
-    }
+/* Texto dentro da seção de fundo */
+.full-bg .content {
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
 }
-
-.menu-mobile.abrir-menu ~ .overlay-menu{
-    display: block;
-}
-.menu-mobile{
-    background-color: rgb(0, 0, 0);
-    height: 100vh;
-    position:fixed;
-    top: 0;
-    right: 0;
-    z-index: 999;
-    width: 0%;
-    overflow: hidden;
-    transition: .4s;
-}
-.menu-mobile nav ul{
-    text-align: right;
-}
-
-.menu-mobile nav ul li a{
-    color: #fff;
-    font-size: 20px;
-    font-weight: 300;
-    padding: 20px 8%;
-    display: block;
-}
-
-.menu-mobile nav ul li a:hover{
-    background-color: #00ff08;
-    color: black;
-}
-.menu-mobile .btn-fechar{
-    padding: 20px 6%;
-}
-.menu-mobile .btn-fechar i {
-    color: #00ff08;
-    font-size: 20px;
-}
-/* TOPO DO SITE*/
-
-section.topo-do-site {
-    padding: 40px 4%;
-}
-section.topo-do-site .flex {
-    align-items: center;
-    justify-content: center;
-    gap: 90px;
-}  
-.topo-do-site h1 {
-    color: #fff;
-    font-size: 42px;
-    line-height: 40px;
-}
-.topo-do-site .txt-topo-site h1 span{ 
-    color: #00ff08;
-}
-.topo-do-site .txt-topo-site p {
-    color: #fff;
-    margin: 40px 0;
-}
-.topo-do-site .img-topo-site img {
-    position: relative;
-    animation: flip 2s ease-in-out infinite alternate;
-    transform-style: preserve-3d;
-}
-
-@keyframes flip {
-    0% {
-        transform: rotateY(0deg);
-    }
-    100% {
-        transform: rotateY(180deg);
-    }
-}
-/* ESTILO DAS ESPECIALIDADES */
-section.especialidades{
-    padding: 40px 4%;
-}
-section.especialidades .flex{
-    gap: 60px;
-}
-.especialidades .especialidades-box:hover{
-    transform: scale(1.05);
-    box-shadow: 0 0 8px #ffffff46;
-}
-.especialidades .especialidades-box{
-    color: #fff;
-    padding: 40px;
-    border-radius: 20px;
-    margin-top: 45px;
-    transition: .2s;
-    cursor: pointer;
-}
-.especialidades .especialidades-box i{
-    color: #00ff08;
-    font-size: 70px;
-    
-}
-.especialidades .especialidades-box h3{
-    font-size: 26px;
-    margin: 15px 0;
-    
-}
-a.reaper{
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-}
-/* Responsividade */
-@media screen and (max-width:1020px){
-    .flex{
-        flex-direction: column;
-    }
-    
-    /* Cabecalho */   
-    
-    .menu-desktop, .btn-contato{
-        display: none;
-        
-    }
-    /* TOPO SITE ESCRITA */
-    section.topo-do-site .flex {
-        
-        gap: 65px;
-    }  
-    
-    section.topo-do-site{
-        padding: 20px 8%;
-    }
-    
-    .topo-do-site h1 {
-        font-size: 30px;
-    }
-    .topo-do-site .img-topo-site img {
-        width: 100%;
-    }
-    
-    /* ESTILO DAS ESPECIALIDADES */
-    section.especialidades{
-        padding: 40px 8%;
-    }
-}
-/* PORTIFOLIO */
-/* Seção principal */
-.portfolio-section {
-    background: #000; /* fundo escuro opcional */
-    padding: 60px 0;
-}
-
-/* Container central com mesmo limite da seção Ronaldo */
-.portfolio-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 8%; /* igual ao bloco de cima */
-    box-sizing: border-box;
-    position: relative;
-}
-
-.portfolio-container h2 {
-    color: #fff;
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 40px;
-}
-
-/* Carrossel */
-.portfolio-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 0%; /* Mesmo padding que os outros itens */
-    box-sizing: border-box;
-    position: relative;
-}
-
-.portfolio-carousel {
-    position: relative;
-    overflow: hidden; /* Oculta a barra de rolagem */
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px; /* ajuste conforme necessário */
-    background: #000; /* opcional: fundo para imagens menores */
-}
-
-.portfolio-wrapper {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.3s ease-in-out; /* Suaviza o movimento ao clicar nas setas */
-}
-
-.portfolio-item img {
+/* Ceifador */
+section.full-bg .ceifador-img img {
     width: 100%;
     height: auto;
-    object-fit: contain; /* mostra a imagem inteira */
-    border-radius: 2px;
+}
+section.full-bg .ceifador-img {
+    position: absolute;
+    top: 42%;
+    left: 2%;
+    width: 60%;
+    max-width: 55%;
+    z-index: 9; /* um pouco abaixo do texto */
+}
+/* TEXTO */
+.texto {
+    color: #fff;
+    box-shadow: black;
+    font-size: 14px;
+    position: absolute;
+    top: 38%; /* ajusta a distância do topo */
+    left: 54%; /* ajusta a distância da esquerda */
+    max-width: 400PX; /* largura do bloco de texto */
+    z-index: 99999;
+    display: inline-block; /* necessário se quiser que o box-shadow se aplique apenas ao tamanho do texto */
+    line-height: 1.4;
+}
+.texto h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    line-height: 3;
+}
+/* Barras */
+h1.com-barra {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+h1.com-barra::after {
+    content: "";
+    display: block;
+    width: 400px;
+    height: 3px;
+    background-color: #000000da;
+    margin-top: 1px;
+    margin-bottom: 16px;
+    margin-left: 0;
+}
+/* Seção normal (sem fundo) */
+.parte {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px 0; /* remove margens laterais */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.514);
+    width: 100%;        /* Ocupar toda a largura disponível */
+    box-sizing: border-box; /* Inclui padding dentro da largura total */
 }
 
-.card {
-    background: #111;
-    padding: 20px;
-    border-radius: 20px;
+.parte h2,
+.parte h3 {
+    font-style: italic;
+    color: #4CAF50;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.parte h4 {
+    margin: 5px 0 10px 0;
+    color: #333;
+}
+
+.parte p {
+    margin: 5px 0 15px 0;
+    line-height: 1.6;
+    color: #000000;
+}
+
+.parte ul {
+    margin-top: 5px;
+    margin-bottom: 20px; /* margem para separar lista do próximo conteúdo */
+    padding-left: 40px; /* recuo padrão para listas */
+}
+
+.parte li {
+    margin-bottom: 6px; /* espaçamento entre itens da lista */
+    color: #222;
+}
+
+.parte ul li strong {
+    font-weight: bold;
+    color: #111;
+}
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+th, td {
+    padding: 12px;
     text-align: center;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #4CAF50;
     color: white;
 }
-
-/* Setas */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+#toggleButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 24px;
-    border-radius: 50%;
-    z-index: 10;
+    font-size: 16px;
+}
+#toggleButton:hover {
+    background-color: #45a049;
+}
+#tableContainer {
+    display: none;
+}
+#lista-links a {
+    text-decoration: none;
+    color: black;
+    
+}
+#link-topo {
+    text-decoration: none;
+    color: white;
+    background-color: #45a049;
+    padding: 10px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    box-shadow: 3px 3px 3px #333;
+}
+a {
+    transition: text-shadow 0.3s ease;
+}
+a:hover {
+    color: white; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+#link-tabela{
+    color: #4CAF50;
+    margin-bottom:1px;
+    text-align: right;
+    padding: 10px;
+    bottom: 5px;
+    text-decoration: none;
+}
+/* Scroll */
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+/* PÓS TABLE */
+section.upe h2{
+    color: #4CAF50;
+    margin: 10px;
+    text-align: center;
+}
+/* Conteudo */
+section.conteudo .text {
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px 0; /* remove margens / laterais */
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.212);
+    width: 100%;        /* Ocupar toda a largura disponível */
+    box-sizing: border-box; /* Inclui padding dentro da largura total */
+}
+section.conteudo h2,
+section.conteudo h3
+{
+    color: #4CAF50;
+    margin: 2px 0 15px;
+}
+section.conteudo a{
+    text-decoration: none;
+    color: inherit;
+}
+section.conteudo .text p{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px 0 15px;
+    line-height: 1.3;
+    color: #555; 
+}
+section.conteudo .text ul{
+    padding-left: 30px;
+    list-style: disc;
+}
+ul.lista-estilo li {
+    margin-bottom: 12px;
 }
 
-.arrow-left {
-    left: 0;
-}
+/* Responsividade */
+/*Telas menores que 768px */
+@media (max-width: 768px) {
 
-.arrow-right {
-    right: 0;
-}
-
-.arrow:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Responsividade - Ajustes para telas menores */
-@media screen and (max-width: 600px) {
-    .portfolio-container {
-        padding: 0 1%; /* padding mais suave no celular */
+    .texto {
+        position: static;
+        padding: 20px;
+        width: 100%;
+        max-width: none;
+        margin: 20px auto;
+        text-align: center;
     }
 
-    .portfolio-wrapper {
-        gap: 20px; /* sem espaço entre os itens */
+    section.full-bg .ceifador-img {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
     }
 
-    .portfolio-item {
-        flex: 0 0 100%; /* garante que apenas 1 item ocupe toda a largura */
-        max-width: 100%; /* impede que o item ultrapasse a tela */
+    .full-bg {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .full-bg .content {
+        padding: 10px;
+        width: 100%;
+    }
+
+    h1.com-barra::after {
+        width: 100%;
+    }
+
+    #link-topo {
+        font-size: 14px;
+        padding: 8px;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    table, th, td {
+        font-size: 10px;
+        padding:8px;
     }
 }
