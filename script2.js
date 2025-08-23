@@ -41,8 +41,6 @@ levelBtn.addEventListener('click', () => {
   updateSkills(); // Atualiza as skills automaticamente ao subir de nível
 });
 
-
-
 // --- INSPIRATION BUTTON ---
 const inspirationBtn = document.getElementById('inspiration-btn');
 
@@ -138,6 +136,7 @@ const abilityMap = {
 function updateSkills() {
   const abilityModifiers = {};
 
+  // Atualiza modificadores das habilidades
   document.querySelectorAll('.ability-box').forEach(box => {
     const abilityName = box.querySelector('.label-name').textContent.trim();
     const input = box.querySelector('.score');
@@ -155,6 +154,7 @@ function updateSkills() {
     modDiv.textContent = (mod >= 0 ? '+' : '') + mod;
   });
 
+  // Atualiza as skills somando o modificador e proficiência
   document.querySelectorAll('.skill-item').forEach(skill => {
     const abilityAbbr = skill.getAttribute('data-ability');
     const mod = abilityModifiers[abilityAbbr] || 0;
@@ -162,34 +162,42 @@ function updateSkills() {
     const proficiencyToggle = skill.querySelector('.proficiency-toggle');
     const doubleProfToggle = skill.querySelector('.double-proficiency-toggle');
 
-    const proficiencyBonus = proficiencyToggle.checked ? parseInt(profBonusDisplay.textContent) || 0 : 0;
-    const doubleProfBonus = doubleProfToggle && doubleProfToggle.checked ? proficiencyBonus : 0;
+    const rawBonusText = profBonusDisplay.textContent.replace('+', '').trim();
+    const bonusValue = parseInt(rawBonusText) || 0;
 
-    let totalBonus = mod + proficiencyBonus + doubleProfBonus;
-    if (totalBonus > mod) totalBonus = mod;
+    let profBonus = 0;
+    if (proficiencyToggle && proficiencyToggle.checked) {
+      profBonus += bonusValue;
+    }
+    if (doubleProfToggle && doubleProfToggle.checked) {
+      profBonus += bonusValue;
+    }
+
+    const totalBonus = mod + profBonus;
 
     const skillBonusSpan = skill.querySelector('.skill-bonus');
     skillBonusSpan.textContent = (totalBonus >= 0 ? '+' : '') + totalBonus;
   });
 
-  // Atualiza iniciativa
+  // Atualiza iniciativa, por exemplo
   const initiativeBtn = document.querySelector('.initiative-btn');
   if (initiativeBtn) {
     const dexMod = abilityModifiers['DEX'] || 0;
     initiativeBtn.textContent = `Iniciativa ${(dexMod >= 0 ? '+' : '') + dexMod}`;
   }
 }
+/* BONUS DE PROFICIENCIA*/
 
 document.querySelectorAll('.ability-box').forEach(box => {
   const input = box.querySelector('.score');
   const modDiv = box.querySelector('.modifier');
-
+  
   function updateMod() {
     const mod = calculateModifier(input.value);
     modDiv.textContent = (mod >= 0 ? '+' : '') + mod;
     updateSkills();
   }
-
+  
   updateMod();
   input.addEventListener('input', updateMod);
 });
