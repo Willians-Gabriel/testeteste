@@ -1017,22 +1017,30 @@ openModalBtn.onclick = () => {
 
 const spellLevelFilter = document.getElementById('spellLevelFilter'); // o select fora do modal
 
-spellLevelFilter.addEventListener('change', () => {
-  const selectedLevel = spellLevelFilter.value;
-  console.log('Filtro selecionado:', selectedLevel);
-  
-  const allSpellLevels = document.querySelectorAll('.spell-level');
-  allSpellLevels.forEach(block => {
-    const blockLevel = block.getAttribute('data-level');
-    if (selectedLevel === 'all' || selectedLevel === blockLevel) {
-      block.style.display = 'block';
-      console.log(`Mostrando nível ${blockLevel}`);
-    } else {
-      block.style.display = 'none';
-      console.log(`Escondendo nível ${blockLevel}`);
-    }
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  const spellLevelFilter = document.querySelector('#spellLevelFilter');
+  if (spellLevelFilter) {
+    spellLevelFilter.addEventListener('change', () => {
+      const selectedLevel = spellLevelFilter.value;
+      console.log('Filtro selecionado:', selectedLevel);
+      
+      const allSpellLevels = document.querySelectorAll('.spell-level');
+      allSpellLevels.forEach(block => {
+        const blockLevel = block.getAttribute('data-level');
+        if (selectedLevel === 'all' || selectedLevel === blockLevel) {
+          block.style.display = 'block';
+          console.log(`Mostrando nível ${blockLevel}`);
+        } else {
+          block.style.display = 'none';
+          console.log(`Escondendo nível ${blockLevel}`);
+        }
+      });
+    });
+  } else {
+    console.log('spellLevelFilter não encontrado no DOM!');
+  }
 });
+
 
 // Fechar modal
 closeModalBtn.onclick = () => {
@@ -1099,9 +1107,84 @@ function addSpellToGrimoire(spell) {
   spellCard.querySelector(".remove-spell-btn").addEventListener("click", () => {
     spellCard.remove();
   });
-  
   levelContainer.appendChild(spellCard);
 }
 
 // Render inicial
 renderSpells();
+
+/* ---------
+INVENTARIO
+------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('itemTypeModal');
+  const select = document.getElementById('itemTypeSelect');
+  const cancelBtn = document.getElementById('cancelModal');
+  const confirmBtn = document.getElementById('confirmModal');
+
+  let currentTable = null;  // Variável para armazenar a tabela de destino
+  let currentButton = null;  // Variável para armazenar o botão clicado
+
+  // Quando o botão "+" for clicado, abre o modal
+  document.querySelectorAll('.add-button').forEach(button => {
+    button.addEventListener('click', (event) => {
+      currentButton = button;
+      select.value = "";  // Resetando o valor do select
+      modal.style.display = 'flex';  // Mostrando o modal
+
+      // Posição do modal para que ele apareça abaixo do botão
+      const rect = currentButton.getBoundingClientRect();
+      const modalWidth = modal.offsetWidth;
+      const leftPosition = rect.left + window.scrollX + (rect.width / 2) - (modalWidth / 2);
+      const topPosition = rect.bottom + window.scrollY + 10;
+
+      modal.style.top = `${topPosition}px`;
+      modal.style.left = `${leftPosition}px`;
+    });
+  });
+
+  // Cancelar o modal
+  cancelBtn.addEventListener('click', () => {
+    modal.style.display = 'none';  // Fecha o modal
+  });
+
+  // Confirmar o tipo e adicionar o item na tabela
+  confirmBtn.addEventListener('click', () => {
+    const tipo = select.value;  // Tipo selecionado no modal
+    if (!tipo) {
+      alert('Por favor, selecione um tipo de item.');
+      return;
+    }
+
+    const targetTable = document.getElementById('equipment-table');  // Tabela de Equipamentos
+
+    // Remover a linha "empty" se ela existir
+    const emptyRow = targetTable.querySelector('.inventory-row.empty');
+    if (emptyRow) emptyRow.remove();
+
+    // Criar a nova linha
+    const newRow = document.createElement('div');
+    newRow.classList.add('inventory-row');
+    
+    newRow.innerHTML = `
+      <span class="col equipment">
+        <input type="text" placeholder="Nome do item (${tipo})" style="width: 90%; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee;">
+      </span>
+      <span class="col weight">
+        <input type="number" min="0" placeholder="Peso" style="width: 60px; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee; text-align:center;">
+      </span>
+      <span class="col qty">
+        <input type="number" min="0" placeholder="Qtd" style="width: 40px; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee; text-align:center;">
+      </span>
+      <span class="col details">
+        <input type="text" placeholder="Detalhes" style="width: 90%; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee;">
+      </span>
+      <span class="col type">${tipo}</span>  <!-- Coluna tipo que especifica a categoria -->
+    `;
+
+    // Inserir a nova linha no final da tabela
+    targetTable.appendChild(newRow);
+
+    modal.style.display = 'none';  // Fecha o modal após a confirmação
+  });
+});

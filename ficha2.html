@@ -168,7 +168,7 @@
                                         <span>Ability</span>
                                         <span>Save</span>
                                     </div>
-                                    <div class="label-name">Charisma</div>
+                                    <div class="label-name">Carisma</div>
                                 </div>
                                 
                             </div>
@@ -178,12 +178,12 @@
                     
                     <div class="custom-block4">
                         <div class="ac">
-                            <h4>AC / Speed</h4>
+                            <h4>CA / Velocidade</h4>
                             
                             <!-- Armor Class -->
                             <div class="armor-class">
                                 <div class="ac-header">
-                                    <label>ARMOR CLASS</label>
+                                    <label>Classe de Armadura</label>
                                     <div class="ac-main">
                                         <input type="number" id="armor-total" value="10" class="input-main" readonly />
                                         <span class="icon">🛡️</span>
@@ -197,9 +197,9 @@
                                 </div>
                                 
                                 <div class="ac-labels">
-                                    <span>Armor</span>
-                                    <span>Dexterity</span>
-                                    <span>Shield</span>
+                                    <span>Natural</span>
+                                    <span>Destreza</span>
+                                    <span>Escudo</span>
                                 </div>
                                 
                                 <div class="linha-divisoria"></div>
@@ -208,9 +208,9 @@
                             <!-- Speed -->
                             <div class="speed-section">
                                 <div class="speed-header">
-                                    <label>SPEED (ft)</label>
+                                    <label>Velocidade (ft)</label>
                                     <div class="speed-main">
-                                        <input type="text" value="--" class="input-main" />
+                                        <input type="text" value="9m" class="input-main" />
                                         <span class="icon">👟</span>
                                         <span id="toggle-speed" class="toggle-arrow">▼</span>
                                     </div>
@@ -318,570 +318,630 @@
                     
                     <div class="custom-block5">
                         <div class="skills-section">
-                          <h4>Skills</h4>
-                          <div class="skill-list">
-                      
-                            <!-- FORÇA (STR) -->
-                            <div class="skill-group" data-ability-group="STR">
-                             
-                              <div class="skill-item" data-ability="STR">
-                                <label class="skill-name">Athletics</label>
-                                <span class="ability-tag">STR</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                            </div>
-                      
-                            <!-- DESTREZA (DEX) -->
-                            <div class="skill-group" data-ability-group="DEX">
-                           
-                              <div class="skill-item" data-ability="DEX">
-                                <label class="skill-name">Stealth</label>
-                                <span class="ability-tag">DEX</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="DEX">
-                                <label class="skill-name">Sleight of Hand</label>
-                                <span class="ability-tag">DEX</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="DEX">
-                                <label class="skill-name">Acrobatics</label>
-                                <span class="ability-tag">DEX</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                            </div>
-                      
-                            <!-- CONSTITUIÇÃO (CON) -->
-                            <div class="skill-group" data-ability-group="CON">
-                            
-                              <!-- Se quiser skills de Constituição, coloque aqui -->
-                              <!-- No seu HTML original não tem, mas pode adicionar se quiser -->
-                            </div>
-                      
-                            <!-- INTELIGÊNCIA (INT) -->
-                            <div class="skill-group" data-ability-group="INT">
-                          
-                              <div class="skill-item" data-ability="INT">
-                                <label class="skill-name">Arcana</label>
-                                <span class="ability-tag">INT</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="INT">
-                                <label class="skill-name">Nature</label>
-                                <span class="ability-tag">INT</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="INT">
-                                <label class="skill-name">History</label>
-                                <span class="ability-tag">INT</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="INT">
-                                <label class="skill-name">Investigation</label>
-                                <span class="ability-tag">INT</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="INT">
-                                <label class="skill-name">Religion</label>
-                                <span class="ability-tag">INT</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                            </div>
-                      
-                            <!-- SABEDORIA (WIS) -->
-                            <div class="skill-group" data-ability-group="WIS">
-                             
-                              <div class="skill-item" data-ability="WIS">
-                                <label class="skill-name">Animal Handling</label>
-                                <span class="ability-tag">WIS</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="WIS">
-                                <label class="skill-name">Insight</label>
-                                <span class="ability-tag">WIS</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="WIS">
-                                <label class="skill-name">Medicine</label>
-                                <span class="ability-tag">WIS</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="WIS">
-                                <label class="skill-name">Perception</label>
-                                <span class="ability-tag">WIS</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="WIS">
-                                <label class="skill-name">Survival</label>
-                                <span class="ability-tag">WIS</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                            </div>
-                      
-                            <!-- CARISMA (CHA) -->
-                            <div class="skill-group" data-ability-group="CHA">
-                          
-                              <div class="skill-item" data-ability="CHA">
-                                <label class="skill-name">Deception</label>
-                                <span class="ability-tag">CHA</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="CHA">
-                                <label class="skill-name">Intimidation</label>
-                                <span class="ability-tag">CHA</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="CHA">
-                                <label class="skill-name">Performance</label>
-                                <span class="ability-tag">CHA</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                              <div class="skill-item" data-ability="CHA">
-                                <label class="skill-name">Persuasion</label>
-                                <span class="ability-tag">CHA</span>
-                                <span class="skill-bonus">+0</span>
-                                <input type="checkbox" class="proficiency-toggle" />
-                                <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
-                              </div>
-                            </div>
-                      
-                          </div>
-                        </div>
-                      </div>
-                      
-                        
-                        <!--NAVBAR-->
-                        
-                        <div class="custom-block9">
-                            
-                            <!-- Navbar -->
-                            <div class="navbar">
-                                <a href="#" class="nav-link active" data-target="combat">Combate</a>
-                                <a href="#" class="nav-link" data-target="spells">Magias</a>
-                                <a href="#" class="nav-link" data-target="inventory">Inventario</a>
-                                <a href="#" class="nav-link" data-target="features">Caracteristicas</a>
-                                <a href="#" class="nav-link" data-target="notes">Notas</a>
-                                <a href="#" class="nav-link" data-target="about">Sobre</a>
+                            <h4>Skills</h4>
+                            <div class="skill-list">
                                 
-                                
-                                <div class="linha-divisoria2"></div>
-                                
-                                <!-- Conteúdo da aba Combate -->
-                                <div id="combat" class="tab-content">
-                                    <div class="combat-section">
-                                        
-                                        <!-- BARRA SUPERIOR (FORA DA BOX) -->
-                                        <div class="attack-toolbar">
-                                            <select class="attack-filter">
-                                                <option>All</option>
-                                            </select>
-                                            <button class="add-attack-btn">+</button>
-                                        </div>
-                                        
-                                        <!-- BOX DE ATAQUES -->
-                                        <div class="combat-block">
-                                            <div class="block-header">ATAQUES</div>
-                                            
-                                            <!-- Lista de ataques -->
-                                            <div class="block-row" id="attack-list"></div>
-                                            
-                                            <!-- Formulário de criação de ataque -->
-                                            <div class="attack-form" id="attack-form" style="display: none;">
-                                                <label>Nome do Ataque:
-                                                    <input type="text" id="attack-name" placeholder="Ex: Espada Longa">
-                                                </label>
-                                                <label>Qual sua arma:
-                                                    <select id="weapon-select">
-                                                        <optgroup label="Simples - Corpo a Corpo">
-                                                            <option>Ataque desarmado</option>
-                                                            <option>Clava</option>
-                                                            <option>Adaga</option>
-                                                            <option>Clava Grande</option>
-                                                            <option>Machadinha</option>
-                                                            <option>Javelina</option>
-                                                            <option>Martelo Leve</option>
-                                                            <option>Maça</option>
-                                                            <option>Cajado</option>
-                                                            <option>Foice</option>
-                                                            <option>Lança</option>
-                                                        </optgroup>
-                                                        <optgroup label="Simples - À Distância">
-                                                            <option>Besta Leve</option>
-                                                            <option>Dardo</option>
-                                                            <option>Arco Curto</option>
-                                                            <option>Estilingue</option>
-                                                        </optgroup>
-                                                        <optgroup label="Marciais - Corpo a Corpo">
-                                                            <option>Machado de Batalha</option>
-                                                            <option>Flail</option>
-                                                            <option>Alabarda</option>
-                                                            <option>Machado Grande</option>
-                                                            <option>Espada Longa Grande</option>
-                                                            <option>Alabarda Longa</option>
-                                                            <option>Lança de Cavalaria</option>
-                                                            <option>Espada Longa</option>
-                                                            <option>Marreta de Guerra</option>
-                                                            <option>Manopla Matinal</option>
-                                                            <option>Alabarda Pesada</option>
-                                                            <option>Estoque</option>
-                                                            <option>Cimitarra</option>
-                                                            <option>Espada Curta</option>
-                                                            <option>Tridente</option>
-                                                            <option>Picareta de Guerra</option>
-                                                            <option>Martelo de Guerra</option>
-                                                            <option>Chicote</option>
-                                                        </optgroup>
-                                                        <optgroup label="Marciais - À Distância">
-                                                            <option>Sugador de Sopro</option>
-                                                            <option>Besta de Mão</option>
-                                                            <option>Besta Pesada</option>
-                                                            <option>Arco Longo</option>
-                                                            <option>Rede</option>
-                                                        </optgroup>
-                                                    </select>
-                                                </label>
-                                                <label>Dado de Dano:
-                                                    <select id="damage-die">
-                                                        <option>1d4</option>
-                                                        <option>1d6</option>
-                                                        <option>1d8</option>
-                                                        <option>1d10</option>
-                                                        <option>1d12</option>
-                                                    </select>
-                                                </label>
-                                                
-                                                <!-- Tipo de Modificador -->
-                                                <label for="attack-mod">Modificador:</label>
-                                                <select id="modifier">
-                                                    <option value="STR">Força</option>
-                                                    <option value="DEX">Destreza</option>
-                                                    <option value="CON">Constituição</option>
-                                                    <option value="INT">Inteligência</option>
-                                                    <option value="WIS">Sabedoria</option>
-                                                    <option value="CHA">Carisma</option>
-                                                </select>
-                                                
-                                                
-                                                
-                                                
-                                                <label>Tipo de Dano:
-                                                    <select id="damage-type">
-                                                        <option>Perfurante</option>
-                                                        <option>Cortante</option>
-                                                        <option>Contundente</option>
-                                                    </select>
-                                                </label>
-                                                
-                                                <label>
-                                                    Sua arma é mágica?
-                                                    <input type="checkbox" id="is-magic">
-                                                </label>                                    
-                                                <label>
-                                                    Ela possui bônus para jogadas de ataque e dano?
-                                                    <select id="attack-bonus">
-                                                        <option value="0">---</option>
-                                                        <option value="1">+1</option>
-                                                        <option value="2">+2</option>
-                                                        <option value="3">+3</option>
-                                                    </select>
-                                                </label>
-                                                
-                                                
-                                                <button id="confirm-attack">Adicionar</button>
-                                            </div>
-                                        </div>
-                                        
-                                        <!--MAESTRIAS-->
-                                        
-                                        <div class="combat-block">
-                                            <div class="block-header">MAESTRIA DE ARMA (opcional)</div>
-                                            <div class="block-row">No Masteries</div>
-                                        </div>
-                                        <br>
+                                <!-- FORÇA (STR) -->
+                                <div class="skill-group" data-ability-group="STR">
+                                    
+                                    <div class="skill-item" data-ability="STR">
+                                        <label class="skill-name">Athletics</label>
+                                        <span class="ability-tag">STR</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
                                     </div>
                                 </div>
                                 
-                                <!-- MAGIAS -->
-                                <div id="spells" class="tab-content" style="display: none;">
-                                    <div class="spells-section">
-                                        
-                                        <!-- BARRA SUPERIOR (FILTRO E BOTÃO GLOBAL) -->
-                                        <div class="spell-toolbar">
-                                            <select class="spell-filter">
-                                                <option>All</option>
-                                                <option>Truques</option>
-                                                <option>Nível 1º</option>
-                                                <option>Nível 2º</option>
-                                                <option>Nível 3º</option>
-                                                <option>Nível 4º</option>
-                                                <option>Nível 5º</option>
-                                                <option>Nível 6º</option>
-                                                <option>Nível 7º</option>
-                                                <option>Nível 8º</option>
-                                                <option>Nível 9º</option>
-                                            </select>
-                                            <!-- Botão + -->
-                                            <button class="add-spell-btn" id="openModalBtn">+</button>
-                                            
-                                            <!-- Modal -->
-                                            <div id="spellModal" class="modal">
-                                                <div class="modal-content">
-                                                    <span class="close" id="closeModalBtn">&times;</span>
-                                                    <h2>Selecionar Magias</h2>
-                                                    
-                                                    <!-- Filtros de classe e nível -->
-                                                    <div class="filter-row">
-                                                        <select id="classFilter" class="spell-filter">
-                                                            <option value="all">Todas as Classes</option>
-                                                            <option value="Artífice">Artífice</option>
-                                                            <option value="Bardo">Bardo</option>
-                                                            <option value="Bruxo">Bruxo</option>
-                                                            <option value="Clérigo">Clérigo</option>
-                                                            <option value="Druida">Druida</option>
-                                                            <option value="Feiticeiro">Feiticeiro</option>
-                                                            <option value="Guerreiro (Cavaleiro Arcano)">Guerreiro (Cavaleiro Arcano)</option>
-                                                            <option value="Ladino (Trapaceiro Arcano)">Ladino (Trapaceiro Arcano)</option>
-                                                            <option value="Mago">Mago</option>
-                                                            <option value="Paladino">Paladino</option>
-                                                            <option value="Ranger">Patrulheiro</option>
-                                                        </select>
-                                                        
-                                                        
-                                                        <select id="levelFilter" class="spell-filter">
-                                                            <option value="all">Todos os Níveis</option>
-                                                            <option value="0">Truques</option>
-                                                            <option value="1">Nível 1</option>
-                                                            <option value="2">Nível 2</option>
-                                                            <option value="3">Nível 3</option>
-                                                            <option value="4">Nível 4</option>
-                                                            <option value="5">Nível 5</option>
-                                                            <option value="6">Nível 6</option>
-                                                            <option value="7">Nível 7</option>
-                                                            <option value="8">Nível 8</option>
-                                                            <option value="9">Nível 9</option>
-                                                        </select>
-                                                    </div>
-                                                    
-                                                    <!-- Lista de magias -->
-                                                    <div class="spell-list-container">
-                                                        <div id="spellList"></div>
-                                                    </div> 
-                                                </div>
-                                            </div>
-                                        </div>                         
-                                        
-                                        <!-- BLOCO DE TRUQUES -->
-                                        <div class="spell-block">
-                                            <div class="block-header2">Truques</div>
-                                            <div class="spell-level" data-level="0">
-                                                <!-- Magias de Truques aqui -->
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- BLOCO DE NÍVEL 1 -->
-                                        <div class="spell-block">
-                                            <div class="block-header2">Nível 1</div>
-                                            <div class="spell-level" data-level="1" id="level-1-spells">
-                                                <!-- Magias de Nível 1 aqui -->
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- BLOCO DE NÍVEL 2 -->
-                                        <div class="spell-block">
-                                            <div class="block-header2">Nível 2</div>
-                                            <div class="spell-level" data-level="2">
-                                                <!-- Magias de Nível 2 aqui -->
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- BLOCO DE NÍVEL 3 -->
-                                        <div class="spell-block">
-                                            <div class="block-header2">Nível 3</div>
-                                            <div class="spell-level" data-level="3">
-                                                <!-- Magias de Nível 3 aqui -->
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- BLOCO DE NÍVEL 4 -->
-                                        <div class="spell-block">
-                                            <div class="block-header2">Nível 4</div>
-                                            <div class="spell-level" data-level="4">
-                                                <!-- Magias de Nível 4 aqui -->
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- BLOCO DE NÍVEL 5 -->
-                                        <div class="spell-block">
-                                            <div class="block-header2">Nível 5</div>
-                                            <div class="spell-level" data-level="5">
-                                                <!-- Magias de Nível 5 aqui -->
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- BLOCO DE NÍVEL 6 -->
-                                        <div class="spell-block">
-                                            <div class="block-header2">Nível 6</div>
-                                            <div class="spell-level" data-level="6">
-                                                <!-- Magias de Nível 6 aqui -->
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- BLOCO DE NÍVEL 7 -->
-                                        <div class="spell-block">
-                                            <div class="block-header2">Nível 7</div>
-                                            <div class="spell-level" data-level="7">
-                                                <!-- Magias de Nível 7 aqui -->
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- BLOCO DE NÍVEL 8 -->
-                                        <div class="spell-block">
-                                            <div class="block-header2">Nível 8</div>
-                                            <div class="spell-level" data-level="8">
-                                                <!-- Magias de Nível 8 aqui -->
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- BLOCO DE NÍVEL 9 -->
-                                        <div class="spell-block">
-                                            <div class="block-header2">Nível 9</div>
-                                            <div class="spell-level" data-level="9">
-                                                <!-- Magias de Nível 9 aqui -->
-                                            </div>
-                                        </div>
-                                        
-                                    </div> <!-- Fecha .spells-section -->
-                                </div> <!-- Fecha #spells -->
+                                <!-- DESTREZA (DEX) -->
+                                <div class="skill-group" data-ability-group="DEX">
+                                    <div class="skill-item" data-ability="DEX">
+                                        <label class="skill-name">Stealth</label>
+                                        <span class="ability-tag">DEX</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="DEX">
+                                        <label class="skill-name">Sleight of Hand</label>
+                                        <span class="ability-tag">DEX</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="DEX">
+                                        <label class="skill-name">Acrobatics</label>
+                                        <span class="ability-tag">DEX</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                </div>
+                                
+                                <!-- CONSTITUIÇÃO (CON) -->
+                                <div class="skill-group" data-ability-group="CON">
+                                    
+                                    <!-- Se quiser skills de Constituição, coloque aqui -->
+                                    <!-- No seu HTML original não tem, mas pode adicionar se quiser -->
+                                </div>
+                                
+                                <!-- INTELIGÊNCIA (INT) -->
+                                <div class="skill-group" data-ability-group="INT">
+                                    
+                                    <div class="skill-item" data-ability="INT">
+                                        <label class="skill-name">Arcana</label>
+                                        <span class="ability-tag">INT</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="INT">
+                                        <label class="skill-name">Nature</label>
+                                        <span class="ability-tag">INT</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="INT">
+                                        <label class="skill-name">History</label>
+                                        <span class="ability-tag">INT</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="INT">
+                                        <label class="skill-name">Investigation</label>
+                                        <span class="ability-tag">INT</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="INT">
+                                        <label class="skill-name">Religion</label>
+                                        <span class="ability-tag">INT</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                </div>
+                                
+                                <!-- SABEDORIA (WIS) -->
+                                <div class="skill-group" data-ability-group="WIS">
+                                    
+                                    <div class="skill-item" data-ability="WIS">
+                                        <label class="skill-name">Animal Handling</label>
+                                        <span class="ability-tag">WIS</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="WIS">
+                                        <label class="skill-name">Insight</label>
+                                        <span class="ability-tag">WIS</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="WIS">
+                                        <label class="skill-name">Medicine</label>
+                                        <span class="ability-tag">WIS</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="WIS">
+                                        <label class="skill-name">Perception</label>
+                                        <span class="ability-tag">WIS</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="WIS">
+                                        <label class="skill-name">Survival</label>
+                                        <span class="ability-tag">WIS</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                </div>
+                                
+                                <!-- CARISMA (CHA) -->
+                                <div class="skill-group" data-ability-group="CHA">
+                                    
+                                    <div class="skill-item" data-ability="CHA">
+                                        <label class="skill-name">Deception</label>
+                                        <span class="ability-tag">CHA</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="CHA">
+                                        <label class="skill-name">Intimidation</label>
+                                        <span class="ability-tag">CHA</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="CHA">
+                                        <label class="skill-name">Performance</label>
+                                        <span class="ability-tag">CHA</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                    <div class="skill-item" data-ability="CHA">
+                                        <label class="skill-name">Persuasion</label>
+                                        <span class="ability-tag">CHA</span>
+                                        <span class="skill-bonus">+0</span>
+                                        <input type="checkbox" class="proficiency-toggle" />
+                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                    </div>
+                                </div>
+                                
                                 
                             </div>
                             
                             
                             
-                            <!-- INVENTARIO -->
-                            <div id="inventory" class="tab-content" style="display: none;">
-                                <div class="inventory-toolbar">
+                            <!--NAVBAR-->
+                            
+                            <div class="custom-block9">
+                                
+                                <!-- Navbar -->
+                                <div class="navbar">
+                                    <a href="#" class="nav-link active" data-target="combat">Combate</a>
+                                    <a href="#" class="nav-link" data-target="spells">Magias</a>
+                                    <a href="#" class="nav-link" data-target="inventory">Inventario</a>
+                                    <a href="#" class="nav-link" data-target="features">Caracteristicas</a>
+                                    <a href="#" class="nav-link" data-target="notes">Notas</a>
+                                    <a href="#" class="nav-link" data-target="about">Sobre</a>
                                     
-                                    <!--MOEDAS -->
-                                    <div class="moedas-bar">
-                                        <div class="coin">
+                                    
+                                    <div class="linha-divisoria2"></div>
+                                    
+                                    <!-- Conteúdo da aba Combate -->
+                                    <div id="combat" class="tab-content">
+                                        <div class="combat-section">
                                             
-                                            <!-- PLATINA -->
-                                            <label class="platina">
-                                                Platinum
-                                                <div class="number-input">
-                                                    <input type="number" value="0" min="0" />
-                                                    <div class="buttons">
-                                                        <button onclick="this.parentNode.previousElementSibling.stepUp()">&#9650;</button>
-                                                        <button onclick="this.parentNode.previousElementSibling.stepDown()">&#9660;</button>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <!-- BARRA SUPERIOR (FORA DA BOX) -->
+                                            <div class="attack-toolbar">
+                                                <select class="attack-filter">
+                                                    <option>All</option>
+                                                </select>
+                                                <button class="add-attack-btn">+</button>
+                                            </div>
                                             
-                                            <!-- OURO -->
-                                            <label class="ouro">
-                                                Ouro
-                                                <div class="number-input">
-                                                    <input type="number" value="0" min="0" />
-                                                    <div class="buttons">
-                                                        <button onclick="this.parentNode.previousElementSibling.stepUp()">&#9650;</button>
-                                                        <button onclick="this.parentNode.previousElementSibling.stepDown()">&#9660;</button>
-                                                    </div>
+                                            <!-- BOX DE ATAQUES -->
+                                            <div class="combat-block">
+                                                <div class="block-header">ATAQUES</div>
+                                                
+                                                <!-- Lista de ataques -->
+                                                <div class="block-row" id="attack-list"></div>
+                                                
+                                                <!-- Formulário de criação de ataque -->
+                                                <div class="attack-form" id="attack-form" style="display: none;">
+                                                    <label>Nome do Ataque:
+                                                        <input type="text" id="attack-name" placeholder="Ex: Espada Longa">
+                                                    </label>
+                                                    <label>Qual sua arma:
+                                                        <select id="weapon-select">
+                                                            <optgroup label="Simples - Corpo a Corpo">
+                                                                <option>Ataque desarmado</option>
+                                                                <option>Clava</option>
+                                                                <option>Adaga</option>
+                                                                <option>Clava Grande</option>
+                                                                <option>Machadinha</option>
+                                                                <option>Javelina</option>
+                                                                <option>Martelo Leve</option>
+                                                                <option>Maça</option>
+                                                                <option>Cajado</option>
+                                                                <option>Foice</option>
+                                                                <option>Lança</option>
+                                                            </optgroup>
+                                                            <optgroup label="Simples - À Distância">
+                                                                <option>Besta Leve</option>
+                                                                <option>Dardo</option>
+                                                                <option>Arco Curto</option>
+                                                                <option>Estilingue</option>
+                                                            </optgroup>
+                                                            <optgroup label="Marciais - Corpo a Corpo">
+                                                                <option>Machado de Batalha</option>
+                                                                <option>Flail</option>
+                                                                <option>Alabarda</option>
+                                                                <option>Machado Grande</option>
+                                                                <option>Espada Longa Grande</option>
+                                                                <option>Alabarda Longa</option>
+                                                                <option>Lança de Cavalaria</option>
+                                                                <option>Espada Longa</option>
+                                                                <option>Marreta de Guerra</option>
+                                                                <option>Manopla Matinal</option>
+                                                                <option>Alabarda Pesada</option>
+                                                                <option>Estoque</option>
+                                                                <option>Cimitarra</option>
+                                                                <option>Espada Curta</option>
+                                                                <option>Tridente</option>
+                                                                <option>Picareta de Guerra</option>
+                                                                <option>Martelo de Guerra</option>
+                                                                <option>Chicote</option>
+                                                            </optgroup>
+                                                            <optgroup label="Marciais - À Distância">
+                                                                <option>Sugador de Sopro</option>
+                                                                <option>Besta de Mão</option>
+                                                                <option>Besta Pesada</option>
+                                                                <option>Arco Longo</option>
+                                                                <option>Rede</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </label>
+                                                    <label>Dado de Dano:
+                                                        <select id="damage-die">
+                                                            <option>1d4</option>
+                                                            <option>1d6</option>
+                                                            <option>1d8</option>
+                                                            <option>1d10</option>
+                                                            <option>1d12</option>
+                                                        </select>
+                                                    </label>
+                                                    
+                                                    <!-- Tipo de Modificador -->
+                                                    <label for="attack-mod">Modificador:</label>
+                                                    <select id="modifier">
+                                                        <option value="STR">Força</option>
+                                                        <option value="DEX">Destreza</option>
+                                                        <option value="CON">Constituição</option>
+                                                        <option value="INT">Inteligência</option>
+                                                        <option value="WIS">Sabedoria</option>
+                                                        <option value="CHA">Carisma</option>
+                                                    </select>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <label>Tipo de Dano:
+                                                        <select id="damage-type">
+                                                            <option>Perfurante</option>
+                                                            <option>Cortante</option>
+                                                            <option>Contundente</option>
+                                                        </select>
+                                                    </label>
+                                                    
+                                                    <label>
+                                                        Sua arma é mágica?
+                                                        <input type="checkbox" id="is-magic">
+                                                    </label>                                    
+                                                    <label>
+                                                        Ela possui bônus para jogadas de ataque e dano?
+                                                        <select id="attack-bonus">
+                                                            <option value="0">---</option>
+                                                            <option value="1">+1</option>
+                                                            <option value="2">+2</option>
+                                                            <option value="3">+3</option>
+                                                        </select>
+                                                    </label>
+                                                    
+                                                    
+                                                    <button id="confirm-attack">Adicionar</button>
                                                 </div>
-                                            </label>
+                                            </div>
                                             
-                                            <!-- ELECTRUM -->
-                                            <label class="electrum">
-                                                Electrum
-                                                <div class="number-input">
-                                                    <input type="number" value="0" min="0"/>
-                                                    <div class="buttons">
-                                                        <button onclick="this.parentNode.previousElementSibling.stepUp()">&#9650;</button>
-                                                        <button onclick="this.parentNode.previousElementSibling.stepDown()">&#9660;</button>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <!--MAESTRIAS-->
                                             
-                                            <!-- PRATA -->
-                                            <label class="prata">
-                                                Prata
-                                                <div class="number-input">
-                                                    <input type="number" value="0" min="0"/>
-                                                    <div class="buttons">
-                                                        <button onclick="this.parentNode.previousElementSibling.stepUp()">&#9650;</button>
-                                                        <button onclick="this.parentNode.previousElementSibling.stepDown()">&#9660;</button>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                            
-                                            <!-- COBRE -->
-                                            <label class="bronze">
-                                                Cobre
-                                                <div class="number-input">
-                                                    <input type="number" value="0" min="0"/>
-                                                    <div class="buttons">
-                                                        <button onclick="this.parentNode.previousElementSibling.stepUp()">&#9650;</button>
-                                                        <button onclick="this.parentNode.previousElementSibling.stepDown()">&#9660;</button>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="combat-block">
+                                                <div class="block-header">MAESTRIA DE ARMA (opcional)</div>
+                                                <div class="block-row">No Masteries</div>
+                                            </div>
+                                            <br>
                                         </div>
                                     </div>
-                                     <div class="equipamentos">Equipamentos</div>
-                   
-                                </div> <!--importante-->
-                            </div> <!--importante-->
+                                    
+                                    <!-- MAGIAS -->
+                                    <div id="spells" class="tab-content" style="display: none;">
+                                        <div class="spells-section">
+                                            
+                                            <!-- BARRA SUPERIOR (FILTRO E BOTÃO GLOBAL) -->
+                                            <div class="spell-toolbar">
+                                                <select class="spell-filter">
+                                                    <option>All</option>
+                                                    <option>Truques</option>
+                                                    <option>Nível 1º</option>
+                                                    <option>Nível 2º</option>
+                                                    <option>Nível 3º</option>
+                                                    <option>Nível 4º</option>
+                                                    <option>Nível 5º</option>
+                                                    <option>Nível 6º</option>
+                                                    <option>Nível 7º</option>
+                                                    <option>Nível 8º</option>
+                                                    <option>Nível 9º</option>
+                                                </select>
+                                                <!-- Botão + -->
+                                                <button class="add-spell-btn" id="openModalBtn">+</button>
+                                                
+                                                <!-- Modal -->
+                                                <div id="spellModal" class="modal">
+                                                    <div class="modal-content">
+                                                        <span class="close" id="closeModalBtn">&times;</span>
+                                                        <h2>Selecionar Magias</h2>
+                                                        
+                                                        <!-- Filtros de classe e nível -->
+                                                        <div class="filter-row">
+                                                            <select id="classFilter" class="spell-filter">
+                                                                <option value="all">Todas as Classes</option>
+                                                                <option value="Artífice">Artífice</option>
+                                                                <option value="Bardo">Bardo</option>
+                                                                <option value="Bruxo">Bruxo</option>
+                                                                <option value="Clérigo">Clérigo</option>
+                                                                <option value="Druida">Druida</option>
+                                                                <option value="Feiticeiro">Feiticeiro</option>
+                                                                <option value="Guerreiro (Cavaleiro Arcano)">Guerreiro (Cavaleiro Arcano)</option>
+                                                                <option value="Ladino (Trapaceiro Arcano)">Ladino (Trapaceiro Arcano)</option>
+                                                                <option value="Mago">Mago</option>
+                                                                <option value="Paladino">Paladino</option>
+                                                                <option value="Ranger">Patrulheiro</option>
+                                                            </select>
+                                                            
+                                                            
+                                                            <select id="levelFilter" class="spell-filter">
+                                                                <option value="all">Todos os Níveis</option>
+                                                                <option value="0">Truques</option>
+                                                                <option value="1">Nível 1</option>
+                                                                <option value="2">Nível 2</option>
+                                                                <option value="3">Nível 3</option>
+                                                                <option value="4">Nível 4</option>
+                                                                <option value="5">Nível 5</option>
+                                                                <option value="6">Nível 6</option>
+                                                                <option value="7">Nível 7</option>
+                                                                <option value="8">Nível 8</option>
+                                                                <option value="9">Nível 9</option>
+                                                            </select>
+                                                        </div>
+                                                        
+                                                        <!-- Lista de magias -->
+                                                        <div class="spell-list-container">
+                                                            <div id="spellList"></div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>                         
+                                            
+                                            <!-- BLOCO DE TRUQUES -->
+                                            <div class="spell-block">
+                                                <div class="block-header2">Truques</div>
+                                                <div class="spell-level" data-level="0">
+                                                    <!-- Magias de Truques aqui -->
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- BLOCO DE NÍVEL 1 -->
+                                            <div class="spell-block">
+                                                <div class="block-header2">Nível 1</div>
+                                                <div class="spell-level" data-level="1" id="level-1-spells">
+                                                    <!-- Magias de Nível 1 aqui -->
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- BLOCO DE NÍVEL 2 -->
+                                            <div class="spell-block">
+                                                <div class="block-header2">Nível 2</div>
+                                                <div class="spell-level" data-level="2">
+                                                    <!-- Magias de Nível 2 aqui -->
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- BLOCO DE NÍVEL 3 -->
+                                            <div class="spell-block">
+                                                <div class="block-header2">Nível 3</div>
+                                                <div class="spell-level" data-level="3">
+                                                    <!-- Magias de Nível 3 aqui -->
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- BLOCO DE NÍVEL 4 -->
+                                            <div class="spell-block">
+                                                <div class="block-header2">Nível 4</div>
+                                                <div class="spell-level" data-level="4">
+                                                    <!-- Magias de Nível 4 aqui -->
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- BLOCO DE NÍVEL 5 -->
+                                            <div class="spell-block">
+                                                <div class="block-header2">Nível 5</div>
+                                                <div class="spell-level" data-level="5">
+                                                    <!-- Magias de Nível 5 aqui -->
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- BLOCO DE NÍVEL 6 -->
+                                            <div class="spell-block">
+                                                <div class="block-header2">Nível 6</div>
+                                                <div class="spell-level" data-level="6">
+                                                    <!-- Magias de Nível 6 aqui -->
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- BLOCO DE NÍVEL 7 -->
+                                            <div class="spell-block">
+                                                <div class="block-header2">Nível 7</div>
+                                                <div class="spell-level" data-level="7">
+                                                    <!-- Magias de Nível 7 aqui -->
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- BLOCO DE NÍVEL 8 -->
+                                            <div class="spell-block">
+                                                <div class="block-header2">Nível 8</div>
+                                                <div class="spell-level" data-level="8">
+                                                    <!-- Magias de Nível 8 aqui -->
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- BLOCO DE NÍVEL 9 -->
+                                            <div class="spell-block">
+                                                <div class="block-header2">Nível 9</div>
+                                                <div class="spell-level" data-level="9">
+                                                    <!-- Magias de Nível 9 aqui -->
+                                                </div>
+                                            </div>
+                                            
+                                        </div> <!-- Fecha .spells-section -->
+                                    </div> <!-- Fecha #spells -->
+                                    
+                                </div>
+                                
+                                <!-- INVENTÁRIO -->
+                                <div id="inventory" class="tab-content" style="display: none;">
+                                    
+                                    <!-- BLOCO DE MOEDAS -->
+                                    <div class="inventory-toolbar">
+                                        
+                                        <!-- BARRA DE MOEDAS -->
+                                        <div class="moedas-bar">
+                                            <div class="coin">
+                                                <label class="platina">Platinum
+                                                    <div class="number-input">
+                                                        <input type="number" value="0" min="0" />
+                                                        <div class="buttons">
+                                                            <button onclick="this.parentNode.previousElementSibling.stepUp()">&#9650;</button>
+                                                            <button onclick="this.parentNode.previousElementSibling.stepDown()">&#9660;</button>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                                <!-- Moeda: Ouro -->
+                                                <label class="ouro">
+                                                    Ouro
+                                                    <div class="number-input">
+                                                        <input type="number" value="0" min="0" />
+                                                        <div class="buttons">
+                                                            <button onclick="this.parentNode.previousElementSibling.stepUp()">&#9650;</button>
+                                                            <button onclick="this.parentNode.previousElementSibling.stepDown()">&#9660;</button>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                                
+                                                <!-- Moeda: Electrum -->
+                                                <label class="electrum">
+                                                    Electrum
+                                                    <div class="number-input">
+                                                        <input type="number" value="0" min="0" />
+                                                        <div class="buttons">
+                                                            <button onclick="this.parentNode.previousElementSibling.stepUp()">&#9650;</button>
+                                                            <button onclick="this.parentNode.previousElementSibling.stepDown()">&#9660;</button>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                                
+                                                <!-- Moeda: Prata -->
+                                                <label class="prata">
+                                                    Prata
+                                                    <div class="number-input">
+                                                        <input type="number" value="0" min="0" />
+                                                        <div class="buttons">
+                                                            <button onclick="this.parentNode.previousElementSibling.stepUp()">&#9650;</button>
+                                                            <button onclick="this.parentNode.previousElementSibling.stepDown()">&#9660;</button>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                                
+                                                <!-- Moeda: Cobre -->
+                                                <label class="bronze">
+                                                    Cobre
+                                                    <div class="number-input">
+                                                        <input type="number" value="0" min="0" />
+                                                        <div class="buttons">
+                                                            <button onclick="this.parentNode.previousElementSibling.stepUp()">&#9650;</button>
+                                                            <button onclick="this.parentNode.previousElementSibling.stepDown()">&#9660;</button>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- TABELA -->
+                                        
+                                        <!-- Seção Equipamentos -->
+                                        <div class="inventory-section" id="equipment-section">
+                                            <h2 class="inventory-category">Equipamentos</h2>
+                                            
+                                            <div class="inventory-table" id="equipment-table">
+                                                <div class="inventory-row header">
+                                                    <span class="col equipment">Equipment</span>
+                                                    <span class="col weight">Weight</span>
+                                                    <span class="col qty">Qty</span>
+                                                    <span class="col details">Details</span>
+                                                    <span class="col type">Type</span> <!-- Coluna para tipo de item -->
+                                                    <button class="add-button" title="Adicionar item">+</button>
+                                                </div>
+                                                <div class="inventory-row empty">
+                                                    <span class="col equipment" colspan="5">No Equipment</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Outras seções do inventário (Attunement, Other Possessions, etc.) -->
+                                        <div class="inventory-section" id="attunement-section">
+                                            <div class="inventory-table" id="attunement-table">
+                                                <div class="inventory-row header">
+                                                    <span class="col equipment" style="flex:1; text-align:left;">Attunement</span>
+                                                    <button class="add-button" title="Adicionar item">+</button>
+                                                </div>
+                                                <div class="inventory-row empty">
+                                                    <span class="col equipment">No Attuned Items</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="inventory-section" id="other-possession-section">
+                                            <div class="inventory-table" id="other-possession-table">
+                                                <div class="inventory-row header">
+                                                    <span class="col equipment">Other Possessions</span>
+                                                    <span class="col weight">Weight</span>
+                                                    <span class="col qty">Qty</span>
+                                                    <span class="col details">Details</span>
+                                                    <button class="add-button" title="Adicionar item">+</button>
+                                                </div>
+                                                <div class="inventory-row empty">
+                                                    <span class="col equipment" colspan="4">No Other Possessions</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div> <!-- fecha .inventory-toolbar -->
+                                    
+                                </div> <!-- fecha #inventory -->
+                                <!-- Modal para escolher o tipo do item -->
+                                <div id="itemTypeModal" class="modal" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); justify-content:center; align-items:center;">
+                                    <div style="background:#222; padding: 20px; border-radius: 8px; width: 300px; color: #eee;">
+                                        <h3>Escolha o tipo do item</h3>
+                                        <select id="itemTypeSelect" style="width: 100%; padding: 8px; margin: 15px 0; border-radius: 5px; border: none; background:#333; color:#eee;">
+                                            <option value="" disabled selected>Selecione o tipo</option>
+                                            <option value="armas">Armas</option>
+                                            <option value="armaduras">Armaduras e Escudos</option>
+                                            <option value="utilitarios">Utilitários</option>
+                                            <option value="outros">Outros</option>
+                                        </select>
+                                        <div style="text-align:right;">
+                                            <button id="cancelModal" style="background:#444; color:#eee; border:none; padding:6px 12px; border-radius:5px; margin-right:10px; cursor:pointer;">Cancelar</button>
+                                            <button id="confirmModal" style="background:#007bff; color:#fff; border:none; padding:6px 12px; border-radius:5px; cursor:pointer;">Confirmar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!--FIM INVENTARIO-->
+                                
+                                <div id="features" class="tab-content" style="display:none;">Conteúdo de Features & Traits</div>
+                                <div id="notes" class="tab-content" style="display:none;">Conteúdo de Notes</div>
+                                <div id="about" class="tab-content" style="display:none;">Conteúdo de About</div>
+                            </div>       
                             
                             
-                            
-                            <!--INVENTARIO-->
-                            
-                            <div id="features" class="tab-content" style="display:none;">Conteúdo de Features & Traits</div>
-                            <div id="notes" class="tab-content" style="display:none;">Conteúdo de Notes</div>
-                            <div id="about" class="tab-content" style="display:none;">Conteúdo de About</div>
-                            
-                            
-                        </div>                
+                        </div>
                     </div>
-                </div>
+                    
+                    
+                    
+                    
+                    <script src="script2.js"></script>
+                </body>
+                </html>
                 
-                
-                
-                
-                <script src="script2.js"></script>
-            </body>
-            </html>
-            
