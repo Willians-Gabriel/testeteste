@@ -108,7 +108,7 @@
                                 <!-- Strength -->
                                 <div class="ability-box">
                                     <div class="modifier">+0</div>
-                                    <input class="score" type="number" value="10" min="-30" max="30" />
+                                    <input class="score" type="number" placeholder="10" min="-30" max="30" />
                                     <div class="labels">
                                         <span>Ability</span>
                                         <span>Save</span>
@@ -119,7 +119,7 @@
                                 <!-- Dexterity -->
                                 <div class="ability-box">
                                     <div class="modifier">+0</div>
-                                    <input class="score" type="number" value="10" min="-30" max="30" />
+                                    <input class="score" type="number" placeholder="10" min="-30" max="30" />
                                     <div class="labels">
                                         <span>Ability</span>
                                         <span>Save</span>
@@ -130,7 +130,7 @@
                                 <!-- Constitution -->
                                 <div class="ability-box">
                                     <div class="modifier">+0</div>
-                                    <input class="score" type="number" value="10" min="-30" max="30" />
+                                    <input class="score" type="number" placeholder="10" min="-30" max="30" />
                                     <div class="labels">
                                         <span>Ability</span>
                                         <span>Save</span>
@@ -141,7 +141,7 @@
                                 <!-- Intelligence -->
                                 <div class="ability-box">
                                     <div class="modifier">+0</div>
-                                    <input class="score" type="number" value="10" min="-30" max="30" />
+                                    <input class="score" type="number" placeholder="10" min="-30" max="30" />
                                     <div class="labels">
                                         <span>Ability</span>
                                         <span>Save</span>
@@ -152,7 +152,7 @@
                                 <!-- Wisdom -->
                                 <div class="ability-box">
                                     <div class="modifier">+0</div>
-                                    <input class="score" type="number" value="10" min="-30" max="30" />
+                                    <input class="score" type="number" placeholder="10" min="-30" max="30" />
                                     <div class="labels">
                                         <span>Ability</span>
                                         <span>Save</span>
@@ -163,7 +163,7 @@
                                 <!-- Charisma -->
                                 <div class="ability-box">
                                     <div class="modifier">+0</div>
-                                    <input class="score" type="number" value="10" min="-30" max="30" />
+                                    <input class="score" type="number" placeholder="10" min="-30" max="30" />
                                     <div class="labels">
                                         <span>Ability</span>
                                         <span>Save</span>
@@ -210,7 +210,7 @@
                                 <div class="speed-header">
                                     <label>Velocidade (ft)</label>
                                     <div class="speed-main">
-                                        <input type="text" value="9m" class="input-main" />
+                                        <input type="number" placeholder="9m" class="input-main" />
                                         <span class="icon">👟</span>
                                         <span id="toggle-speed" class="toggle-arrow">▼</span>
                                     </div>
@@ -243,7 +243,6 @@
                                 <ul class="dropdown-menu hidden"></ul>
                             </div>
                             
-                            <div class="linha-divisoria"></div>
                             
                             <!-- Condições -->
                             <div class="section resistencias-condicoes">
@@ -258,20 +257,20 @@
                                     <h4>Passivas</h4>
                                 </div>
                                 
-                                <div class="sense-item">
-                                    <span id="passive-investigation">Investigation</span>
+                                <div class="sense-item" data-skill="Investigation">
+                                    <span class="sense-name">Investigação</span>
                                     <span class="sense-ability">INT</span>
                                     <span class="sense-value">10</span>
                                 </div>
                                 
-                                <div class="sense-item">
-                                    <span id="passive-insight">Insight</span>
+                                <div class="sense-item" data-skill="Insight">
+                                    <span class="sense-name">Intuição</span>
                                     <span class="sense-ability">WIS</span>
                                     <span class="sense-value">10</span>
                                 </div>
                                 
-                                <div class="sense-item">
-                                    <span id="passive-perception">Perception</span>
+                                <div class="sense-item" data-skill="Perception">
+                                    <span class="sense-name">Percepção</span>
                                     <span class="sense-ability">WIS</span>
                                     <span class="sense-value">10</span>
                                 </div>
@@ -281,29 +280,29 @@
                             
                             <div class="custom-block8">
                                 <div class="profs">
-                                    <span>PROFICIENCIES & LANGUAGES</span>
+                                    <span>PROFICIENCIAS & IDIOMAS</span>
                                 </div>
                                 
                                 <div class="section weapons">
-                                    <div class="section-title">WEAPONS</div>
+                                    <div class="section-title">Armas</div>
                                     <div class="section-content" contenteditable="false">None</div>
                                     <ul class="dropdown-menu weapons-menu hidden"></ul>
                                 </div>
                                 
                                 <div class="section armor">
-                                    <div class="section-title">ARMOR</div>
+                                    <div class="section-title">Armaduras</div>
                                     <div class="section-content" contenteditable="false">None</div>
                                     <ul class="dropdown-menu armor-menu hidden"></ul>
                                 </div>
                                 
                                 <div class="section tools">
-                                    <div class="section-title">TOOLS</div>
+                                    <div class="section-title">Ferramentas</div>
                                     <div class="section-content" contenteditable="false">None</div>
                                     <ul class="dropdown-menu tools-menu hidden"></ul>
                                 </div>
                                 
                                 <div class="section languages">
-                                    <div class="section-title">LANGUAGES</div>
+                                    <div class="section-title">Idiomas</div>
                                     <div class="section-content" contenteditable="false">None</div>
                                     <ul class="dropdown-menu languages-menu hidden"></ul>
                                 </div>
@@ -323,13 +322,27 @@
                                 
                                 <!-- FORÇA (STR) -->
                                 <div class="skill-group" data-ability-group="STR">
-                                    
                                     <div class="skill-item" data-ability="STR">
                                         <label class="skill-name">Athletics</label>
                                         <span class="ability-tag">STR</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                                 
@@ -339,30 +352,73 @@
                                         <label class="skill-name">Stealth</label>
                                         <span class="ability-tag">DEX</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
+                                        
                                     </div>
                                     <div class="skill-item" data-ability="DEX">
                                         <label class="skill-name">Sleight of Hand</label>
                                         <span class="ability-tag">DEX</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="DEX">
                                         <label class="skill-name">Acrobatics</label>
                                         <span class="ability-tag">DEX</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>                                        
                                     </div>
                                 </div>
                                 
                                 <!-- CONSTITUIÇÃO (CON) -->
                                 <div class="skill-group" data-ability-group="CON">
                                     
-                                    <!-- Se quiser skills de Constituição, coloque aqui -->
-                                    <!-- No seu HTML original não tem, mas pode adicionar se quiser -->
                                 </div>
                                 
                                 <!-- INTELIGÊNCIA (INT) -->
@@ -372,36 +428,106 @@
                                         <label class="skill-name">Arcana</label>
                                         <span class="ability-tag">INT</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="INT">
                                         <label class="skill-name">Nature</label>
                                         <span class="ability-tag">INT</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="INT">
                                         <label class="skill-name">History</label>
                                         <span class="ability-tag">INT</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="INT">
                                         <label class="skill-name">Investigation</label>
                                         <span class="ability-tag">INT</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="INT">
                                         <label class="skill-name">Religion</label>
                                         <span class="ability-tag">INT</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -412,36 +538,106 @@
                                         <label class="skill-name">Animal Handling</label>
                                         <span class="ability-tag">WIS</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="WIS">
                                         <label class="skill-name">Insight</label>
                                         <span class="ability-tag">WIS</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="WIS">
                                         <label class="skill-name">Medicine</label>
                                         <span class="ability-tag">WIS</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="WIS">
                                         <label class="skill-name">Perception</label>
                                         <span class="ability-tag">WIS</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="WIS">
                                         <label class="skill-name">Survival</label>
                                         <span class="ability-tag">WIS</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -452,29 +648,81 @@
                                         <label class="skill-name">Deception</label>
                                         <span class="ability-tag">CHA</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="CHA">
                                         <label class="skill-name">Intimidation</label>
                                         <span class="ability-tag">CHA</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="CHA">
                                         <label class="skill-name">Performance</label>
                                         <span class="ability-tag">CHA</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="skill-item" data-ability="CHA">
                                         <label class="skill-name">Persuasion</label>
                                         <span class="ability-tag">CHA</span>
                                         <span class="skill-bonus">+0</span>
-                                        <input type="checkbox" class="proficiency-toggle" />
-                                        <input type="checkbox" class="double-proficiency-toggle" title="Dupla Proficiência" />
+                                        <!-- SELETOR CIRCULAR COM MENU DE PROFICIÊNCIA -->
+                                        <div class="skill-select" style="position: relative; display: inline-block;">
+                                            <button class="skill-circle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar proficiência">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20" width="24" height="24">
+                                                    <circle cx="10.4" cy="10" r="9" fill="transparent" stroke="#666" stroke-dasharray="4 2" stroke-width="2"></circle>
+                                                </svg>
+                                            </button>
+                                            
+                                            <ul class="skill-options hidden" role="menu" aria-label="Opções de proficiência" style="position: absolute; background: #222; border: 1px solid #555; padding: 0; margin: 5px 0 0 0; list-style: none; width: 160px; border-radius: 4px; z-index: 1000;">
+                                                <li role="menuitem" tabindex="0" data-value="automatic">Automático</li>
+                                                <li role="menuitem" tabindex="0" data-value="half-proficient">Meio Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="proficient">Proficiente</li>
+                                                <li role="menuitem" tabindex="0" data-value="expertise">Expertise</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -860,76 +1108,184 @@
                                         
                                         <!-- Seção Equipamentos -->
                                         <div class="inventory-section" id="equipment-section">
-                                            <h2 class="inventory-category">Equipamentos</h2>
                                             
-                                            <div class="inventory-table" id="equipment-table">
-                                                <div class="inventory-row header">
-                                                    <span class="col equipment">Equipment</span>
-                                                    <span class="col weight">Weight</span>
-                                                    <span class="col qty">Qty</span>
-                                                    <span class="col details">Details</span>
-                                                    <span class="col type">Type</span> <!-- Coluna para tipo de item -->
-                                                    <button class="add-button" title="Adicionar item">+</button>
-                                                </div>
-                                                <div class="inventory-row empty">
-                                                    <span class="col equipment" colspan="5">No Equipment</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- Outras seções do inventário (Attunement, Other Possessions, etc.) -->
-                                        <div class="inventory-section" id="attunement-section">
-                                            <div class="inventory-table" id="attunement-table">
-                                                <div class="inventory-row header">
-                                                    <span class="col equipment" style="flex:1; text-align:left;">Attunement</span>
-                                                    <button class="add-button" title="Adicionar item">+</button>
-                                                </div>
-                                                <div class="inventory-row empty">
-                                                    <span class="col equipment">No Attuned Items</span>
+                                            
+                                            <!-- Seção Equipamentos -->
+                                            <div class="inventory-section" id="equipment-section">
+                                                
+                                                
+                                                <div class="inventory-table" id="equipment-table">
+                                                    <div class="inventory-row header">
+                                                        <span class="col equipment">Equipamentos</span>
+                                                        <span class="col weight">Peso</span>
+                                                        <span class="col qty">Qntd</span>
+                                                        <span class="col details">Detalhes</span>
+                                                        <span class="col type">Tipo</span>
+                                                        <button class="add-button" data-section="equipment-table" title="Adicionar item">+</button>
+                                                    </div>
+                                                    <div class="inventory-row empty">
+                                                        <span class="col equipment" colspan="5">Nenhum equipamento ainda</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        
-                                        <div class="inventory-section" id="other-possession-section">
-                                            <div class="inventory-table" id="other-possession-table">
-                                                <div class="inventory-row header">
-                                                    <span class="col equipment">Other Possessions</span>
-                                                    <span class="col weight">Weight</span>
-                                                    <span class="col qty">Qty</span>
-                                                    <span class="col details">Details</span>
-                                                    <button class="add-button" title="Adicionar item">+</button>
-                                                </div>
-                                                <div class="inventory-row empty">
-                                                    <span class="col equipment" colspan="4">No Other Possessions</span>
+                                            
+                                            <!-- Seção Attunement -->
+                                            <div class="inventory-section" id="attunement-section">
+                                                <div class="inventory-table" id="attunement-table">
+                                                    <div class="inventory-row header">
+                                                        <span class="col equipment" style="flex:1; text-align:left;">Sintonizados</span>
+                                                        <span class="col qty">
+                                                            Qntd
+                                                            <input class="sintonizados clean-input" type="number" value="0" min="0" max="4">
+                                                        </span>
+                                                        
+                                                        <button class="add-button" data-section="attunement-table" title="Adicionar item">+</button>
+                                                    </div>
+                                                    <div class="inventory-row empty">
+                                                        <span class="col equipment">Nenhum item sintonizado ainda</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                            
+                                            <!-- Seção Outras Posses -->
+                                            <div class="inventory-section" id="other-possession-section">
+                                                <div class="inventory-table" id="other-possession-table">
+                                                    <div class="inventory-row header">
+                                                        <span class="col equipment">Outras coisas</span>
+                                                        <span class="col weight">Peso</span>
+                                                        <span class="col qty">Qntd</span>
+                                                        <span class="col details">Detalhes</span>
+                                                        <button class="add-button" data-section="other-possession-table" title="Adicionar item">+</button>
+                                                    </div>
+                                                    <div class="inventory-row empty">
+                                                        <span class="col equipment" colspan="4">Nenhum item ainda</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            
+                                        </div> <!-- fecha .inventory-toolbar -->
                                         
-                                        
-                                    </div> <!-- fecha .inventory-toolbar -->
+                                    </div>  <!-- fecha #inventory -->
+                                    <!-- Modal para escolher o tipo do item -->
                                     
-                                </div> <!-- fecha #inventory -->
-                                <!-- Modal para escolher o tipo do item -->
-                                <div id="itemTypeModal" class="modal" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); justify-content:center; align-items:center;">
-                                    <div style="background:#222; padding: 20px; border-radius: 8px; width: 300px; color: #eee;">
-                                        <h3>Escolha o tipo do item</h3>
-                                        <select id="itemTypeSelect" style="width: 100%; padding: 8px; margin: 15px 0; border-radius: 5px; border: none; background:#333; color:#eee;">
-                                            <option value="" disabled selected>Selecione o tipo</option>
-                                            <option value="armas">Armas</option>
-                                            <option value="armaduras">Armaduras e Escudos</option>
-                                            <option value="utilitarios">Utilitários</option>
-                                            <option value="outros">Outros</option>
+                                    <div id="itemTypeModal" class="modal" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); justify-content:center; align-items:center;">
+                                        <div style="background:#222; padding: 20px; border-radius: 8px; width: 300px; color: #eee;">
+                                            <h3>Escolha o tipo do item</h3>
+                                            <select id="itemTypeSelect" style="width: 100%; padding: 8px; margin: 15px 0; border-radius: 5px; border: none; background:#333; color:#eee;">
+                                                <option value="" disabled selected>Selecione o tipo</option>
+                                                <option value="armas">Armas</option>
+                                                <option value="armaduras">Armaduras e Escudos</option>
+                                                <option value="utilitarios">Utilitários</option>
+                                                <option value="outros">Outros</option>
+                                            </select>
+                                            <div style="text-align:right;">
+                                                <button id="cancelModal" style="background:#444; color:#eee; border:none; padding:6px 12px; border-radius:5px; margin-right:10px; cursor:pointer;">Cancelar</button>
+                                                <button id="confirmModal" style="background:#007bff; color:#fff; border:none; padding:6px 12px; border-radius:5px; cursor:pointer;">Confirmar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!--FIM INVENTARIO-->
+                                
+                                <!-- Seção de Características -->
+                                <div id="features" class="tab-content" style="display: none;">
+                                    <!-- Barra de título com o filtro e o botão Adicionar (+) -->
+                                    <div class="features-toolbar">
+                                        <select class="caracteristicas-filter" id="categoria">
+                                            <option value="class">Recurso de Classe</option>
+                                            <option value="racial-traits">Traço Racial</option>
+                                            <option value="feat">Talento</option>
+                                            <option value="other">Outro</option>
                                         </select>
-                                        <div style="text-align:right;">
-                                            <button id="cancelModal" style="background:#444; color:#eee; border:none; padding:6px 12px; border-radius:5px; margin-right:10px; cursor:pointer;">Cancelar</button>
-                                            <button id="confirmModal" style="background:#007bff; color:#fff; border:none; padding:6px 12px; border-radius:5px; cursor:pointer;">Confirmar</button>
+                                        <button class="botao-adicionar">+</button>
+                                    </div>
+                                    
+                                    <!-- Seções de características -->
+                                    <div class="features-container">
+                                        <div id="recursos-de-classe" class="feature-item">
+                                            <div class="feature-header">
+                                                <span class="feature-title">Recursos de Classe</span>
+                                            </div>
+                                            <div class="feature-details">
+                                                <p>No Class Features</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div id="tracos-raciais" class="feature-item">
+                                            <div class="feature-header">
+                                                <span class="feature-title">Traços Raciais</span>
+                                            </div>
+                                            <div class="feature-details">
+                                                <p>No Species Traits</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div id="talentos" class="feature-item">
+                                            <div class="feature-header">
+                                                <span class="feature-title">Talentos</span>
+                                            </div>
+                                            <div class="feature-details">
+                                                <p>No Feats</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div id="outros" class="feature-item">
+                                            <div class="feature-header">
+                                                <span class="feature-title">Outros</span>
+                                            </div>
+                                            <div class="feature-details">
+                                                <p>No Other Features</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                       
+                                                 
+                                    <!-- Modal para Adicionar Nova Característica -->
+                                    <div class="modal-caracteristicas" style="display: none;">
+                                        <div class="modal-caracteristicas-conteudo">
+                                            <h3>Nova Característica</h3>
+                                            <form id="newFeatureForm">
+                                                <div class="form-group">
+                                                    <label for="name">Nome</label>
+                                                    <input type="text" id="name" class="form-input" placeholder="Nova Característica" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="actionType">Tem uma ação?</label>
+                                                    <select id="actionType" class="form-input" required>
+                                                        <option value="none">Não</option>
+                                                        <option value="action">Ação</option>
+                                                        <option value="bonus">Ação Bônus</option>
+                                                        <option value="reaction">Reação</option>
+                                                        <option value="free">Ação Livre</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="description">Descrição</label>
+                                                    <textarea id="description" class="form-input" placeholder="Descrição" required></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="sourceType">Tipo de Característica</label>
+                                                    <select id="sourceType" class="form-input" required>
+                                                        <option value="class">Recurso de Classe</option>
+                                                        <option value="racial-traits">Traço Racial</option>
+                                                        <option value="feat">Talento</option>
+                                                        <option value="other">Outro</option>
+                                                    </select>
+                                                </div>
+                                                <div class="modal-caracteristicas-botoes">
+                                                    <button type="submit" id="saveButton" class="botao-confirmar">Salvar</button>
+                                                    <button type="button" id="cancelButton" class="botao-cancelar">Cancelar</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <!--FIM INVENTARIO-->
                                 
-                                <div id="features" class="tab-content" style="display:none;">Conteúdo de Features & Traits</div>
+                                
+                                
+                                <!--FIM CARACTERISTICAS-->
                                 <div id="notes" class="tab-content" style="display:none;">Conteúdo de Notes</div>
                                 <div id="about" class="tab-content" style="display:none;">Conteúdo de About</div>
                             </div>       

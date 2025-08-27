@@ -86,164 +86,235 @@ const toggleSpeedBtn = document.getElementById('toggle-speed');
 const speedDetails = document.querySelector('.speed-details');
 const speedLabels = document.querySelector('.speed-labels');
 
-toggleSpeedBtn.addEventListener('click', () => {
+toggleSpeedBtn?.addEventListener('click', () => {
   const isHidden = speedDetails.classList.toggle('hidden');
   speedLabels.classList.toggle('hidden');
   toggleSpeedBtn.textContent = isHidden ? '▼' : '▲';
 });
 
-// --- ARMOR CLASS CALCULATION ---
-const armorBaseInput = document.getElementById('armor-base-value');
-const dexterityInput = document.getElementById('dexterity-value');
-const shieldInput = document.getElementById('shield-value');
-const armorTotalInput = document.getElementById('armor-total');
+// --- LEITURA DO INPUT DE VELOCIDADE ---
+const speedInput = document.querySelector('.speed-section .input-main');
 
-function parseValue(val) {
-  if (!val || val === '--') return 0;
-  return Number(val.replace(/\+/g, '').trim()) || 0;
+function getSpeedValue() {
+  let speed = speedInput?.value.trim();
+  if (!speed) {
+    speed = '9m'; // valor padrão apenas para lógica interna
+  }
+  return speed;
 }
 
-function updateArmorClass() {
-  const armorVal = parseValue(armorBaseInput.value);
-  const dexVal = parseValue(dexterityInput.value);
-  const shieldVal = parseValue(shieldInput.value);
-  const total = armorVal + dexVal + shieldVal;
-  armorTotalInput.value = total;
-}
-
-armorBaseInput.addEventListener('input', updateArmorClass);
-dexterityInput.addEventListener('input', updateArmorClass);
-shieldInput.addEventListener('input', updateArmorClass);
-updateArmorClass();
-
-// --- ABILITY MODIFIERS ---
+// --- CALCULAR MODIFICADOR ---
 function calculateModifier(score) {
   const parsed = parseInt(score);
-  if (isNaN(parsed)) return 0; // Retorna número para facilitar contas
+  if (isNaN(parsed)) return 0;
   return Math.floor((parsed - 10) / 2);
 }
 
-// Mapeamento dos nomes para abreviações usadas nas skills
+// --- Mapeamento de nomes para abreviações ---
 const abilityMap = {
   'Strength': 'STR',
   'Dexterity': 'DEX',
   'Constitution': 'CON',
   'Intelligence': 'INT',
   'Wisdom': 'WIS',
-  'Charisma': 'CHA'
+  'Carisma': 'CHA'
 };
 
-function updateSkills() {
-  const abilityModifiers = {};
+document.addEventListener("DOMContentLoaded", () => {
 
-  // Atualiza modificadores das habilidades
-  document.querySelectorAll('.ability-box').forEach(box => {
-    const abilityName = box.querySelector('.label-name').textContent.trim();
-    const input = box.querySelector('.score');
-    let val = parseInt(input.value);
-    if (isNaN(val)) val = 10;
-    if (val < 0) val = 0;
-    if (val > 30) val = 30;
-    input.value = val;
+  const profBonusEl = document.getElementById("proficiency-bonus");
 
-    const mod = calculateModifier(val);
-    const abbr = abilityMap[abilityName];
-    if (abbr) abilityModifiers[abbr] = mod;
+  // --- FUNÇÃO CENTRAL ---
+  function updateSkills() {
+    const abilityModifiers = {};
+    const profBonus = profBonusEl ? parseInt(profBonusEl.textContent) || 0 : 0;
 
-    const modDiv = box.querySelector('.modifier');
-    modDiv.textContent = (mod >= 0 ? '+' : '') + mod;
-  });
+    // --- CALCULA MODIFICADORES ---
+    document.querySelectorAll('.ability-box').forEach(box => {
+      const abilityName = box.querySelector('.label-name').textContent.trim();
+      const input = box.querySelector('.score');
 
-  // Atualiza as skills somando o modificador e proficiência
-  document.querySelectorAll('.skill-item').forEach(skill => {
-    const abilityAbbr = skill.getAttribute('data-ability');
-    const mod = abilityModifiers[abilityAbbr] || 0;
+      let val = parseInt(input.value);
+      if (isNaN(val)) val = 10; // valor padrão se vazio
+      if (val < 0) val = 0;
+      if (val > 30) val = 30;
 
-    const proficiencyToggle = skill.querySelector('.proficiency-toggle');
-    const doubleProfToggle = skill.querySelector('.double-proficiency-toggle');
+      input.dataset.actualValue = val; // guarda valor real para referência
+      if (input.value !== val.toString()) input.value = val;
 
-    const rawBonusText = profBonusDisplay.textContent.replace('+', '').trim();
-    const bonusValue = parseInt(rawBonusText) || 0;
+      const mod = calculateModifier(val);
+      const abbr = abilityMap[abilityName];
+      if (abbr) abilityModifiers[abbr] = mod;
 
-    let profBonus = 0;
-    if (proficiencyToggle && proficiencyToggle.checked) {
-      profBonus += bonusValue;
-    }
-    if (doubleProfToggle && doubleProfToggle.checked) {
-      profBonus += bonusValue;
-    }
+      const modDiv = box.querySelector('.modifier');
+      if (modDiv) modDiv.textContent = (mod >= 0 ? '+' : '') + mod;
+    });
 
-    const totalBonus = mod + profBonus;
+    // --- ATUALIZA SKILLS ---
+    document.querySelectorAll('.skill-item').forEach(skill => {
+      const abilityAbbr = skill.getAttribute('data-ability');
+      const mod = abilityModifiers[abilityAbbr] || 0;
 
-    const skillBonusSpan = skill.querySelector('.skill-bonus');
-    skillBonusSpan.textContent = (totalBonus >= 0 ? '+' : '') + totalBonus;
-  });
+      const skillSelect = skill.querySelector('.skill-select');
+      const selected = skillSelect ? skillSelect.dataset.selected || "untrained" : "untrained";
 
-  // Atualiza iniciativa, por exemplo
-  const initiativeBtn = document.querySelector('.initiative-btn');
-  if (initiativeBtn) {
-    const dexMod = abilityModifiers['DEX'] || 0;
-    initiativeBtn.textContent = `Iniciativa ${(dexMod >= 0 ? '+' : '') + dexMod}`;
-  }
-}
-/* BONUS DE PROFICIENCIA*/
-
-document.querySelectorAll('.ability-box').forEach(box => {
-  const input = box.querySelector('.score');
-  const modDiv = box.querySelector('.modifier');
-  
-  function updateMod() {
-    const mod = calculateModifier(input.value);
-    modDiv.textContent = (mod >= 0 ? '+' : '') + mod;
-    updateSkills();
-  }
-  
-  updateMod();
-  input.addEventListener('input', updateMod);
-});
-
-document.querySelectorAll('.proficiency-toggle').forEach(checkbox => {
-  checkbox.addEventListener('change', updateSkills);
-});
-
-document.querySelectorAll('.double-proficiency-toggle').forEach(checkbox => {
-  checkbox.addEventListener('change', updateSkills);
-});
-
-document.querySelectorAll('.ability-box .score').forEach(input => {
-  input.addEventListener('input', () => {
-    let val = parseInt(input.value);
-    if (isNaN(val)) return;
-    if (val < 0) input.value = 0;
-    else if (val > 30) input.value = 30;
-  });
-});
-
-// Atualiza tudo ao carregar a página
-updateSkills();
-
-/* CALCULO PARA CA --- */
-document.querySelectorAll('.ability-box').forEach(box => {
-  const input = box.querySelector('.score');
-  const modDiv = box.querySelector('.modifier');
-  const label = box.querySelector('.label-name').textContent.trim();
-  
-  function updateMod() {
-    const mod = calculateModifier(input.value);
-    modDiv.textContent = mod;
-    
-    if (label === "Dexterity") {
-      const dexInput = document.getElementById("dexterity-value");
-      if (dexInput) {
-        dexInput.value = mod;
-        updateArmorClass(); 
+      let profValue = 0;
+      switch(selected) {
+        case "half-proficient": profValue = Math.floor(profBonus / 2); break;
+        case "proficient": profValue = profBonus; break;
+        case "expertise": profValue = profBonus * 2; break;
+        default: profValue = 0;
       }
+
+      const totalBonus = mod + profValue;
+
+      const skillBonusSpan = skill.querySelector('.skill-bonus');
+      if (skillBonusSpan) skillBonusSpan.textContent = (totalBonus >= 0 ? '+' : '') + totalBonus;
+    });
+
+    // --- ATUALIZA PASSIVOS ---
+    document.querySelectorAll('.sense-item').forEach(sense => {
+      const skillName = sense.dataset.skill;
+      const skillItem = Array.from(document.querySelectorAll('.skill-item'))
+        .find(s => s.querySelector('.skill-name').textContent.trim() === skillName);
+      if (skillItem) {
+        const bonusText = skillItem.querySelector('.skill-bonus').textContent.trim();
+        const bonus = parseInt(bonusText.replace('+', '')) || 0;
+        sense.querySelector('.sense-value').textContent = 10 + bonus;
+      }
+    });
+
+    // --- ATUALIZA CLASSE DE ARMADURA (CA) ---
+    const armorBase = parseInt(document.getElementById('armor-base-value')?.value) || 10;
+    const dexMod = abilityModifiers['DEX'] || 0;
+    const shieldBonus = parseInt(document.getElementById('shield-value')?.value) || 0;
+
+    const armorTotalInput = document.getElementById('armor-total');
+    if (armorTotalInput) {
+      armorTotalInput.value = armorBase + dexMod + shieldBonus;
+    }
+
+    const dexInputDisplay = document.getElementById('dexterity-value');
+    if (dexInputDisplay) {
+      dexInputDisplay.value = (dexMod >= 0 ? '+' : '') + dexMod;
     }
   }
-  
-  updateMod();
-  input.addEventListener('input', updateMod);
+
+  // --- INPUTS DE ABILITY SCORES ---
+  document.querySelectorAll('.ability-box .score').forEach(input => {
+    const DEFAULT_VAL = 10;
+
+    // Inicializa com marcador
+    if (input.value === '') input.value = DEFAULT_VAL;
+
+    // Atualiza modificador ao digitar
+    input.addEventListener('input', () => {
+      let val = parseInt(input.value);
+      if (isNaN(val)) return;
+      if (val < 0) input.value = 0;
+      else if (val > 30) input.value = 30;
+      updateSkills();
+    });
+
+    // Ao focar, limpa valor se for padrão
+    input.addEventListener('focus', () => {
+      if (parseInt(input.value) === DEFAULT_VAL) input.value = '';
+    });
+
+    // Ao sair do input, retorna valor padrão se vazio
+    input.addEventListener('blur', () => {
+      if (input.value === '') input.value = DEFAULT_VAL;
+      updateSkills();
+    });
+  });
+
+  // --- MENU CIRCULAR DE PROFICIÊNCIA ---
+  document.querySelectorAll('.skill-select').forEach(select => {
+    if (!select.dataset.selected) select.dataset.selected = "untrained";
+
+    const button = select.querySelector('.skill-circle-btn');
+    const svgCircle = button.querySelector('circle');
+    const menu = select.querySelector('.skill-options');
+
+    const applyVisual = value => {
+      let stroke='#666', fill='transparent', dash='4 2';
+      switch(value) {
+        case 'half-proficient': stroke='#aa0'; fill='#333'; dash='0'; break;
+        case 'proficient': stroke='#0a0'; fill='#222'; dash='0'; break;
+        case 'expertise': stroke='#a00'; fill='#400'; dash='0'; break;
+        case 'automatic':
+        case 'untrained': stroke='#666'; fill='transparent'; dash='4 2'; break;
+      }
+      svgCircle.setAttribute('stroke', stroke);
+      svgCircle.setAttribute('fill', fill);
+      svgCircle.setAttribute('stroke-dasharray', dash);
+    };
+
+    applyVisual(select.dataset.selected);
+
+    // Abrir/fechar menu
+    menu.style.transition = 'transform 0.2s ease, opacity 0.2s ease';
+    menu.classList.add('hidden');
+    menu.style.transformOrigin = 'center center';
+
+    button.addEventListener('click', e => {
+      e.stopPropagation();
+      document.querySelectorAll('.skill-options').forEach(m => {
+        if (m !== menu) {
+          m.classList.add('hidden');
+          m.style.opacity = '0';
+          m.style.transform = 'scale(0.8)';
+        }
+      });
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          menu.style.opacity = '1';
+          menu.style.transform = 'scale(1)';
+        });
+      } else {
+        menu.style.opacity = '0';
+        menu.style.transform = 'scale(0.8)';
+        setTimeout(() => menu.classList.add('hidden'), 200);
+      }
+    });
+
+    menu.querySelectorAll('li').forEach(li => {
+      li.addEventListener('click', e => {
+        e.stopPropagation();
+        const value = li.dataset.value;
+        select.dataset.selected = value;
+        applyVisual(value);
+
+        menu.style.opacity = '0';
+        menu.style.transform = 'scale(0.8)';
+        setTimeout(() => menu.classList.add('hidden'), 200);
+
+        updateSkills();
+      });
+    });
+  });
+
+  // Fecha menus ao clicar fora
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.skill-options').forEach(menu => {
+      menu.style.opacity = '0';
+      menu.style.transform = 'scale(0.8)';
+      setTimeout(() => menu.classList.add('hidden'), 200);
+    });
+  });
+
+  // Observa mudanças no bônus de proficiência
+  if (profBonusEl) {
+    const observer = new MutationObserver(updateSkills);
+    observer.observe(profBonusEl, { childList: true, characterData: true, subtree: true });
+  }
+
+  // Inicializa tudo
+  updateSkills();
 });
+
+
 
 /* ------------------------
 MULTI-SELEÇÃO DROPDOWNS
@@ -360,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
     CON: 'Constitution',
     INT: 'Intelligence',
     WIS: 'Wisdom',
-    CHA: 'Charisma'
+    CHA: 'Carisma'
   };
   
   function getAbilityModifier(abilityCode) {
@@ -420,11 +491,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreInput = box.querySelector('.score');
     const modDiv = box.querySelector('.modifier');
     
-    const score = parseInt(scoreInput.value, 10) || 10; // se vazio, usa 10
+    let score = parseInt(scoreInput.value, 10);
+    if (isNaN(score)) score = 10; // Usa 10 apenas para cálculo, sem alterar o input
+    
     const mod = calculateModifier(score);
     const modText = (mod >= 0 ? '+' : '') + mod;
     modDiv.textContent = modText;
   }
+  
   
   // Atualiza todos ao carregar a página
   function updateAllModifiers() {
@@ -1122,17 +1196,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const cancelBtn = document.getElementById('cancelModal');
   const confirmBtn = document.getElementById('confirmModal');
 
-  let currentTable = null;  // Variável para armazenar a tabela de destino
-  let currentButton = null;  // Variável para armazenar o botão clicado
+  let currentButton = null;
 
-  // Quando o botão "+" for clicado, abre o modal
+  // Abrir o modal ao clicar no botão "+"
   document.querySelectorAll('.add-button').forEach(button => {
     button.addEventListener('click', (event) => {
       currentButton = button;
-      select.value = "";  // Resetando o valor do select
-      modal.style.display = 'flex';  // Mostrando o modal
+      select.value = "";
+      modal.style.display = 'flex';
 
-      // Posição do modal para que ele apareça abaixo do botão
+      // Posicionar modal (opcional, pode remover se quiser centralizado)
       const rect = currentButton.getBoundingClientRect();
       const modalWidth = modal.offsetWidth;
       const leftPosition = rect.left + window.scrollX + (rect.width / 2) - (modalWidth / 2);
@@ -1145,46 +1218,181 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Cancelar o modal
   cancelBtn.addEventListener('click', () => {
-    modal.style.display = 'none';  // Fecha o modal
+    modal.style.display = 'none';
   });
 
-  // Confirmar o tipo e adicionar o item na tabela
+  // Confirmar o tipo de item e adicionar à tabela
   confirmBtn.addEventListener('click', () => {
-    const tipo = select.value;  // Tipo selecionado no modal
-    if (!tipo) {
+    const tipo = select.value;
+    if (!tipo || !currentButton) {
       alert('Por favor, selecione um tipo de item.');
       return;
     }
 
-    const targetTable = document.getElementById('equipment-table');  // Tabela de Equipamentos
+    // Identifica a tabela alvo pelo data-section
+    const targetTableId = currentButton.dataset.section;
+    const targetTable = document.getElementById(targetTableId);
+    if (!targetTable) {
+      console.error("Tabela não encontrada para:", targetTableId);
+      return;
+    }
 
-    // Remover a linha "empty" se ela existir
+    // Remove linha "empty" se houver
     const emptyRow = targetTable.querySelector('.inventory-row.empty');
     if (emptyRow) emptyRow.remove();
 
-    // Criar a nova linha
+    // Criar nova linha
     const newRow = document.createElement('div');
     newRow.classList.add('inventory-row');
-    
-    newRow.innerHTML = `
-      <span class="col equipment">
-        <input type="text" placeholder="Nome do item (${tipo})" style="width: 90%; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee;">
-      </span>
-      <span class="col weight">
-        <input type="number" min="0" placeholder="Peso" style="width: 60px; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee; text-align:center;">
-      </span>
-      <span class="col qty">
-        <input type="number" min="0" placeholder="Qtd" style="width: 40px; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee; text-align:center;">
-      </span>
-      <span class="col details">
-        <input type="text" placeholder="Detalhes" style="width: 90%; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee;">
-      </span>
-      <span class="col type">${tipo}</span>  <!-- Coluna tipo que especifica a categoria -->
-    `;
 
-    // Inserir a nova linha no final da tabela
+    // Conteúdo adaptado para attunement ou outras seções
+    let newRowHTML = '';
+
+    if (targetTableId === 'attunement-table') {
+      newRowHTML = `
+        <span class="col equipment">
+          <input type="text" placeholder="Nome do item (${tipo})" style="width: 90%; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee;">
+        </span>
+      `;
+    } else {
+      newRowHTML = `
+        <span class="col equipment">
+          <input type="text" placeholder="Nome do item (${tipo})" style="width: 90%; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee;">
+        </span>
+        <span class="col weight">
+          <input type="number" min="0" placeholder="Peso" style="width: 60px; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee; text-align:center;">
+        </span>
+        <span class="col qty">
+          <input type="number" min="0" placeholder="Qtd" style="width: 40px; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee; text-align:center;">
+        </span>
+        <span class="col details">
+          <input type="text" placeholder="Detalhes" style="width: 90%; padding: 4px; border-radius: 4px; border: 1px solid #444; background-color:#222; color:#eee;">
+        </span>
+        <span class="col type">${tipo}</span>
+      `;
+    }
+
+    newRow.innerHTML = newRowHTML;
     targetTable.appendChild(newRow);
 
-    modal.style.display = 'none';  // Fecha o modal após a confirmação
+    // Fechar modal
+    modal.style.display = 'none';
+    select.value = "";
+    currentButton = null;
+  });
+});
+/* Impede de passar de 4 itens sintonizados*/
+document.addEventListener('input', (event) => {
+  const input = event.target;
+
+  if (input.classList.contains('sintonizados')) {
+    const max = 4;
+    const min = 0;
+
+    let value = parseInt(input.value, 10);
+
+    if (isNaN(value)) {
+      input.value = min;
+    } else if (value > max) {
+      input.value = max;
+    } else if (value < min) {
+      input.value = min;
+    }
+  }
+});
+/*****************
+  Caracteristicas
+******************/
+document.addEventListener("DOMContentLoaded", () => {
+  const addButton = document.querySelector(".botao-adicionar"); // Botão de adicionar
+  const modal = document.querySelector('.modal-caracteristicas'); // Modal de adicionar item
+  const cancelButton = document.getElementById("cancelButton"); // Botão de cancelar
+  const saveButton = document.getElementById("saveButton"); // Botão de salvar
+  const form = document.getElementById("newFeatureForm"); // Formulário de nova característica
+
+  // Mapeamento para as categorias
+  const sourceToCategory = {
+    class: "recursos-de-classe",
+    feat: "talentos",
+    racial: "tracos-raciais",
+    other: "outros"
+  };
+
+  // Abrir o modal ao clicar no botão "+"
+  addButton.addEventListener("click", () => {
+    modal.style.display = "flex"; // Mostra o modal
+  });
+
+  // Fechar o modal ao clicar em "Cancelar"
+  cancelButton.addEventListener("click", () => {
+    modal.style.display = "none"; // Esconde o modal
+  });
+
+  // Salvar as informações do formulário
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Impede o envio tradicional do formulário
+
+    const name = document.getElementById("name").value;
+    const actionType = document.getElementById("actionType").value;
+    const description = document.getElementById("description").value;
+    const sourceType = document.getElementById("sourceType").value;
+
+    // Verifica se os campos obrigatórios estão preenchidos
+    if (!name || !description) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+
+    // Determina a categoria com base no tipo de recurso
+    const categoryId = sourceToCategory[sourceType] || "outros"; // Define a categoria com base no tipo
+
+    // Adiciona a nova feature à categoria correspondente
+    const categorySection = document.getElementById(categoryId); // Encontra a categoria pela ID
+
+    if (!categorySection) {
+      alert("Categoria não encontrada.");
+      return;
+    }
+
+    const newFeatureItem = document.createElement("div");
+    newFeatureItem.classList.add("feature-item", "new-item");  // Adiciona a classe "new-item" para destacar o item recém-adicionado
+
+    newFeatureItem.innerHTML = `
+      <div class="feature-header">
+        <span class="feature-title">${name}</span>
+        <div class="feature-actions">
+          <button class="edit-feature"><i class="fas fa-edit"></i></button>
+          <button class="delete-feature"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="feature-details">
+        <p>${description}</p>
+        <p><strong>Action Type:</strong> ${actionType}</p>
+        <p><strong>Source Type:</strong> ${categoryId}</p>
+      </div>
+    `;
+
+    // Adiciona o novo item na categoria
+    categorySection.appendChild(newFeatureItem);
+
+    // Fecha o modal
+    modal.style.display = "none";
+
+    // Limpar o formulário
+    form.reset();
+
+    // Adiciona eventos para os botões de editar e excluir
+    newFeatureItem.querySelector(".edit-feature").addEventListener("click", () => {
+      alert("Editar a característica: " + name); // Aqui você pode implementar a lógica de edição
+    });
+
+    newFeatureItem.querySelector(".delete-feature").addEventListener("click", () => {
+      newFeatureItem.remove(); // Exclui o item
+    });
+
+    // Remove a classe "new-item" após um pequeno delay (para dar o efeito visual)
+    setTimeout(() => {
+      newFeatureItem.classList.remove("new-item");
+    }, 3000); // Remove após 3 segundos, pode ser ajustado conforme necessário
   });
 });

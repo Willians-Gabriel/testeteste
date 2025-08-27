@@ -721,11 +721,73 @@ body {
     padding: 0;
   }
   
-.skill-button:hover {
-  transform: scale(1.1); /* Aumenta um pouco o ícone quando o mouse passa */
-  background-color: #444; /* Cor de fundo ao passar o mouse */
-}
+  .skill-button:hover {
+    transform: scale(1.1); /* Aumenta um pouco o ícone quando o mouse passa */
+    background-color: #444; /* Cor de fundo ao passar o mouse */
+  }
+  /* SKILL REDONDO */
+  /* Botão circular */
+  .skill-circle-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 18px;   /* antes 24px → agora menor */
+    height: 18px;
+    margin-left: 6px; /* espaço entre o bônus e o círculo */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
+  .skill-circle-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .skill-circle-btn svg circle {
+    transition: stroke 0.3s, fill 0.3s, stroke-dasharray 0.3s;
+  }
+  .skill-circle-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+  .skill-circle-btn svg circle {
+    transition: stroke 0.3s, fill 0.3s, stroke-dasharray 0.3s;
+  }
+  /* Dropdown */
+  .skill-options {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    background: #222;
+    border: 1px solid #555;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 160px;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+  .skill-options.hidden {
+    display: none;
+  }
+  
+  .skill-options li {
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #ddd;
+    cursor: pointer;
+  }
+  
+  .skill-options li:hover {
+    background: #444;
+    color: #fff;
+  }
   /* Estilo do menu de opções */
   .dropdown-content {
     display: none;
@@ -973,12 +1035,12 @@ body {
   .dropdown-menu li:hover {
     background-color: #444;
   }
-  /***********
+  /**********
   NAVBAR 
-  ************/
+  ***********/
   .custom-block9{
     position: fixed;
-    margin-top: -162%;
+    margin-top: -166%;
     margin-left: 52%;
     background-color: #222;
     border-radius: 7px;
@@ -1422,178 +1484,419 @@ body {
     color: #ff0000;
     background-color: rgba(255, 0, 0, 0.1);
   }
+  
+  
+  /**********
+  INVENTÁRIO 
+  **********/
+  .inventory-toolbar {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    color: #f1f1f1;
+  }
+  
+  .moedas {
+    border-top: 1px solid #444;
+    padding: 10px 0;
+  }
+  
+  .coin {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .coin label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    gap: 5px;
+    min-width: 60px;
+  }
+  
+  /* Container input + botões */
+  .number-input {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .number-input input {
+    width: 45px;
+    height: 32px;
+    padding-right: 20px;
+    background-color: #1e1e1e;
+    border: 1px solid #888;
+    border-radius: 6px;
+    text-align: center;
+    color: #eee;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Botões dentro do input */
+  .number-input .buttons {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .number-input button {
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 10px;
+  }
+  
+  .number-input button:hover {
+    color: #fff;
+  }
+  
+  /* Cores de moedas */
+  .electrum {
+    color: #D9C878;
+  }
+  
+  .ouro {
+    color: #FFD700;
+  }
+  
+  .prata {
+    color: #c0c0c0;
+  }
+  
+  .bronze {
+    color: #CD7F32;
+  }
+  
+  .platina {
+    color: #004146;
+  }
+  
+  /* ITENS */ 
+  .inventory-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+  .inventory-section-title {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  .add-button:hover {
+    color: #888;
+  }
+  .add-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 8px;
+    transition: color 0.3s;
+  }
+  .inventory-section {
+    margin: 40px 0; /* aumenta o espaço vertical entre as seções */
+  }
+  
+  
+  .inventory-table {
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+  }
+  
+  .inventory-row {
+    display: flex;
+    padding: 8px 0;
+    border-top: 2px solid #333;
+  }
+  
+  .inventory-row.header {
+    font-weight: bold;
+    border-bottom: 2px solid #888;
+    background-color: #00000080;
+  }
+  
+  .inventory-row.empty {
+    color: #777;
+    font-style: italic;
+  }
+  
+  .col {
+    flex: 1;
+    text-align: center;
+    padding: 2px 8px;
+  }
+  
+  .col.equipment {
+    flex: 2;
+    text-align: left;
+  }
+  .clean-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    width: 30px;
+    text-align: center;
+    margin-left: 6px;
+    appearance: textfield;
+  }
+  
+  
+  /* Remove setinhas de input number no Chrome/Safari */
+  .clean-input::-webkit-outer-spin-button,
+  .clean-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Remove setinhas de input number no Firefox */
+  .clean-input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  /* Estilo ao focar (opcional, discreto) */
+  .clean-input:focus {
+    outline: none;
+    border-bottom: 1px solid #555; /* ou remova se quiser 100% clean */
+  }
+  
+  #itemTypeModal {
+    display: none;
+    position: absolute; /* Mantém a posição absoluta */
+    background: rgba(0, 0, 0, 0.7); /* Cor de fundo escura */
+    margin-left: -198%;
+    color: #eee;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    z-index: 1000;
+  }
+  .caracteristicas-filter {
+    padding: 6px 2px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #ffffff00;
+    color: #8d8d8d;
+  }
 
-
-/**********
- INVENTÁRIO 
- **********/
-.inventory-toolbar {
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 700px;
-  box-sizing: border-box;
-  color: #f1f1f1;
-}
-
-.moedas {
-  border-top: 1px solid #444;
-  padding: 10px 0;
-}
-
-.coin {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.coin label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 13px;
-  gap: 5px;
-  min-width: 60px;
-}
-
-/* Container input + botões */
-.number-input {
+/* Características */
+#features {
   position: relative;
-  display: inline-block;
 }
 
-.number-input input {
-  width: 45px;
-  height: 32px;
-  padding-right: 20px;
-  background-color: #1e1e1e;
-  border: 1px solid #888;
-  border-radius: 6px;
-  text-align: center;
-  color: #eee;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* Botões dentro do input */
-.number-input .buttons {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.number-input button {
-  background: none;
-  border: none;
-  color: #ccc;
-  font-size: 10px;
-  cursor: pointer;
-  padding: 0;
-  line-height: 10px;
-}
-
-.number-input button:hover {
-  color: #fff;
-}
-
-/* Cores de moedas */
-.electrum {
-  color: #D9C878;
-}
-
-.ouro {
-  color: #FFD700;
-}
-
-.prata {
-  color: #c0c0c0;
-}
-
-.bronze {
-  color: #CD7F32;
-}
-
-.platina {
-  color: #004146;
-}
-
-/* ITENS */ 
-.inventory-section-header {
+.features-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #444;
-  padding-bottom: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
-.inventory-section-title {
-  font-size: 1.1rem;
-  margin: 0;
+
+.botao-adicionar {
+  font-size: 24px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffff00e7;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
-.add-button:hover {
-  color: #888;
+
+.botao-adicionar:hover {
+  background-color: #ffff00d6;
+  transform: scale(1.1);
 }
-.add-button {
+
+/* Estilo do container das características */
+.features-container {
+  width: 91%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Estilo das categorias */
+.feature-item {
+  background-color: #1e1e1e;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.feature-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.feature-title {
+  color: white;
+}
+
+/* Estilo para as ações (editar/excluir) */
+.feature-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.feature-actions button {
   background-color: transparent;
   border: none;
-  color: #fff;
-  font-size: 20px;
+  color: white;
   cursor: pointer;
-  padding: 0 8px;
-  transition: color 0.3s;
-}
-.inventory-section {
-  margin: 40px 0; /* aumenta o espaço vertical entre as seções */
+  font-size: 16px;
+  transition: transform 0.2s;
 }
 
-
-.inventory-table {
-  border-top: 1px solid #444;
-  border-bottom: 1px solid #444;
+.feature-actions button:hover {
+  transform: scale(1.1);
 }
 
-.inventory-row {
-  display: flex;
-  padding: 8px 0;
-  border-top: 2px solid #333;
+/* Ícones de editar e excluir */
+.feature-actions .edit-feature i {
+  color: #00aced;
 }
 
-.inventory-row.header {
-  font-weight: bold;
-  border-bottom: 2px solid #888;
-  background-color: #00000080;
+.feature-actions .delete-feature i {
+  color: #e74c3c;
 }
 
-.inventory-row.empty {
-  color: #777;
-  font-style: italic;
-}
-
-.col {
-  flex: 1;
-  text-align: center;
-  padding: 2px 8px;
-}
-
-.col.equipment {
-  flex: 2;
-  text-align: left;
-}
-
-#itemTypeModal {
+/* Estilo do conteúdo da característica */
+.feature-details {
   display: none;
-  position: absolute; /* Mantém a posição absoluta */
-  background: rgba(0, 0, 0, 0.7); /* Cor de fundo escura */
-  margin-left: -198%;
-  color: #eee;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.feature-item.open .feature-details {
+  display: block;
+}
+
+/* Modal para adicionar nova característica */
+.modal-caracteristicas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Estilo do conteúdo do modal */
+.modal-caracteristicas-conteudo {
+  background-color: #1e1e1e;
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  width: 100%;
+}
+
+/* Título do modal */
+.modal-caracteristicas-conteudo h3 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  text-align: center;
+  color: #00aced;
+}
+
+/* Estilo dos campos do formulário */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background-color: #2b2b2b;
+  color: #f0f0f0;
+  border: 1px solid #444;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #00aced;
+}
+
+.modal-caracteristicas-botoes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.botao-cancelar {
+  background-color: #444;
+  color: #eee;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.botao-cancelar:hover {
+  background-color: #222;
+}
+
+.botao-confirmar {
+  background-color: #00aced;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.botao-confirmar:hover {
+  background-color: #0084a6;
 }
